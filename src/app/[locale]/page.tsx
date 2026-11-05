@@ -1,5 +1,5 @@
-import { LandingPage } from '@/features/landing/presentation/pages/landing/landing-page';
+import { HomePage } from '@/features/home/presentation/pages/home/home-page';
 
-export default function HomePage() {
-  return <LandingPage />;
+export default function Page() {
+  return <HomePage />;
 }

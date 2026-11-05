@@ -14,8 +14,6 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Chris Balola',
-  description: 'Indie hacker building products people love.',
   icons: [
     { rel: 'icon', url: '/favicon.ico', sizes: 'any' },
     { rel: 'icon', url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },

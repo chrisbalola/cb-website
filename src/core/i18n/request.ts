@@ -28,7 +28,7 @@ async function loadMessages(locale: string): Promise<Record<string, unknown>> {
     reportI18nError(error, 'shared', locale);
   }
 
-  const features = ['landing', 'pricing', 'legal'];
+  const features = ['home'];
 
   for (const feature of features) {
     try {

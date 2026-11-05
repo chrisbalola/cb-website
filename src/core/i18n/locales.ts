@@ -3,11 +3,7 @@ export type LocaleItem = {
   name: string;
 };
 
-export const locales: LocaleItem[] = [
-  { code: 'en', name: 'English' },
-  { code: 'fr', name: 'Français' },
-  { code: 'sw', name: 'Kiswahili' },
-];
+export const locales: LocaleItem[] = [{ code: 'en', name: 'English' }];
 
 /** Locale codes array for use in routing config */
 export const localeCodes = locales.map((l) => l.code) as [string, ...string[]];
