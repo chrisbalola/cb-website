@@ -7,8 +7,15 @@ const linkClassName =
   'underline decoration-accent decoration-2 underline-offset-[0.22em] hover:decoration-[3px] focus-visible:rounded-xs focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent';
 
 function ExternalLink({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
+  const opensNewTab = !href.startsWith('mailto:');
+
   return (
-    <a href={href} className={cn(linkClassName, className)}>
+    <a
+      href={href}
+      className={cn(linkClassName, className)}
+      target={opensNewTab ? '_blank' : undefined}
+      rel={opensNewTab ? 'noopener noreferrer' : undefined}
+    >
       {children}
     </a>
   );
