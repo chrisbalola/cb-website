@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "badge": "Indie Hacker",
+    "title": "Building Products People Love",
+    "subtitle": "I'm Chris Balola — an indie hacker crafting useful software products. Currently building in public and shipping fast.",
+    "learnMore": "See My Projects",
+    "visual": {
+      "title": "Projects",
+      "badge": "Indie Hacker",
+      "live": "Live",
+      "building": "Building",
+      "planning": "Planning"
+    }
+  },
+  "features": {
+    "label": "Projects",
+    "title": "What I'm Building",
+    "subtitle": "Products designed to solve real problems for real people.",
+    "items": {
+      "0": {
+        "title": "Meneja",
+        "description": "An all-in-one management platform for businesses and individuals. Finance, products, and services in one app."
+      },
+      "1": {
+        "title": "More Coming Soon",
+        "description": "Always exploring new ideas and building the next thing. Stay tuned for upcoming projects."
+      }
+    }
+  },
+  "modules": {
+    "label": "Focus Areas",
+    "title": "What I Work On",
+    "subtitle": "The domains and technologies I'm passionate about.",
+    "finance": {
+      "title": "SaaS Products",
+      "badge": "Active",
+      "description": "Building software-as-a-service products that help people manage their work and lives more effectively.",
+      "features": {
+        "0": "Clean architecture and scalable systems",
+        "1": "Mobile-first, offline-capable experiences",
+        "2": "Multi-language and multi-currency support",
+        "3": "Team collaboration built in"
+      }
+    },
+    "products": {
+      "title": "Developer Tools",
+      "badge": "Exploring",
+      "description": "Creating tools and libraries that make developers more productive and codebases more maintainable.",
+      "features": {
+        "0": "Open source contributions",
+        "1": "TypeScript-first approach",
+        "2": "Modern web stack",
+        "3": "Developer experience focused"
+      }
+    },
+    "services": {
+      "title": "Content & Community",
+      "badge": "Growing",
+      "description": "Sharing the journey of building products in public — lessons learned, wins, and everything in between.",
+      "features": {
+        "0": "Building in public",
+        "1": "Indie hacker community",
+        "2": "Technical writing",
+        "3": "Product development insights"
+      }
+    }
+  },
+  "differentiators": {
+    "label": "About Me",
+    "title": "How I Build",
+    "subtitle": "My approach to creating products that matter.",
+    "items": {
+      "0": {
+        "title": "Ship Fast, Iterate Often",
+        "description": "I believe in getting products into users' hands quickly and improving based on real feedback."
+      },
+      "1": {
+        "title": "Solve Real Problems",
+        "description": "Every product starts with a genuine pain point. I build things that people actually need."
+      },
+      "2": {
+        "title": "Quality Code",
+        "description": "Clean architecture, type safety, and maintainable codebases. Built to last, not just to launch."
+      },
+      "3": {
+        "title": "Build in Public",
+        "description": "Sharing the journey transparently — the wins, the failures, and the lessons learned along the way."
+      }
+    }
+  },
+  "cta": {
+    "title": "Let's connect.",
+    "subtitle": "Follow along as I build products, share lessons, and grow as an indie hacker.",
+    "button": "Follow on X"
+  }
+}

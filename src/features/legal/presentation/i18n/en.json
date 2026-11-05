@@ -1,0 +1,258 @@
+{
+  "terms": {
+    "hero": {
+      "badge": "Legal",
+      "title": "Terms & Conditions",
+      "subtitle": "Please read these terms carefully before using chrisbalola.com.",
+      "effectiveDate": "Effective Date: March 1, 2025"
+    },
+    "sections": {
+      "0": {
+        "title": "1. Acceptance of Terms",
+        "paragraphs": {
+          "0": "By accessing or using chrisbalola.com (the \"Service\"), operated by Emigisha Ltd (\"we\", \"us\", or \"our\"), you agree to be bound by these Terms & Conditions. If you are using the Service on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these terms.",
+          "1": "If you do not agree to these terms, you must stop using the Service immediately."
+        }
+      },
+      "1": {
+        "title": "2. Service Description",
+        "paragraphs": {
+          "0": "chrisbalola.com is a software-as-a-service (SaaS) platform designed to help businesses and individuals manage their operations. The Finance module is currently live, with Products and Services modules under active development.",
+          "1": "chrisbalola.com is built with an offline-first architecture, allowing core functionality to work without an internet connection. Data synchronizes automatically when connectivity is restored."
+        }
+      },
+      "2": {
+        "title": "3. User Accounts",
+        "paragraphs": {
+          "0": "To use certain features of the Service, you must register for an account. You agree to provide accurate, current, and complete information during registration and to keep your account information updated.",
+          "1": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Accounts are non-transferable and may not be shared with third parties."
+        }
+      },
+      "3": {
+        "title": "4. Acceptable Use",
+        "paragraphs": {
+          "0": "You agree to use the Service only for lawful purposes and in compliance with all applicable laws and regulations. You may not:"
+        },
+        "items": {
+          "0": "Reverse engineer, decompile, or disassemble any part of the Service",
+          "1": "Upload or transmit malware, viruses, or any malicious code",
+          "2": "Scrape, crawl, or use automated tools to extract data from the Service",
+          "3": "Attempt to gain unauthorized access to other users' accounts or our systems",
+          "4": "Use the Service to facilitate illegal activities or violate any third-party rights",
+          "5": "Interfere with or disrupt the integrity or performance of the Service"
+        }
+      },
+      "4": {
+        "title": "5. Intellectual Property",
+        "paragraphs": {
+          "0": "The Service, including its design, code, features, and branding, is the intellectual property of Emigisha Ltd and is protected by applicable copyright, trademark, and other intellectual property laws.",
+          "1": "You retain full ownership of all data and content you input into the Service. By using the Service, you grant us a limited, non-exclusive license to process, store, and display your data solely for the purpose of providing the Service to you."
+        }
+      },
+      "5": {
+        "title": "6. Privacy",
+        "paragraphs": {
+          "0": "Your use of the Service is also governed by our Privacy Policy, which describes how we collect, use, and protect your personal information.",
+          "1": "By using the Service, you consent to the data practices described in our Privacy Policy."
+        }
+      },
+      "6": {
+        "title": "7. Payment & Billing",
+        "paragraphs": {
+          "0": "chrisbalola.com is currently offered free of charge. We may introduce paid plans or premium features in the future.",
+          "1": "If paid plans are introduced, we will provide advance notice of pricing and billing terms. Continued use of paid features after the notice period constitutes acceptance of the applicable fees."
+        }
+      },
+      "7": {
+        "title": "8. Data & Security",
+        "paragraphs": {
+          "0": "We implement reasonable technical and organizational measures to protect your data. However, no method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security.",
+          "1": "When using the Service in offline mode, your data is stored locally on your device. You are responsible for the security of your device and any data stored on it during offline use."
+        }
+      },
+      "8": {
+        "title": "9. Service Availability",
+        "paragraphs": {
+          "0": "We strive to maintain high availability of the Service but do not guarantee uninterrupted or error-free operation. The Service may be temporarily unavailable due to maintenance, updates, or circumstances beyond our control.",
+          "1": "We are not liable for any losses or damages resulting from service outages or interruptions."
+        }
+      },
+      "9": {
+        "title": "10. Termination",
+        "paragraphs": {
+          "0": "You may terminate your account at any time by contacting us or using the account deletion feature within the Service.",
+          "1": "We reserve the right to suspend or terminate your access to the Service at any time, with or without notice, if we reasonably believe you have violated these terms or if continued use poses a risk to the Service or other users.",
+          "2": "Upon termination, your data will be retained for a reasonable period to allow for recovery, after which it will be permanently deleted in accordance with our data retention policies."
+        }
+      },
+      "10": {
+        "title": "11. Limitation of Liability",
+        "paragraphs": {
+          "0": "To the maximum extent permitted by law, Emigisha Ltd shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities, arising out of or related to your use of the Service.",
+          "1": "Our total liability for any claim arising from or related to these terms or the Service shall not exceed the amount you paid us in the twelve (12) months preceding the claim, or one hundred US dollars ($100), whichever is greater."
+        }
+      },
+      "11": {
+        "title": "12. Disclaimers",
+        "paragraphs": {
+          "0": "The Service is provided on an \"as is\" and \"as available\" basis without warranties of any kind, whether express, implied, or statutory, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.",
+          "1": "We do not warrant that the Service will meet your specific requirements, that results obtained from using the Service will be accurate or reliable, or that any errors in the Service will be corrected."
+        }
+      },
+      "12": {
+        "title": "13. Changes to Terms",
+        "paragraphs": {
+          "0": "We reserve the right to modify these Terms & Conditions at any time. Material changes will be communicated through the Service, by email, or by posting a notice on our website.",
+          "1": "Your continued use of the Service after the effective date of any changes constitutes your acceptance of the updated terms. If you do not agree with the changes, you must stop using the Service."
+        }
+      },
+      "13": {
+        "title": "14. Governing Law & Disputes",
+        "paragraphs": {
+          "0": "These Terms & Conditions are governed by and construed in accordance with the laws of the Republic of Kenya, without regard to its conflict of law provisions.",
+          "1": "Any disputes arising from or related to these terms or the Service shall first be resolved through informal negotiation. If a resolution cannot be reached, the dispute shall be submitted to the exclusive jurisdiction of the courts located in Nairobi, Kenya."
+        }
+      }
+    },
+    "contact": {
+      "title": "Questions about these terms?",
+      "subtitle": "If you have any questions or concerns about these Terms & Conditions, please reach out to us.",
+      "email": "hello@chrisbalola.com"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "badge": "Legal",
+      "title": "Privacy Policy",
+      "subtitle": "Your privacy matters to us. Learn how we collect, use, and protect your information.",
+      "effectiveDate": "Effective Date: March 1, 2025"
+    },
+    "sections": {
+      "0": {
+        "title": "1. Information We Collect",
+        "paragraphs": {
+          "0": "When you use chrisbalola.com, operated by Emigisha Ltd (\"we\", \"us\", or \"our\"), we collect the following types of information:"
+        },
+        "items": {
+          "0": "Account information: your name, email address, phone number, and other details you provide during registration",
+          "1": "Financial data: transaction records, income, expenses, and other financial information you enter into the platform",
+          "2": "Device and usage data: device type, operating system, browser type, IP address, and how you interact with the Service",
+          "3": "Offline data: information stored locally on your device when using the Service without an internet connection"
+        }
+      },
+      "1": {
+        "title": "2. How We Use Your Information",
+        "paragraphs": {
+          "0": "We use the information we collect for the following purposes:"
+        },
+        "items": {
+          "0": "To provide, maintain, and improve the Service and its features",
+          "1": "To personalize your experience and deliver relevant content",
+          "2": "To communicate with you about updates, security alerts, and support messages",
+          "3": "To detect, prevent, and address security threats, fraud, and technical issues",
+          "4": "To comply with legal obligations and enforce our terms"
+        }
+      },
+      "2": {
+        "title": "3. Data Storage & Security",
+        "paragraphs": {
+          "0": "We take the security of your data seriously and implement appropriate measures to protect it:"
+        },
+        "items": {
+          "0": "Data is encrypted in transit and at rest using industry-standard encryption protocols",
+          "1": "Access to personal data is restricted to authorized personnel on a need-to-know basis",
+          "2": "We conduct regular security audits and vulnerability assessments",
+          "3": "Despite our efforts, no method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security"
+        }
+      },
+      "3": {
+        "title": "4. Offline Data",
+        "paragraphs": {
+          "0": "chrisbalola.com is built with an offline-first architecture. When using the Service without an internet connection:"
+        },
+        "items": {
+          "0": "Your data is stored locally on your device and remains under your control",
+          "1": "You are responsible for the security of your device and any data stored on it during offline use",
+          "2": "When connectivity is restored, locally stored data synchronizes automatically with our servers"
+        }
+      },
+      "4": {
+        "title": "5. Data Sharing & Third Parties",
+        "paragraphs": {
+          "0": "We do not sell your personal information. We may share your data only in the following circumstances:"
+        },
+        "items": {
+          "0": "With trusted service providers who assist us in operating the Service, subject to strict confidentiality agreements",
+          "1": "When required by law, regulation, or legal process, or to respond to lawful requests from public authorities",
+          "2": "In connection with a merger, acquisition, or sale of assets, where your data may be transferred to the successor entity",
+          "3": "With your explicit consent or at your direction"
+        }
+      },
+      "5": {
+        "title": "6. Cookies & Tracking Technologies",
+        "paragraphs": {
+          "0": "We use cookies and similar technologies to enhance your experience:"
+        },
+        "items": {
+          "0": "Essential cookies: required for the Service to function properly, such as authentication and session management",
+          "1": "Analytics: we use Cloudflare Web Analytics to understand how the Service is used, which does not use client-side state for tracking",
+          "2": "We do not use third-party advertising cookies or tracking technologies"
+        }
+      },
+      "6": {
+        "title": "7. Your Rights",
+        "paragraphs": {
+          "0": "You have the following rights regarding your personal data:"
+        },
+        "items": {
+          "0": "Access: request a copy of the personal data we hold about you",
+          "1": "Correction: request that we correct any inaccurate or incomplete personal data",
+          "2": "Deletion: request that we delete your personal data, subject to legal retention requirements",
+          "3": "Data portability: request a copy of your data in a structured, machine-readable format",
+          "4": "Withdraw consent: withdraw your consent to data processing at any time, where consent is the basis for processing",
+          "5": "Lodge complaints: file a complaint with the relevant data protection authority if you believe your rights have been violated"
+        }
+      },
+      "7": {
+        "title": "8. Children's Privacy",
+        "paragraphs": {
+          "0": "The Service is not directed at individuals under the age of 16. We do not knowingly collect personal information from children under 16.",
+          "1": "If we become aware that we have collected personal data from a child under 16, we will take steps to delete that information as quickly as possible. If you believe we may have collected information from a child, please contact us immediately."
+        }
+      },
+      "8": {
+        "title": "9. International Data Transfers",
+        "paragraphs": {
+          "0": "Your data may be processed and stored in countries other than Kenya. When we transfer data internationally, we ensure appropriate safeguards are in place to protect your information in accordance with applicable data protection laws.",
+          "1": "By using the Service, you consent to the transfer of your information to countries outside of your country of residence, which may have different data protection rules."
+        }
+      },
+      "9": {
+        "title": "10. Data Retention",
+        "paragraphs": {
+          "0": "We retain your personal data for as long as your account is active or as needed to provide the Service to you. We may also retain certain information as required by law or for legitimate business purposes.",
+          "1": "After account termination, your data will be retained for a reasonable period to allow for recovery, after which it will be permanently deleted in accordance with our data retention policies."
+        }
+      },
+      "10": {
+        "title": "11. Changes to This Policy",
+        "paragraphs": {
+          "0": "We may update this Privacy Policy from time to time. Material changes will be communicated through the Service, by email, or by posting a notice on our website.",
+          "1": "Your continued use of the Service after the effective date of any changes constitutes your acceptance of the updated policy. We encourage you to review this policy periodically."
+        }
+      },
+      "11": {
+        "title": "12. Governing Law",
+        "paragraphs": {
+          "0": "This Privacy Policy is governed by and construed in accordance with the laws of the Republic of Kenya, without regard to its conflict of law provisions.",
+          "1": "Any disputes arising from or related to this policy shall be submitted to the exclusive jurisdiction of the courts located in Nairobi, Kenya."
+        }
+      }
+    },
+    "contact": {
+      "title": "Questions about your privacy?",
+      "subtitle": "If you have any questions or concerns about this Privacy Policy or how we handle your data, please reach out to us.",
+      "email": "hello@chrisbalola.com"
+    }
+  }
+}

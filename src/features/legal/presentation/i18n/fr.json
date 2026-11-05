@@ -1,0 +1,258 @@
+{
+  "terms": {
+    "hero": {
+      "badge": "Juridique",
+      "title": "Conditions Générales",
+      "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser chrisbalola.com.",
+      "effectiveDate": "Date d'entrée en vigueur : 1er mars 2025"
+    },
+    "sections": {
+      "0": {
+        "title": "1. Acceptation des Conditions",
+        "paragraphs": {
+          "0": "En accédant ou en utilisant chrisbalola.com (le « Service »), exploité par Emigisha Ltd (« nous », « notre » ou « nos »), vous acceptez d'être lié par ces Conditions Générales. Si vous utilisez le Service au nom d'une organisation, vous déclarez et garantissez que vous avez l'autorité nécessaire pour engager cette organisation.",
+          "1": "Si vous n'acceptez pas ces conditions, vous devez cesser immédiatement d'utiliser le Service."
+        }
+      },
+      "1": {
+        "title": "2. Description du Service",
+        "paragraphs": {
+          "0": "chrisbalola.com est une plateforme logicielle en tant que service (SaaS) conçue pour aider les entreprises et les particuliers à gérer leurs opérations. Le module Finance est actuellement disponible, et les modules Produits et Services sont en cours de développement.",
+          "1": "chrisbalola.com est conçu avec une architecture hors-ligne d'abord, permettant aux fonctionnalités principales de fonctionner sans connexion internet. Les données se synchronisent automatiquement lorsque la connectivité est rétablie."
+        }
+      },
+      "2": {
+        "title": "3. Comptes Utilisateurs",
+        "paragraphs": {
+          "0": "Pour utiliser certaines fonctionnalités du Service, vous devez créer un compte. Vous acceptez de fournir des informations exactes, actuelles et complètes lors de l'inscription et de maintenir vos informations de compte à jour.",
+          "1": "Vous êtes responsable de la confidentialité de vos identifiants de compte et de toutes les activités effectuées sous votre compte. Les comptes sont non transférables et ne peuvent pas être partagés avec des tiers."
+        }
+      },
+      "3": {
+        "title": "4. Utilisation Acceptable",
+        "paragraphs": {
+          "0": "Vous acceptez d'utiliser le Service uniquement à des fins licites et en conformité avec toutes les lois et réglementations applicables. Il vous est interdit de :"
+        },
+        "items": {
+          "0": "Désassembler, décompiler ou faire de l'ingénierie inverse sur toute partie du Service",
+          "1": "Télécharger ou transmettre des logiciels malveillants, virus ou tout code malveillant",
+          "2": "Extraire, collecter ou utiliser des outils automatisés pour récupérer des données du Service",
+          "3": "Tenter d'obtenir un accès non autorisé aux comptes d'autres utilisateurs ou à nos systèmes",
+          "4": "Utiliser le Service pour faciliter des activités illégales ou violer les droits de tiers",
+          "5": "Interférer avec ou perturber l'intégrité ou les performances du Service"
+        }
+      },
+      "4": {
+        "title": "5. Propriété Intellectuelle",
+        "paragraphs": {
+          "0": "Le Service, y compris sa conception, son code, ses fonctionnalités et son image de marque, est la propriété intellectuelle d'Emigisha Ltd et est protégé par les lois applicables en matière de droits d'auteur, de marques et d'autres droits de propriété intellectuelle.",
+          "1": "Vous conservez la pleine propriété de toutes les données et contenus que vous saisissez dans le Service. En utilisant le Service, vous nous accordez une licence limitée et non exclusive pour traiter, stocker et afficher vos données uniquement dans le but de vous fournir le Service."
+        }
+      },
+      "5": {
+        "title": "6. Confidentialité",
+        "paragraphs": {
+          "0": "Votre utilisation du Service est également régie par notre Politique de Confidentialité, qui décrit comment nous collectons, utilisons et protégeons vos informations personnelles.",
+          "1": "En utilisant le Service, vous consentez aux pratiques de données décrites dans notre Politique de Confidentialité."
+        }
+      },
+      "6": {
+        "title": "7. Paiement et Facturation",
+        "paragraphs": {
+          "0": "chrisbalola.com est actuellement offert gratuitement. Nous pourrions introduire des plans payants ou des fonctionnalités premium à l'avenir.",
+          "1": "Si des plans payants sont introduits, nous fournirons un préavis des tarifs et conditions de facturation. L'utilisation continue des fonctionnalités payantes après la période de préavis constitue l'acceptation des frais applicables."
+        }
+      },
+      "7": {
+        "title": "8. Données et Sécurité",
+        "paragraphs": {
+          "0": "Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données. Cependant, aucune méthode de stockage ou de transmission électronique n'est totalement sécurisée, et nous ne pouvons garantir une sécurité absolue.",
+          "1": "Lorsque vous utilisez le Service en mode hors-ligne, vos données sont stockées localement sur votre appareil. Vous êtes responsable de la sécurité de votre appareil et de toutes les données qui y sont stockées pendant l'utilisation hors-ligne."
+        }
+      },
+      "8": {
+        "title": "9. Disponibilité du Service",
+        "paragraphs": {
+          "0": "Nous nous efforçons de maintenir une haute disponibilité du Service, mais ne garantissons pas un fonctionnement ininterrompu ou sans erreur. Le Service peut être temporairement indisponible en raison de la maintenance, des mises à jour ou de circonstances indépendantes de notre volonté.",
+          "1": "Nous ne sommes pas responsables des pertes ou dommages résultant d'interruptions ou de pannes du service."
+        }
+      },
+      "9": {
+        "title": "10. Résiliation",
+        "paragraphs": {
+          "0": "Vous pouvez résilier votre compte à tout moment en nous contactant ou en utilisant la fonction de suppression de compte dans le Service.",
+          "1": "Nous nous réservons le droit de suspendre ou de résilier votre accès au Service à tout moment, avec ou sans préavis, si nous estimons raisonnablement que vous avez violé ces conditions ou si votre utilisation continue présente un risque pour le Service ou les autres utilisateurs.",
+          "2": "Après la résiliation, vos données seront conservées pendant une période raisonnable pour permettre la récupération, après quoi elles seront définitivement supprimées conformément à nos politiques de conservation des données."
+        }
+      },
+      "10": {
+        "title": "11. Limitation de Responsabilité",
+        "paragraphs": {
+          "0": "Dans toute la mesure permise par la loi, Emigisha Ltd ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, y compris, mais sans s'y limiter, la perte de profits, de données ou d'opportunités commerciales, découlant de ou liés à votre utilisation du Service.",
+          "1": "Notre responsabilité totale pour toute réclamation découlant de ou liée à ces conditions ou au Service ne dépassera pas le montant que vous nous avez payé au cours des douze (12) mois précédant la réclamation, ou cent dollars américains (100 $), selon le montant le plus élevé."
+        }
+      },
+      "11": {
+        "title": "12. Avertissements",
+        "paragraphs": {
+          "0": "Le Service est fourni « en l'état » et « selon disponibilité » sans garantie d'aucune sorte, qu'elle soit expresse, implicite ou légale, y compris, mais sans s'y limiter, les garanties implicites de qualité marchande, d'adéquation à un usage particulier et de non-contrefaçon.",
+          "1": "Nous ne garantissons pas que le Service répondra à vos exigences spécifiques, que les résultats obtenus par l'utilisation du Service seront exacts ou fiables, ou que les erreurs dans le Service seront corrigées."
+        }
+      },
+      "12": {
+        "title": "13. Modifications des Conditions",
+        "paragraphs": {
+          "0": "Nous nous réservons le droit de modifier ces Conditions Générales à tout moment. Les modifications importantes seront communiquées via le Service, par e-mail ou par la publication d'un avis sur notre site web.",
+          "1": "Votre utilisation continue du Service après la date d'entrée en vigueur de toute modification constitue votre acceptation des conditions mises à jour. Si vous n'acceptez pas les modifications, vous devez cesser d'utiliser le Service."
+        }
+      },
+      "13": {
+        "title": "14. Droit Applicable et Litiges",
+        "paragraphs": {
+          "0": "Ces Conditions Générales sont régies et interprétées conformément aux lois de la République du Kenya, sans égard à ses dispositions en matière de conflit de lois.",
+          "1": "Tout litige découlant de ou lié à ces conditions ou au Service sera d'abord résolu par négociation informelle. Si une résolution ne peut être atteinte, le litige sera soumis à la juridiction exclusive des tribunaux situés à Nairobi, Kenya."
+        }
+      }
+    },
+    "contact": {
+      "title": "Des questions sur ces conditions ?",
+      "subtitle": "Si vous avez des questions ou des préoccupations concernant ces Conditions Générales, n'hésitez pas à nous contacter.",
+      "email": "hello@chrisbalola.com"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "badge": "Juridique",
+      "title": "Politique de Confidentialité",
+      "subtitle": "Votre vie privée nous tient à cœur. Découvrez comment nous collectons, utilisons et protégeons vos informations.",
+      "effectiveDate": "Date d'entrée en vigueur : 1er mars 2025"
+    },
+    "sections": {
+      "0": {
+        "title": "1. Informations que Nous Collectons",
+        "paragraphs": {
+          "0": "Lorsque vous utilisez chrisbalola.com, exploité par Emigisha Ltd (« nous », « notre » ou « nos »), nous collectons les types d'informations suivants :"
+        },
+        "items": {
+          "0": "Informations de compte : votre nom, adresse e-mail, numéro de téléphone et autres détails que vous fournissez lors de l'inscription",
+          "1": "Données financières : enregistrements de transactions, revenus, dépenses et autres informations financières que vous saisissez dans la plateforme",
+          "2": "Données d'appareil et d'utilisation : type d'appareil, système d'exploitation, type de navigateur, adresse IP et comment vous interagissez avec le Service",
+          "3": "Données hors-ligne : informations stockées localement sur votre appareil lorsque vous utilisez le Service sans connexion internet"
+        }
+      },
+      "1": {
+        "title": "2. Comment Nous Utilisons Vos Informations",
+        "paragraphs": {
+          "0": "Nous utilisons les informations que nous collectons aux fins suivantes :"
+        },
+        "items": {
+          "0": "Pour fournir, maintenir et améliorer le Service et ses fonctionnalités",
+          "1": "Pour personnaliser votre expérience et fournir du contenu pertinent",
+          "2": "Pour communiquer avec vous concernant les mises à jour, les alertes de sécurité et les messages d'assistance",
+          "3": "Pour détecter, prévenir et traiter les menaces de sécurité, la fraude et les problèmes techniques",
+          "4": "Pour nous conformer aux obligations légales et faire respecter nos conditions"
+        }
+      },
+      "2": {
+        "title": "3. Stockage et Sécurité des Données",
+        "paragraphs": {
+          "0": "Nous prenons la sécurité de vos données au sérieux et mettons en œuvre des mesures appropriées pour les protéger :"
+        },
+        "items": {
+          "0": "Les données sont chiffrées en transit et au repos à l'aide de protocoles de chiffrement standard de l'industrie",
+          "1": "L'accès aux données personnelles est limité au personnel autorisé selon le principe du besoin d'en connaître",
+          "2": "Nous effectuons des audits de sécurité et des évaluations de vulnérabilité réguliers",
+          "3": "Malgré nos efforts, aucune méthode de stockage ou de transmission électronique n'est totalement sécurisée, et nous ne pouvons garantir une sécurité absolue"
+        }
+      },
+      "3": {
+        "title": "4. Données Hors-ligne",
+        "paragraphs": {
+          "0": "chrisbalola.com est conçu avec une architecture hors-ligne d'abord. Lorsque vous utilisez le Service sans connexion internet :"
+        },
+        "items": {
+          "0": "Vos données sont stockées localement sur votre appareil et restent sous votre contrôle",
+          "1": "Vous êtes responsable de la sécurité de votre appareil et de toutes les données qui y sont stockées pendant l'utilisation hors-ligne",
+          "2": "Lorsque la connectivité est rétablie, les données stockées localement se synchronisent automatiquement avec nos serveurs"
+        }
+      },
+      "4": {
+        "title": "5. Partage des Données et Tiers",
+        "paragraphs": {
+          "0": "Nous ne vendons pas vos informations personnelles. Nous pouvons partager vos données uniquement dans les circonstances suivantes :"
+        },
+        "items": {
+          "0": "Avec des prestataires de services de confiance qui nous aident à exploiter le Service, soumis à des accords de confidentialité stricts",
+          "1": "Lorsque la loi, la réglementation ou une procédure judiciaire l'exige, ou pour répondre aux demandes légitimes des autorités publiques",
+          "2": "En lien avec une fusion, une acquisition ou une vente d'actifs, où vos données peuvent être transférées à l'entité successeur",
+          "3": "Avec votre consentement explicite ou à votre demande"
+        }
+      },
+      "5": {
+        "title": "6. Cookies et Technologies de Suivi",
+        "paragraphs": {
+          "0": "Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience :"
+        },
+        "items": {
+          "0": "Cookies essentiels : nécessaires au bon fonctionnement du Service, tels que l'authentification et la gestion de session",
+          "1": "Analytique : nous utilisons Cloudflare Web Analytics pour comprendre comment le Service est utilisé, sans utiliser d'état côté client pour le suivi",
+          "2": "Nous n'utilisons pas de cookies publicitaires tiers ni de technologies de suivi"
+        }
+      },
+      "6": {
+        "title": "7. Vos Droits",
+        "paragraphs": {
+          "0": "Vous disposez des droits suivants concernant vos données personnelles :"
+        },
+        "items": {
+          "0": "Accès : demander une copie des données personnelles que nous détenons à votre sujet",
+          "1": "Rectification : demander la correction de toute donnée personnelle inexacte ou incomplète",
+          "2": "Suppression : demander la suppression de vos données personnelles, sous réserve des obligations légales de conservation",
+          "3": "Portabilité des données : demander une copie de vos données dans un format structuré et lisible par machine",
+          "4": "Retrait du consentement : retirer votre consentement au traitement des données à tout moment, lorsque le consentement est la base du traitement",
+          "5": "Déposer une plainte : déposer une plainte auprès de l'autorité compétente en matière de protection des données si vous estimez que vos droits ont été violés"
+        }
+      },
+      "7": {
+        "title": "8. Vie Privée des Enfants",
+        "paragraphs": {
+          "0": "Le Service n'est pas destiné aux personnes de moins de 16 ans. Nous ne collectons pas sciemment des informations personnelles auprès d'enfants de moins de 16 ans.",
+          "1": "Si nous apprenons que nous avons collecté des données personnelles d'un enfant de moins de 16 ans, nous prendrons des mesures pour supprimer ces informations le plus rapidement possible. Si vous pensez que nous avons collecté des informations d'un enfant, veuillez nous contacter immédiatement."
+        }
+      },
+      "8": {
+        "title": "9. Transferts Internationaux de Données",
+        "paragraphs": {
+          "0": "Vos données peuvent être traitées et stockées dans des pays autres que le Kenya. Lorsque nous transférons des données à l'international, nous veillons à ce que des garanties appropriées soient en place pour protéger vos informations conformément aux lois applicables en matière de protection des données.",
+          "1": "En utilisant le Service, vous consentez au transfert de vos informations vers des pays en dehors de votre pays de résidence, qui peuvent avoir des règles de protection des données différentes."
+        }
+      },
+      "9": {
+        "title": "10. Conservation des Données",
+        "paragraphs": {
+          "0": "Nous conservons vos données personnelles aussi longtemps que votre compte est actif ou que nécessaire pour vous fournir le Service. Nous pouvons également conserver certaines informations conformément aux exigences légales ou à des fins commerciales légitimes.",
+          "1": "Après la résiliation du compte, vos données seront conservées pendant une période raisonnable pour permettre la récupération, après quoi elles seront définitivement supprimées conformément à nos politiques de conservation des données."
+        }
+      },
+      "10": {
+        "title": "11. Modifications de Cette Politique",
+        "paragraphs": {
+          "0": "Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre. Les modifications importantes seront communiquées via le Service, par e-mail ou par la publication d'un avis sur notre site web.",
+          "1": "Votre utilisation continue du Service après la date d'entrée en vigueur de toute modification constitue votre acceptation de la politique mise à jour. Nous vous encourageons à consulter cette politique régulièrement."
+        }
+      },
+      "11": {
+        "title": "12. Droit Applicable",
+        "paragraphs": {
+          "0": "Cette Politique de Confidentialité est régie et interprétée conformément aux lois de la République du Kenya, sans égard à ses dispositions en matière de conflit de lois.",
+          "1": "Tout litige découlant de ou lié à cette politique sera soumis à la juridiction exclusive des tribunaux situés à Nairobi, Kenya."
+        }
+      }
+    },
+    "contact": {
+      "title": "Des questions sur votre vie privée ?",
+      "subtitle": "Si vous avez des questions ou des préoccupations concernant cette Politique de Confidentialité ou la manière dont nous traitons vos données, n'hésitez pas à nous contacter.",
+      "email": "hello@chrisbalola.com"
+    }
+  }
+}

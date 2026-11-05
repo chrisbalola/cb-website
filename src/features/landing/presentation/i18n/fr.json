@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "badge": "Indie Hacker",
+    "title": "Créer des produits que les gens adorent",
+    "subtitle": "Je suis Chris Balola — un indie hacker qui crée des logiciels utiles. Actuellement en train de construire en public et de livrer rapidement.",
+    "learnMore": "Voir mes projets",
+    "visual": {
+      "title": "Projets",
+      "badge": "Indie Hacker",
+      "live": "En ligne",
+      "building": "En cours",
+      "planning": "Planifié"
+    }
+  },
+  "features": {
+    "label": "Projets",
+    "title": "Ce que je construis",
+    "subtitle": "Des produits conçus pour résoudre de vrais problèmes pour de vraies personnes.",
+    "items": {
+      "0": {
+        "title": "Meneja",
+        "description": "Une plateforme de gestion tout-en-un pour les entreprises et les particuliers. Finances, produits et services dans une seule app."
+      },
+      "1": {
+        "title": "D'autres à venir",
+        "description": "Toujours en train d'explorer de nouvelles idées et de construire la prochaine chose. Restez à l'écoute."
+      }
+    }
+  },
+  "modules": {
+    "label": "Domaines",
+    "title": "Ce sur quoi je travaille",
+    "subtitle": "Les domaines et technologies qui me passionnent.",
+    "finance": {
+      "title": "Produits SaaS",
+      "badge": "Actif",
+      "description": "Construire des produits logiciels en tant que service qui aident les gens à mieux gérer leur travail et leur vie.",
+      "features": {
+        "0": "Architecture propre et systèmes évolutifs",
+        "1": "Expériences mobiles d'abord, fonctionnelles hors ligne",
+        "2": "Support multilingue et multidevise",
+        "3": "Collaboration d'équipe intégrée"
+      }
+    },
+    "products": {
+      "title": "Outils développeur",
+      "badge": "En exploration",
+      "description": "Créer des outils et des bibliothèques qui rendent les développeurs plus productifs.",
+      "features": {
+        "0": "Contributions open source",
+        "1": "Approche TypeScript d'abord",
+        "2": "Stack web moderne",
+        "3": "Axé sur l'expérience développeur"
+      }
+    },
+    "services": {
+      "title": "Contenu et communauté",
+      "badge": "En croissance",
+      "description": "Partager le parcours de construction de produits en public — leçons apprises, victoires et tout le reste.",
+      "features": {
+        "0": "Construction en public",
+        "1": "Communauté indie hacker",
+        "2": "Rédaction technique",
+        "3": "Perspectives de développement produit"
+      }
+    }
+  },
+  "differentiators": {
+    "label": "À propos",
+    "title": "Comment je construis",
+    "subtitle": "Mon approche pour créer des produits qui comptent.",
+    "items": {
+      "0": {
+        "title": "Livrer vite, itérer souvent",
+        "description": "Je crois qu'il faut mettre les produits entre les mains des utilisateurs rapidement et améliorer grâce aux retours réels."
+      },
+      "1": {
+        "title": "Résoudre de vrais problèmes",
+        "description": "Chaque produit commence par un vrai problème. Je construis des choses dont les gens ont vraiment besoin."
+      },
+      "2": {
+        "title": "Code de qualité",
+        "description": "Architecture propre, typage fort et bases de code maintenables. Construit pour durer, pas juste pour lancer."
+      },
+      "3": {
+        "title": "Construire en public",
+        "description": "Partager le parcours en toute transparence — les victoires, les échecs et les leçons apprises."
+      }
+    }
+  },
+  "cta": {
+    "title": "Connectons-nous.",
+    "subtitle": "Suivez-moi pendant que je construis des produits, partage des leçons et grandis en tant qu'indie hacker.",
+    "button": "Suivre sur X"
+  }
+}

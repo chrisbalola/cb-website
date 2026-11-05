@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Pricing",
+    "title": "Simple pricing for everyone",
+    "subtitle": "Everything you need to manage your finances. Free to start, no credit card required."
+  },
+  "plan": {
+    "label": "Plan",
+    "title": "Current Plan",
+    "name": "Free",
+    "price": "$0",
+    "period": "/month",
+    "description": "Full access to the finance module with all core features.",
+    "cta": "Get Started Free",
+    "features": {
+      "0": "Income & expense tracking",
+      "1": "Multi-currency support (150+)",
+      "2": "Budget envelopes",
+      "3": "Bills & receivables management",
+      "4": "Team collaboration (up to 5 roles)",
+      "5": "Offline-first — works without internet",
+      "6": "Financial reports & dashboard",
+      "7": "Unlimited transactions"
+    }
+  },
+  "features": {
+    "label": "What's Included",
+    "title": "Everything in the Free plan",
+    "subtitle": "Powerful financial management tools at no cost.",
+    "items": {
+      "0": {
+        "title": "Financial Tracking",
+        "description": "Record income, expenses, and transfers with full categorization."
+      },
+      "1": {
+        "title": "150+ Currencies",
+        "description": "Full ISO 4217 support with automatic exchange rates."
+      },
+      "2": {
+        "title": "Budget Envelopes",
+        "description": "Allocate funds into savings, expenses, and investment categories."
+      },
+      "3": {
+        "title": "Bills & Receivables",
+        "description": "Track recurring bills and money owed to you with due date alerts."
+      },
+      "4": {
+        "title": "Offline First",
+        "description": "Full functionality without internet. Data syncs when you reconnect."
+      },
+      "5": {
+        "title": "Team Collaboration",
+        "description": "Invite members with Owner, Admin, Manager, Member, and Viewer roles."
+      }
+    }
+  },
+  "cta": {
+    "title": "Start managing your finances today.",
+    "subtitle": "No credit card required. Get started in seconds.",
+    "button": "Get Started Free"
+  }
+}

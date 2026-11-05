@@ -1,0 +1,55 @@
+{
+  "confirmationDialog": {
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "loading": "Loading..."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist.",
+    "goHome": "Go to homepage"
+  },
+  "error": {
+    "description": "Something went wrong",
+    "reset": "Try again"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy"
+  },
+  "marketing": {
+    "navbar": {
+      "home": "Home",
+      "projects": "Projects",
+      "about": "About"
+    },
+    "footer": {
+      "tagline": "Indie hacker building products people love.",
+      "navigation": "Navigation",
+      "projects": "Projects",
+      "about": "About",
+      "legal": "Legal",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "social": "Social",
+      "copyright": "© {year} Chris Balola. All rights reserved."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Chris Balola",
+      "description": "Indie hacker building products people love."
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Read our terms and conditions."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Read our privacy policy."
+    }
+  }
+}
