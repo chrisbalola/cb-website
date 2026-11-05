@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposal D2: The Log, with photo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fff;--fg:#1a1a1a;--muted:#6b6b6b;--accent:#FFAA2B;--border:#e5e5e5;--soft:#f5f5f5}
+  @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1a1a1a;--fg:#fafafa;--muted:#a0a0a0;--border:rgba(255,255,255,.12);--soft:#242424}}
+  :root[data-theme=dark]{--bg:#1a1a1a;--fg:#fafafa;--muted:#a0a0a0;--border:rgba(255,255,255,.12);--soft:#242424}
+  *{box-sizing:border-box}
+  html{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum"}
+  body{margin:0;min-height:100svh;display:flex;flex-direction:column}
+  main{flex:1;width:100%;max-width:44rem;margin:0 auto;padding:clamp(3rem,10vh,6rem) 1rem 3rem}
+  .head{display:flex;align-items:center;gap:.75rem;margin:0 0 1.5rem}.mark{font-weight:800;color:var(--accent);font-size:1.0625rem;margin:0}.ph{width:2.5rem;height:2.5rem;border-radius:50%}.ph img{transform:scale(1.45);transform-origin:62% 40%}
+  .intro{font-size:clamp(1.375rem,3vw,1.75rem);font-weight:600;line-height:1.3;letter-spacing:-.02em;margin:0 0 2.5rem;max-width:30ch}
+  a{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:.2em}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+  .now{background:var(--soft);border-radius:10px;padding:1.1rem 1.25rem;margin:0 0 3rem;font-size:1rem;line-height:1.55}
+  .now b{font-weight:700;margin-right:.5rem}
+  .year{display:grid;grid-template-columns:5rem 1fr;gap:1rem;border-top:1px solid var(--border);padding:1.25rem 0 .5rem}
+  .year h2{font-size:1rem;font-weight:700;margin:0;position:sticky;top:1rem;align-self:start}
+  .year ol{list-style:none;margin:0;padding:0}
+  .entry{display:grid;grid-template-columns:3.25rem 1fr;gap:.75rem;padding:.4rem 0 .9rem;font-size:1rem;line-height:1.5}
+  .entry time{color:var(--muted);font-size:.9375rem;padding-top:.05rem}
+  .entry .what{position:relative}
+  .entry.ship .what::before{content:"";position:absolute;left:-1.1rem;top:.55rem;width:.5rem;height:.5rem;background:var(--accent);border-radius:2px}
+  .entry .tag{color:var(--muted)}
+  @media (max-width:560px){.year{grid-template-columns:1fr;gap:.5rem}.year h2{position:static}.entry{grid-template-columns:3.25rem 1fr}.entry.ship .what::before{display:none}}
+  .elsewhere{list-style:none;margin:3rem 0 0;padding:1.25rem 0 0;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;font-size:.9375rem;font-weight:600}
+  footer{width:100%;max-width:44rem;margin:0 auto;padding:1.25rem 1rem;font-size:.8125rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem}
+  .theme{position:fixed;top:1rem;right:1rem;width:2rem;height:2rem;border-radius:50%;border:1px solid var(--border);background:var(--bg);cursor:pointer;color:var(--fg);font:inherit;font-size:.75rem}
+  .sw{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);white-space:nowrap;display:flex;align-items:center;gap:.25rem;padding:.3rem .4rem .3rem .7rem;border:1px solid var(--border);border-radius:999px;background:var(--bg);font-size:.75rem;color:var(--muted);z-index:5}
+  .sw button{font:inherit;font-weight:600;color:var(--fg);background:none;border:0;padding:.3rem .55rem;border-radius:999px;cursor:pointer}
+  .sw button[aria-pressed=true]{background:var(--accent);color:#1a1a1a}
+  .ph{display:block;overflow:hidden;background:var(--accent)}
+  .ph img{display:block;width:100%;height:100%;object-fit:cover}
+  [data-photo=grey] .ph{background:#d9d9d9}
+  [data-photo=grey] .ph img{filter:grayscale(1) contrast(1.05)}
+  [data-photo=amber] .ph img{filter:grayscale(1) contrast(1.1);mix-blend-mode:luminosity}
+</style>
+</head>
+<body>
+<button class="theme" aria-label="Toggle light and dark">◐</button>
+<main>
+  <div class="head"><span class="ph"><img src="photo/original.jpeg" alt="Christian Balola"></span><p class="mark">Chris Balola</p></div>
+  <h1 class="intro">Entrepreneur building software companies. Lead engineer by trade, scholar by habit. This page is the log.</h1>
+  <p class="now"><b>Now</b>Building the next <a href="https://about.meneja.app">Meneja</a> module and a second product.</p>
+
+  <section class="year">
+    <h2>2026</h2>
+    <ol>
+      <li class="entry"><time>Nov</time><span class="what">Started the second product. Named when it ships.</span></li>
+    </ol>
+  </section>
+  <section class="year">
+    <h2>2025</h2>
+    <ol>
+      <li class="entry ship"><time>TBD</time><span class="what"><a href="https://about.meneja.app">Meneja</a> finance module live. Income, expenses, wallets, budgets and bills, offline first, multi-currency.</span></li>
+      <li class="entry"><time>TBD</time><span class="what">Started building Meneja. <span class="tag">Swahili for "manage".</span></span></li>
+    </ol>
+  </section>
+  <section class="year">
+    <h2>2022</h2>
+    <ol>
+      <li class="entry"><time>Aug</time><span class="what">Wrote <a href="https://blog.chrisbalola.com">Deploying a NestJS API to AWS Elastic Beanstalk with CI/CD</a>.</span></li>
+      <li class="entry"><time>Jul</time><span class="what">Wrote <a href="https://blog.chrisbalola.com">Building a secure and quality NodeJS REST API with NestJS</a>.</span></li>
+    </ol>
+  </section>
+
+  <ul class="elsewhere">
+    <li><a href="https://blog.chrisbalola.com">Blog</a></li>
+    <li><a href="https://www.linkedin.com/in/chrisbalola">LinkedIn</a></li>
+    <li><a href="https://x.com/chrisbalola">X</a></li>
+    <li><a href="mailto:hello@chrisbalola.com">Email</a></li>
+  </ul>
+</main>
+<div class="sw" role="group" aria-label="Photo treatment"><span>Photo</span><button data-p="colour">Colour</button><button data-p="grey">Grey</button><button data-p="amber">Amber</button></div>
+<footer><span>Christian Balola</span><span>chrisbalola.com</span></footer>
+<script>
+  const pk="proposal-photo";const setP=v=>{r.dataset.photo=v;document.querySelectorAll(".sw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.p===v));try{localStorage.setItem(pk,v)}catch(e){}};
+  let pv="colour";try{pv=localStorage.getItem(pk)||pv}catch(e){}setP(pv);document.querySelectorAll(".sw button").forEach(b=>b.addEventListener("click",()=>setP(b.dataset.p)));
+  const r=document.documentElement,k='proposal-theme';
+  const q=new URLSearchParams(location.search).get("theme");if(q)r.dataset.theme=q;else{try{const s=localStorage.getItem(k);if(s)r.dataset.theme=s}catch(e){}}
+  document.querySelector('.theme').addEventListener('click',()=>{const c=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');const n=c==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem(k,n)}catch(e){}});
+</script>
+</body>
+</html>

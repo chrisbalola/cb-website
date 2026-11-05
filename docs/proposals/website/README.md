@@ -1,12 +1,16 @@
 # chrisbalola.com: website proposals
 
-Four directions for the personal site. Each has a static mockup you can open in a browser (light and dark, desktop and phone) and a screenshot in `screenshots/`. Pick one, or combine, and the build follows.
+Four directions for the personal site, each also offered with the photo (A2 to D2, further down). Each has a static mockup you can open in a browser (light and dark, desktop and phone) and a screenshot in `screenshots/`. Pick one, or combine, and the build follows.
 
 ```
 open docs/proposals/website/01-letter.html
 open docs/proposals/website/02-ledger.html
 open docs/proposals/website/03-statement.html
 open docs/proposals/website/04-log.html
+open docs/proposals/website/05-letter-photo.html
+open docs/proposals/website/06-ledger-photo.html
+open docs/proposals/website/07-statement-photo.html
+open docs/proposals/website/08-log-photo.html
 ```
 
 Each mockup has a theme toggle in a corner. Mockups need internet access for the Manrope font.
@@ -33,7 +37,7 @@ Same content everywhere. The directions differ in how it is arranged and what ca
 | Writing | Link to blog.chrisbalola.com; optionally the latest two posts |
 | Elsewhere | LinkedIn, X, email |
 
-What stays off: photo (optional later), skill lists, CV, timeline of jobs, newsletter box, contact form, analytics widgets, "fun facts".
+What stays off: skill lists, CV, timeline of jobs, newsletter box, contact form, analytics widgets, "fun facts".
 
 Rules shared by all mockups:
 
@@ -162,6 +166,65 @@ The homepage is a reverse-chronological shipping log, grouped by year, with a "N
 - Risks: needs maintenance; a log that stops in 2025 says the opposite of what it should. Today the log is short, and the 2022 to 2025 gap is visible. Less immediately "catchy" than C.
 - Best for: if you will actually keep it updated, roughly monthly.
 
+## With the photo: variants A2 to D2
+
+The photo is a gift for this brand: the shirt is within a shade of the accent `#FFAA2B`, and the brown backdrop is the same warmth. So the colour photo is the on-brand version. A grey or cut-out version is offered for comparison, but in every direction colour wins, and in C2 it is the whole idea.
+
+Each variant has a switcher at the bottom of the page to compare three treatments in place:
+
+- Colour: the photo as shot.
+- Grey: desaturated. Calmer, more "serious", but it throws away the one thing that makes the photo yours.
+- Amber: grey photo blended into the accent (a duotone). Striking in B2, wrong in C2 because it greys the shirt.
+
+Two source files, in `photo/`: `original.jpeg` (the photo as given, 512px) and `cutout.png` (background removed with macOS Vision person segmentation, no manual cleanup). 512px is enough for the avatars and the Ledger column, but not for the Statement slab on a retina screen. The original full-size photo is needed before building C2.
+
+Rule across all four: the photo is added at the size the direction already had room for. It never pushes the type, and it never gets a frame, shadow or gradient.
+
+### A2. The Letter, with photo
+
+`05-letter-photo.html`
+
+![Letter with photo](screenshots/05-letter-photo-desktop.png)
+
+A 56px round portrait beside the wordmark, like a letterhead. The brown backdrop keeps the circle warm on both light and dark. Nothing else changes. Expression: the note now visibly comes from a person.
+
+### B2. The Ledger, with photo
+
+`06-ledger-photo.html`
+
+![Ledger with photo](screenshots/06-ledger-photo-desktop.png)
+
+A 4:5 portrait fills the sticky left column above the wordmark, 10px radius, the brand's base radius. The amber shirt and the amber "Live" dot are now the only two colour events on the page and they rhyme. Of the four, this is the one where the photo most increases the expression without any other change: the ledger gains a face, the face gets a ledger.
+
+Grey and amber treatments for comparison: `screenshots/06-ledger-photo-desktop-grey.png`, `screenshots/06-ledger-photo-desktop-amber.png`.
+
+### C2. The Statement, with photo
+
+`07-statement-photo.html`
+
+![Statement with photo](screenshots/07-statement-photo-desktop.png)
+
+The cutout sits on the amber slab, bottom-aligned, so the shirt dissolves into the slab and only the face and neck read. This is the memorable image of the whole set. The hero stays type-only; the photo belongs to the product slab, which says "this is who built it" without a caption. Needs the full-resolution original and probably one pass of manual edge cleanup on the cutout.
+
+### D2. The Log, with photo
+
+`08-log-photo.html`
+
+![Log with photo](screenshots/08-log-photo-desktop.png)
+
+A 40px avatar beside the wordmark, the way a commit log or feed shows its author. The smallest possible addition, and the right one for a log.
+
+### Does the photo help?
+
+| | Without | With | Verdict |
+| --- | --- | --- | --- |
+| A Letter | Calm, anonymous | Calm, personal | Small gain. Optional. |
+| B Ledger | Serious, cool | Serious, warm | Clear gain. Use it. |
+| C Statement | Bold type | Bold type plus a face on amber | Large gain. Becomes the catchiest option by far. |
+| D Log | Feed without an author | Feed with one | Small gain. Use it. |
+
+Updated recommendation: B2 for a site that reads as serious today; C2 if you want the most memorable site and have the full-size photo. Both keep the amber shirt as the only colour on the page besides the wordmark.
+
 ## Comparison
 
 | | A Letter | B Ledger | C Statement | D Log |
@@ -195,4 +258,4 @@ If you prefer to lead with ambition today, choose C and use a headline that is t
 3. Headline wording if C is chosen.
 4. Whether to show the two 2022 blog posts, or only a link to the blog. Two posts from 2022 may say "inactive" more than "writer"; linking only is safer until there is newer writing.
 5. Location line, if any ("Based in ...").
-6. Photo: none of the directions need one. B and C can take a small one without changing shape.
+6. Photo: the full-resolution original (the file in `.ai/assets` is 512px). Needed for C2, nice to have for B2.
