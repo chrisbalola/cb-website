@@ -8,8 +8,6 @@ PM2_NAME="chrisbalola-website"
 
 echo "Starting build + deploy..."
 
-sudo ls -la
-cat .env.local
 echo "Installing dependencies..."
 pnpm install --frozen-lockfile
 

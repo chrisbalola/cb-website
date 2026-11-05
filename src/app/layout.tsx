@@ -4,8 +4,6 @@ import Script from 'next/script';
 import './globals.css';
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
-import { Toaster } from 'sonner';
-import { QueryProvider } from '@/shared/presentation/providers/query-provider';
 import { clientConfig } from '@/core/config/client-config';
 
 const manrope = Manrope({
@@ -31,8 +29,7 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${manrope.variable} antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="chrisbalola-theme">
-          <QueryProvider>{children}</QueryProvider>
-          <Toaster richColors position="top-center" />
+          {children}
         </ThemeProvider>
         {clientConfig.cfAnalyticsToken && (
           <Script
