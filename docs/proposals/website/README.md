@@ -15,6 +15,12 @@ open docs/proposals/website/08-log-photo.html
 
 Each mockup has a theme toggle in a corner. Mockups need internet access for the Manrope font.
 
+## Decision (5 Nov 2026)
+
+Build A2, the Letter with photo (`05-letter-photo.html`), colour treatment.
+
+Later, when there are three or more products and at least two companies, move to C2, the Statement (`07-statement-photo.html`), with the Meneja logo in the slab instead of the portrait. The Letter's content model (one-liner, roles, products, links) carries over unchanged.
+
 ## Brief, as I read it
 
 - Christian Balola. Entrepreneur first, lead software engineer, scholar. Builds products, intends to build companies.
