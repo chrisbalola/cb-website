@@ -1,0 +1,9 @@
+# App build outputs (the root .gitignore covers node_modules and env files)
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Storybook
+*storybook.log
+storybook-static

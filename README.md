@@ -1,58 +1,52 @@
-# Chris Balola — Personal Website
+# Websites
 
-The personal website for [chrisbalola.com](https://chrisbalola.com), built with Next.js and Clean Architecture principles.
+Turborepo monorepo for my websites. Each site is a Next.js app under `apps/`.
 
-## Architecture Overview
+## Layout
 
-This project follows **Clean Architecture** with clear separation of concerns across layers:
+```
+apps/
+└── chrisbalola/   # chrisbalola.com
 
-- **Domain Layer**: Business entities, interfaces, and core business rules
-- **Data Layer**: Repository implementations, data mappers, and external service adapters
-- **Presentation Layer**: React components, Next.js pages, and server actions
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v20 or later)
-- pnpm
-
-### Installation
-
-1. Clone the repository.
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
-3. Set up husky pre-commit hooks:
-   ```bash
-   pnpm prepare
-   ```
-
-### Environment Variables
-
-Create environment files based on `.env.example`:
-
-- `.env.development` - Development environment
-- `.env.staging` - Staging environment
-- `.env.production` - Production environment
-
-### Running the Development Server
-
-```bash
-pnpm dev                 # Uses .env.local or default
-pnpm start:development   # Uses .env.development
-pnpm start:production    # Uses .env.production
+packages/
+└── tsconfig/      # shared TypeScript presets
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000).
+## Quickstart
 
-## Key Technologies
+```bash
+pnpm install         # install workspace deps
+pnpm dev             # run all apps in parallel
+pnpm build           # build all apps
+pnpm lint:check      # lint all apps
+pnpm format          # format the workspace with prettier
+```
 
-- **Framework**: Next.js 16 with App Router
-- **Language**: TypeScript 5
-- **Styling**: Tailwind CSS 4
-- **State Management**: Zustand
-- **DI Container**: Awilix
-- **UI Components**: Radix UI + shadcn/ui
-- **i18n**: next-intl (English, French, Swahili)
+`dev`, `build`, `lint` and `lint:check` go through turbo, so reruns hit the cache.
+
+Per-app:
+
+```bash
+pnpm --filter @websites/chrisbalola dev
+pnpm --filter @websites/chrisbalola build
+```
+
+## Requirements
+
+- Node `>=20`
+- pnpm `10.19.0`
+
+Each app keeps its own environment files. Copy the app's `.env.example` to `.env` in the same directory and fill in the values.
+
+## Adding a site
+
+1. Create `apps/<name>` with a `package.json` named `@websites/<name>`.
+2. Extend `@websites/tsconfig/nextjs.json` in its `tsconfig.json`.
+3. Give `dev` its own port so the apps can run side by side.
+4. Add a service for it in `.railway/railway.ts`.
+
+## Docs
+
+- [`docs/guide/CODING_GUIDELINES.md`](docs/guide/CODING_GUIDELINES.md): architecture and coding rules shared by every app
+- [`.railway/README.md`](.railway/README.md): hosting
+- `apps/<name>/docs/`: brand guide and product notes for that site

@@ -3,14 +3,14 @@
 Four directions for the personal site, each also offered with the photo (A2 to D2, further down). Each has a static mockup you can open in a browser (light and dark, desktop and phone) and a screenshot in `screenshots/`. Pick one, or combine, and the build follows.
 
 ```
-open docs/proposals/website/01-letter.html
-open docs/proposals/website/02-ledger.html
-open docs/proposals/website/03-statement.html
-open docs/proposals/website/04-log.html
-open docs/proposals/website/05-letter-photo.html
-open docs/proposals/website/06-ledger-photo.html
-open docs/proposals/website/07-statement-photo.html
-open docs/proposals/website/08-log-photo.html
+open apps/chrisbalola/docs/proposals/website/01-letter.html
+open apps/chrisbalola/docs/proposals/website/02-ledger.html
+open apps/chrisbalola/docs/proposals/website/03-statement.html
+open apps/chrisbalola/docs/proposals/website/04-log.html
+open apps/chrisbalola/docs/proposals/website/05-letter-photo.html
+open apps/chrisbalola/docs/proposals/website/06-ledger-photo.html
+open apps/chrisbalola/docs/proposals/website/07-statement-photo.html
+open apps/chrisbalola/docs/proposals/website/08-log-photo.html
 ```
 
 Each mockup has a theme toggle in a corner. Mockups need internet access for the Manrope font.
@@ -27,7 +27,7 @@ Later, when there are three or more products and at least two companies, move to
 - One shipped product today (Meneja). More products soon, companies later. The site must grow without a redesign.
 - Extremely concise. No skills grids, no testimonials, no "services", no contact form, no hero illustration.
 - Catchy and pleasant, and it must read as serious and trustworthy.
-- Existing brand: amber `#FFAA2B`, Manrope, warm minimalism, light and dark (see `docs/guide/BRAND_GUIDE.md`).
+- Existing brand: amber `#FFAA2B`, Manrope, warm minimalism, light and dark (see `apps/chrisbalola/docs/guide/BRAND_GUIDE.md`).
 
 ## What goes on the site (all directions)
 
@@ -167,7 +167,7 @@ The homepage is a reverse-chronological shipping log, grouped by year, with a "N
           Jul    Wrote "Building a secure NodeJS REST API ..."
 ```
 
-- Why it fits: matches the "build in public" philosophy in `docs/product/ABOUT.md`. Trust comes from a visible track record rather than claims. Concise per line, and it grows naturally.
+- Why it fits: matches the "build in public" philosophy in `apps/chrisbalola/docs/product/ABOUT.md`. Trust comes from a visible track record rather than claims. Concise per line, and it grows naturally.
 - Memorable element: the format itself. Few personal sites are a log.
 - Risks: needs maintenance; a log that stops in 2025 says the opposite of what it should. Today the log is short, and the 2022 to 2025 gap is visible. Less immediately "catchy" than C.
 - Best for: if you will actually keep it updated, roughly monthly.

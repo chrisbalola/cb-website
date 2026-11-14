@@ -1,21 +1,26 @@
 # Railway infrastructure
 
-Railway hosting for chrisbalola.com is defined in code in `railway.ts`
-(Railway Infrastructure as Code): the service, its build and start commands,
-custom domains, and the names of environment variables.
+Railway hosting for the websites in this monorepo is defined in code in
+`railway.ts` (Railway Infrastructure as Code): one service per app, its build
+and start commands, watch paths, custom domains, and the names of environment
+variables.
 
 Config as Code (`railway.json` / `railway.toml`) is deprecated on Railway and
 new services cannot use it. Do not add those files.
 
 ## What is on Railway
 
-| Environment  | Branch | Services            |
-| ------------ | ------ | ------------------- |
-| `production` | `main` | chrisbalola-website |
+| Environment  | Branch | Service             | App                |
+| ------------ | ------ | ------------------- | ------------------ |
+| `production` | `main` | chrisbalola-website | `apps/chrisbalola` |
+
+Each service builds and starts its own app with `pnpm --filter`, and only
+redeploys when its app directory, the shared packages or the root workspace
+files change.
 
 ## Setup
 
-The CLI and the `railway/iac` SDK are both needed. The SDK is a dev
+The CLI and the `railway/iac` SDK are both needed. The SDK is a root dev
 dependency, so `pnpm install` covers it.
 
 ```bash

@@ -1,4 +1,7 @@
-public
+pnpm-lock.yaml
+.next
+.turbo
+apps/*/public
 
 # Design proposals are hand-written mockups; leave their formatting alone
-docs/proposals/
+apps/*/docs/proposals/

@@ -1,9 +1,9 @@
 import { defineRailway, github, preserve, project, service } from 'railway/iac';
 
-// Railway definition for chrisbalola.com. Only production is deployed, from
-// the main branch. Secrets and values are never written here: preserve()
-// keeps whatever value is already set on Railway. Add a new variable name
-// here first, then set its value in the dashboard.
+// Railway definition for the websites monorepo, one service per app. Only
+// production is deployed, from the main branch. Secrets and values are never
+// written here: preserve() keeps whatever value is already set on Railway. Add
+// a new variable name here first, then set its value in the dashboard.
 //
 //   railway config plan     preview against the linked environment
 //   railway config apply    apply after review
@@ -18,12 +18,19 @@ export default defineRailway(() => {
     checkSuites: false,
   });
 
-  const website = service('chrisbalola-website', {
+  // Watch paths are matched against each commit's diff; a service only
+  // redeploys when something it builds from changed. Every app reads these
+  // root files and the shared packages on top of its own directory.
+  const sharedWatchPaths = ['/package.json', '/pnpm-lock.yaml', '/pnpm-workspace.yaml', '/turbo.json', '/packages/**'];
+  const watchPaths = (app: string) => [`/apps/${app}/**`, ...sharedWatchPaths];
+
+  const chrisbalola = service('chrisbalola-website', {
     source: repo,
     build: {
-      buildCommand: 'pnpm build',
+      buildCommand: 'pnpm --filter @websites/chrisbalola build',
+      watchPatterns: watchPaths('chrisbalola'),
     },
-    start: 'pnpm start',
+    start: 'pnpm --filter @websites/chrisbalola start',
     healthcheck: '/',
     replicas: { [region]: 1 },
     domains: [
@@ -45,6 +52,6 @@ export default defineRailway(() => {
   });
 
   return project('chrisbalola', {
-    resources: [website],
+    resources: [chrisbalola],
   });
 });
