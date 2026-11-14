@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-display: var(--font-syne), sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-leaf: var(--leaf);
+  --color-leaf-mark: var(--leaf-mark);
+  --color-on-leaf: var(--on-leaf);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Light mode (default). See docs/guide/BRAND_GUIDE.md */
+  --background: #eff4e9;
+  --foreground: #12251a;
+  --primary: #17502f;
+  --primary-foreground: #f3f7ee;
+  --secondary: #e1ead9;
+  --secondary-foreground: #12251a;
+  --muted: #e1ead9;
+  --muted-foreground: #55695b;
+  --accent: #f2c230;
+  --accent-foreground: #12251a;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #cad6c4;
+  --input: #cad6c4;
+  --ring: #f2c230;
+
+  /* Brand field: the green band, the marks on it, and text on it */
+  --leaf: #17502f;
+  --leaf-mark: #2c6e45;
+  --on-leaf: #f3f7ee;
+}
+
+.dark {
+  /* Dark mode. See docs/guide/BRAND_GUIDE.md */
+  --background: #0c1a12;
+  --foreground: #e9f1e5;
+  --primary: #e9f1e5;
+  --primary-foreground: #0c1a12;
+  --secondary: #14261b;
+  --secondary-foreground: #e9f1e5;
+  --muted: #14261b;
+  --muted-foreground: #9cb0a1;
+  --accent: #f2c230;
+  --accent-foreground: #12251a;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #24382b;
+  --input: #24382b;
+  --ring: #f2c230;
+
+  --leaf: #0f3a22;
+  --leaf-mark: #1f5a37;
+  --on-leaf: #f3f7ee;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-albert-sans), sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+}

@@ -73,7 +73,7 @@ Each mockup has a theme toggle in the corner and needs internet access for its f
 
 ## Decision (14 Nov 2026)
 
-Direction C, the Name. Its content, colours and typefaces (Syne, Albert Sans) are settled. The layout is still open: five options below.
+Direction C, the Name, in layout 2, the Band (`04-name-band.html`). Content, colours and typefaces (Syne, Albert Sans) as in the mockup. The app in `apps/emigisha` is built from it; a few changes are planned later.
 
 ## Layouts for C
 

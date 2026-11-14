@@ -1,0 +1,44 @@
+{
+  "name": "@websites/emigisha",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start:development": "env-cmd -f .env.development next dev -p 3001",
+    "start:staging": "env-cmd -f .env.staging next dev -p 3001",
+    "start:production": "env-cmd -f .env.production next dev -p 3001",
+    "build:development": "env-cmd -f .env.development next build",
+    "build:staging": "env-cmd -f .env.staging next build",
+    "build:production": "env-cmd -f .env.production next build",
+    "build:dev": "tsc -b && next build && tsc -b --clean",
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "lint:check": "eslint",
+    "lint": "eslint --fix"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.563.0",
+    "next": "16.1.5",
+    "next-intl": "^4.7.0",
+    "next-themes": "^0.4.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "rooks": "^9.5.0",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^25.0.10",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "@websites/tsconfig": "workspace:*",
+    "env-cmd": "^11.0.0",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.1.4",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
+}

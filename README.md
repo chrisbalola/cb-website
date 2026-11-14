@@ -6,7 +6,8 @@ Turborepo monorepo for my websites. Each site is a Next.js app under `apps/`.
 
 ```
 apps/
-└── chrisbalola/   # chrisbalola.com
+├── chrisbalola/   # chrisbalola.com
+└── emigisha/      # Emigisha, LLC company site
 
 packages/
 └── tsconfig/      # shared TypeScript presets
@@ -27,8 +28,8 @@ pnpm format          # format the workspace with prettier
 Per-app:
 
 ```bash
-pnpm --filter @websites/chrisbalola dev
-pnpm --filter @websites/chrisbalola build
+pnpm --filter @websites/chrisbalola dev    # http://localhost:3000
+pnpm --filter @websites/emigisha dev       # http://localhost:3001
 ```
 
 ## Requirements

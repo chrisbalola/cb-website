@@ -1,0 +1,20 @@
+{
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "goHome": "Go to the homepage"
+  },
+  "error": {
+    "description": "Something went wrong",
+    "reset": "Try again"
+  },
+  "theme": {
+    "toggle": "Toggle light and dark"
+  },
+  "pages": {
+    "home": {
+      "title": "Emigisha",
+      "description": "Emigisha means blessings. A small company building software for people who run businesses. First product: Meneja."
+    }
+  }
+}
