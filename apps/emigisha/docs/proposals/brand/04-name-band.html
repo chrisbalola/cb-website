@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emigisha: C, The Name. Layout 2, The Band</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --leaf: #17502F;
+    --leaf-mark: #2C6E45;
+    --on-leaf: #F3F7EE;
+    --sun: #F2C230;
+    --page: #EFF4E9;
+    --panel: #FFFFFF;
+    --ink: #12251A;
+    --soft: #55695B;
+    --rule: #CAD6C4;
+  }
+  :root[data-theme="dark"] {
+    --leaf: #0F3A22;
+    --leaf-mark: #1F5A37;
+    --page: #0C1A12;
+    --panel: #14261B;
+    --ink: #E9F1E5;
+    --soft: #9CB0A1;
+    --rule: #24382B;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 'Albert Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--sun); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; }
+  h1, .name, .item strong { font-family: 'Syne', sans-serif; }
+  .name { font-weight: 700; font-size: 1.5rem; line-height: 1; letter-spacing: -0.01em; }
+  .links { display: flex; gap: 1.5rem; font-weight: 500; }
+  .links a { text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  .marks { display: block; width: 100%; height: auto; }
+  .marks .m { fill: var(--leaf-mark); }
+  .marks .s { fill: var(--sun); }
+  .item strong { font-weight: 600; font-size: 1.375rem; line-height: 1.1; }
+  .item span { color: var(--soft); }
+  .item em { font-style: normal; font-weight: 500; white-space: nowrap; }
+  .item em i { display: inline-block; width: 0.55rem; height: 0.55rem; transform: rotate(45deg); background: var(--sun); margin-right: 0.6rem; }
+  .item.next em i { background: none; border: 1.5px solid var(--soft); }
+  .item.next strong, .item.next em { color: var(--soft); }
+  a.item { text-decoration: none; }
+  a.item:hover strong { text-decoration: underline; text-decoration-color: var(--sun); }
+  .foot { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; color: var(--soft); font-size: 0.9375rem; }
+  .foot nav { display: flex; gap: 1.5rem; }
+  .toggle { position: fixed; right: 1rem; bottom: 1rem; z-index: 5; font: inherit; font-size: 0.875rem; padding: 0.4rem 0.8rem; background: var(--page); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; cursor: pointer; }
+  .hero { background: var(--leaf); color: var(--on-leaf); padding: 2rem clamp(1.25rem, 4vw, 3.5rem) 1.75rem; min-height: 68svh; display: flex; flex-direction: column; }
+  .hero header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .hero h1 { font-weight: 700; font-size: clamp(2.75rem, 8.4vw, 7.5rem); line-height: 0.98; letter-spacing: -0.035em; max-width: 11ch; margin: auto 0 clamp(2rem, 5vh, 3.5rem); padding-top: 3rem; }
+  .track { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; border-top: 1px solid var(--leaf-mark); padding-top: 1.25rem; }
+  .track p { font-size: 0.9375rem; opacity: 0.8; max-width: 17rem; }
+  .body { padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 4vw, 3.5rem) 2.5rem; }
+  .cols { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .lede { font-size: 1.1875rem; max-width: 32rem; }
+  .lede.quiet { margin-top: 1rem; color: var(--soft); }
+  .list { border-top: 1px solid var(--ink); }
+  .item { display: grid; grid-template-columns: 9rem 1fr auto; gap: 1rem; padding: 1.125rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .foot { margin-top: 4.5rem; }
+  @media (max-width: 52rem) {
+    .hero { min-height: 60svh; }
+    .track { grid-template-columns: 1fr; gap: 0.75rem; }
+    .cols { grid-template-columns: 1fr; }
+    .item { grid-template-columns: 1fr auto; }
+    .item span { grid-column: 1 / -1; grid-row: 2; }
+  }
+</style>
+</head>
+<body>
+<div class="hero">
+  <header><div class="name">Emigisha</div><nav class="links"><a href="#work">Products</a><a href="mailto:hello@emigisha.com">Contact</a></nav></header>
+  <h1>Emigisha means blessings.</h1>
+  <div class="track"><svg class="marks" data-cols="28" data-rows="1" data-lit="0,0" role="img" aria-label="A grid of small diamonds. One is yellow: one for each product shipped."></svg><p>One mark turns yellow for every product we ship. One so far.</p></div>
+</div>
+<main class="body">
+  <div class="cols">
+    <div><p class="lede">It is the standard we hold our work to. A product should leave the person using it better off than it found them: more time, clearer books, fewer things to worry about.</p><p class="lede quiet">We are a small company, founded by <a href="https://chrisbalola.com">Christian Balola</a>, building software for people who run businesses.</p></div>
+    <div class="list" id="work">
+      <a class="item" href="https://about.meneja.app">
+        <strong>Meneja</strong>
+        <span>Finance, products and services management in one app.</span>
+        <em><i></i>Live</em>
+      </a>
+      <div class="item next">
+        <strong>Next</strong>
+        <span>The second product, in the works.</span>
+        <em><i></i>Building</em>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <span>© 2026 Emigisha, LLC</span>
+    <nav><a href="mailto:hello@emigisha.com">hello@emigisha.com</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+  </footer>
+</main>
+<button class="toggle" type="button">Switch theme</button>
+<script>
+  const root = document.documentElement;
+  if (new URLSearchParams(location.search).get('theme') === 'dark') root.dataset.theme = 'dark';
+  document.querySelector('.toggle').addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  });
+  // Diamonds: data-cols x data-rows, the cell at data-lit ("x,y") is yellow.
+  document.querySelectorAll('svg.marks').forEach((svg) => {
+    const cols = +svg.dataset.cols, rows = +svg.dataset.rows, step = 40, r = 9;
+    const [lx, ly] = svg.dataset.lit.split(',').map(Number);
+    svg.setAttribute('viewBox', `0 0 ${cols * step} ${rows * step}`);
+    let out = '';
+    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+      const cx = 20 + x * step, cy = 20 + y * step;
+      out += `<path class="${x === lx && y === ly ? 's' : 'm'}" d="M${cx} ${cy - r}L${cx + r} ${cy}L${cx} ${cy + r}L${cx - r} ${cy}Z"/>`;
+    }
+    svg.innerHTML = out;
+  });
+</script>
+</body>
+</html>

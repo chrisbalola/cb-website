@@ -5,7 +5,11 @@ Three directions. Each one is a positioning, a voice and a visual identity, show
 ```
 open apps/emigisha/docs/proposals/brand/01-imprint.html
 open apps/emigisha/docs/proposals/brand/02-maker.html
-open apps/emigisha/docs/proposals/brand/03-name.html
+open apps/emigisha/docs/proposals/brand/03-name-grid.html
+open apps/emigisha/docs/proposals/brand/04-name-band.html
+open apps/emigisha/docs/proposals/brand/05-name-column.html
+open apps/emigisha/docs/proposals/brand/06-name-field.html
+open apps/emigisha/docs/proposals/brand/07-name-sheet.html
 ```
 
 Each mockup has a theme toggle in the corner and needs internet access for its fonts.
@@ -56,9 +60,9 @@ Each mockup has a theme toggle in the corner and needs internet access for its f
 
 ## C: The Name
 
-`03-name.html`
+`03-name-grid.html` (layout 1 of 5; the others are further down)
 
-![Name](screenshots/03-name-desktop.png)
+![Name](screenshots/03-name-grid-desktop.png)
 
 - Positioning: the name as the standard. "Emigisha means blessings."
 - Voice: first person plural, warm, a little personal.
@@ -67,9 +71,33 @@ Each mockup has a theme toggle in the corner and needs internet access for its f
 - Why it fits: it is the only direction that no other company could use, and it explains a name most visitors will not know.
 - Risks: it depends on the meaning being right and on you wanting it public. It is the least corporate of the three, which a bank or payment reviewer may read as less formal.
 
-## Recommendation
+## Decision (14 Nov 2026)
 
-A now, with B's wordmark treatment kept in reserve for when there are two or three products. This mirrors the Letter-then-Statement decision on chrisbalola.com.
+Direction C, the Name. Its content, colours and typefaces (Syne, Albert Sans) are settled. The layout is still open: five options below.
+
+## Layouts for C
+
+Same copy, same palette, same type in all five. Only the arrangement and the UI treatment change.
+
+| | File | Arrangement | Diamonds | Products |
+| --- | --- | --- | --- | --- |
+| 1 | `03-name-grid.html` | Split: sticky green panel left, story right | 11 by 11 grid filling the panel | Rows |
+| 2 | `04-name-band.html` | Green band on top with a very large headline, two columns below | One row across the page, read as a track | Rows |
+| 3 | `05-name-column.html` | One narrow column, like the Letter on chrisbalola.com | Small logo tile, plus a green tally card after the products | Stacked rows |
+| 4 | `06-name-field.html` | Whole page is the green field, headline bottom left, content in white cards on the right | The page background | Cards with status pills |
+| 5 | `07-name-sheet.html` | Headline across the full width, then three columns: grid tile, story, products | 7 by 7 tile in the first column | Stacked rows |
+
+![Split](screenshots/03-name-grid-desktop.png)
+![Band](screenshots/04-name-band-desktop.png)
+![Column](screenshots/05-name-column-desktop.png)
+![Field](screenshots/06-name-field-desktop.png)
+![Sheet](screenshots/07-name-sheet-desktop.png)
+
+- 1, Split: the grid gets the most room and stays in view while the right side scrolls. Half the screen is mostly empty marks while there is one product.
+- 2, Band: the headline is the hero and the track shows progress at a glance. The grid becomes a line, so it loses some presence.
+- 3, Column: the calmest and the closest sibling to chrisbalola.com. The least distinctive.
+- 4, Field: the most immersive, and the only one with cards and pills. Fits one screen on desktop. The pattern behind text needs care for legibility.
+- 5, Sheet: the most information on one screen, in a pale page with green as an accent. Reads more like a document than a brand.
 
 ## Open questions
 
