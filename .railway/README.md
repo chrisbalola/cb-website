@@ -13,6 +13,7 @@ new services cannot use it. Do not add those files.
 | Environment  | Branch | Service             | App                |
 | ------------ | ------ | ------------------- | ------------------ |
 | `production` | `main` | chrisbalola-website | `apps/chrisbalola` |
+| `production` | `main` | emigisha-website    | `apps/emigisha`    |
 
 Each service builds and starts its own app with `pnpm --filter`, and only
 redeploys when its app directory, the shared packages or the root workspace
@@ -78,6 +79,6 @@ the file.
 
 ## Domains
 
-`chrisbalola.com` and `www.chrisbalola.com` both point at port 8080, the port
+Each site has its bare domain and `www` (`chrisbalola.com`, `emigisha.com`), all pointing at port 8080, the port
 Railway assigns through `PORT`. After the first apply, add the DNS records
 Railway shows under Service > Settings > Networking.

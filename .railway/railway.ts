@@ -51,7 +51,32 @@ export default defineRailway(() => {
     },
   });
 
+  const emigisha = service('emigisha-website', {
+    source: repo,
+    build: {
+      buildCommand: 'pnpm --filter @websites/emigisha build',
+      watchPatterns: watchPaths('emigisha'),
+    },
+    start: 'pnpm --filter @websites/emigisha start',
+    healthcheck: '/',
+    replicas: { [region]: 1 },
+    // www only exists to redirect to the bare domain (see apps/emigisha/next.config.ts).
+    domains: [
+      { domain: 'emigisha.com', port: 8080 },
+      { domain: 'www.emigisha.com', port: 8080 },
+    ],
+    // Every variable has a default in the app's client-config.ts, so none of
+    // these has to be set on Railway.
+    env: {
+      NEXT_PUBLIC_SITE_URL: preserve(),
+      NEXT_PUBLIC_CONTACT_EMAIL: preserve(),
+      NEXT_PUBLIC_LINK_MENEJA: preserve(),
+      NEXT_PUBLIC_LINK_FOUNDER: preserve(),
+      NEXT_PUBLIC_CF_ANALYTICS_TOKEN: preserve(),
+    },
+  });
+
   return project('chrisbalola', {
-    resources: [chrisbalola],
+    resources: [chrisbalola, emigisha],
   });
 });
