@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emigisha: A, The Imprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F1F4F3;
+    --ink: #15212B;
+    --soft: #5B6A74;
+    --rule: #CBD4D3;
+    --seal: #0B5D6B;
+    --amber: #FFAA2B;
+  }
+  :root[data-theme="dark"] {
+    --paper: #101A21;
+    --ink: #E8EEEE;
+    --soft: #94A4AC;
+    --rule: #2A3840;
+    --seal: #6CC3CF;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 'Instrument Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--seal); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--seal); outline-offset: 3px; }
+  .page { max-width: 46rem; margin: 0 auto; padding: 4.5rem 1.5rem 3rem; }
+  .mark { display: flex; align-items: center; gap: 0.875rem; }
+  .mark svg { width: 3rem; height: 3rem; color: var(--seal); flex: none; }
+  .mark span { font: 400 2rem/1 'Instrument Serif', serif; letter-spacing: 0.01em; }
+  h1 {
+    font: 400 clamp(2.5rem, 7vw, 4.25rem)/1.05 'Instrument Serif', serif;
+    letter-spacing: -0.01em;
+    margin: 5.5rem 0 1.5rem;
+    max-width: 14ch;
+  }
+  .lede { max-width: 34rem; color: var(--soft); font-size: 1.1875rem; }
+  dl { margin-top: 4.5rem; border-top: 1px solid var(--ink); }
+  .row { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+  dt { color: var(--soft); }
+  dd { font-weight: 500; }
+  dd small { display: block; font-weight: 400; font-size: 0.9375rem; color: var(--soft); }
+  .live { display: inline-block; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--amber); margin-right: 0.5rem; vertical-align: 0.08em; }
+  .soon { display: inline-block; width: 0.5rem; height: 0.5rem; border-radius: 50%; border: 1.5px solid var(--soft); margin-right: 0.5rem; vertical-align: 0.08em; }
+  footer { margin-top: 4rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; font-size: 0.9375rem; color: var(--soft); }
+  footer nav { display: flex; gap: 1.5rem; }
+  .toggle { position: fixed; right: 1rem; bottom: 1rem; font: inherit; font-size: 0.875rem; padding: 0.4rem 0.8rem; background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; cursor: pointer; }
+  @media (max-width: 34rem) {
+    .page { padding-top: 2.5rem; }
+    h1 { margin-top: 3.5rem; }
+    .row { grid-template-columns: 1fr; gap: 0.125rem; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="mark">
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" aria-hidden="true">
+      <circle cx="24" cy="24" r="22.5" stroke-width="1.5"/>
+      <circle cx="24" cy="24" r="18" stroke-width="0.75"/>
+      <path d="M17 15h14M17 24h11M17 33h14M17 15v18" stroke-width="2.5" stroke-linecap="square"/>
+    </svg>
+    <span>Emigisha</span>
+  </div>
+
+  <h1>The company behind Meneja.</h1>
+  <p class="lede">Emigisha, LLC builds and operates software for running a business. When you sign up, pay or ask for help, this is who you are dealing with.</p>
+
+  <dl>
+    <div class="row"><dt>Legal name</dt><dd>Emigisha, LLC</dd></div>
+    <div class="row"><dt>Registered in</dt><dd>United States</dd></div>
+    <div class="row"><dt>Founded by</dt><dd><a href="https://chrisbalola.com">Christian Balola</a></dd></div>
+    <div class="row"><dt>Operates</dt><dd><span class="live"></span><a href="https://about.meneja.app">Meneja</a><small>Finance, products and services management in one app. Live.</small></dd></div>
+    <div class="row"><dt>In the works</dt><dd><span class="soon"></span>A second product<small>Announced here when it ships.</small></dd></div>
+    <div class="row"><dt>Contact</dt><dd><a href="mailto:hello@emigisha.com">hello@emigisha.com</a><small>Billing, legal and partnership questions.</small></dd></div>
+  </dl>
+
+  <footer>
+    <span>© 2026 Emigisha, LLC</span>
+    <nav><a href="#">Privacy</a><a href="#">Terms</a></nav>
+  </footer>
+</main>
+<button class="toggle" type="button">Switch theme</button>
+<script>
+  const root = document.documentElement;
+  if (new URLSearchParams(location.search).get('theme') === 'dark') root.dataset.theme = 'dark';
+  document.querySelector('.toggle').addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  });
+</script>
+</body>
+</html>
