@@ -71,6 +71,8 @@ export default defineRailway(() => {
       NEXT_PUBLIC_SITE_URL: preserve(),
       NEXT_PUBLIC_CONTACT_EMAIL: preserve(),
       NEXT_PUBLIC_LINK_MENEJA: preserve(),
+      NEXT_PUBLIC_LINK_TALATALA: preserve(),
+      NEXT_PUBLIC_LINK_STYLEDDOC: preserve(),
       NEXT_PUBLIC_LINK_FOUNDER: preserve(),
       NEXT_PUBLIC_CF_ANALYTICS_TOKEN: preserve(),
     },

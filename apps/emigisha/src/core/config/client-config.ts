@@ -6,6 +6,8 @@ export const clientConfig = {
   links: {
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@emigisha.com',
     meneja: process.env.NEXT_PUBLIC_LINK_MENEJA ?? 'https://about.meneja.app',
+    talatala: process.env.NEXT_PUBLIC_LINK_TALATALA ?? 'https://talatala.app',
+    styleddoc: process.env.NEXT_PUBLIC_LINK_STYLEDDOC ?? 'https://styleddoc.app',
     founder: process.env.NEXT_PUBLIC_LINK_FOUNDER ?? 'https://chrisbalola.com',
   },
 

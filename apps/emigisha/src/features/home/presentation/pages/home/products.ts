@@ -11,7 +11,8 @@ export type Product = {
 
 export const products: Product[] = [
   { key: 'meneja', status: 'live', href: clientConfig.links.meneja },
-  { key: 'next', status: 'building' },
+  { key: 'talatala', status: 'live', href: clientConfig.links.talatala },
+  { key: 'styleddoc', status: 'building', href: clientConfig.links.styleddoc },
 ];
 
 /** Number of products that have shipped. Drives the yellow marks in the hero. */

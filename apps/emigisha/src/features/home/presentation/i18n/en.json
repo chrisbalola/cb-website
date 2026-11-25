@@ -23,9 +23,13 @@
         "name": "Meneja",
         "description": "Finance, products and services management in one app."
       },
-      "next": {
-        "name": "Next",
-        "description": "The second product, in the works."
+      "talatala": {
+        "name": "Talatala",
+        "description": "Studio photos from a selfie, paid with mobile money."
+      },
+      "styleddoc": {
+        "name": "StyledDoc",
+        "description": "Designed documents from plain content."
       }
     }
   },
