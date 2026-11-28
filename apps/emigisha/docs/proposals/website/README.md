@@ -1,6 +1,6 @@
 # Emigisha: website proposals
 
-Six concepts for a new emigisha.com, built on the chosen logo (concept P, "Full bowl", set in Outfit). Each is a working one-page mockup with light and dark themes and a phone layout, and screenshots are in `screenshots/`.
+Seven concepts for a new emigisha.com, built on the chosen logo (concept P, "Full bowl", set in Outfit). Each is a working one-page mockup with light and dark themes and a phone layout, and screenshots are in `screenshots/`.
 
 ```
 open apps/emigisha/docs/proposals/website/01-sunrise.html
@@ -9,11 +9,12 @@ open apps/emigisha/docs/proposals/website/03-horizon.html
 open apps/emigisha/docs/proposals/website/04-day.html
 open apps/emigisha/docs/proposals/website/05-gold.html
 open apps/emigisha/docs/proposals/website/06-orbit.html
+open apps/emigisha/docs/proposals/website/07-sunrise-orbit.html
 ```
 
 Each mockup has a light and dark toggle in the corner, and needs internet access for its fonts. Add `?theme=dark` or `?theme=light` to the URL to pick a theme.
 
-## Shared across all six
+## Shared across all seven
 
 - Identity: navy `#0E2A47`, gold `#F2B33D`, Outfit for headings, Inter for text, the Full bowl symbol.
 - Content from `website.md`: products (Meneja live; Talatala, PrettyCV and StyledDoc coming soon), principles, about, founder, contact addresses, careers line, legal line with the Delaware LLC name, and links to Terms, Privacy and Refunds (the items payment reviewers check).
@@ -90,7 +91,19 @@ Each mockup has a light and dark toggle in the corner, and needs internet access
 - Best at: explaining the model (one company, many products) in a single picture. The most premium and "tech" of the six.
 - Risk: the product icons are placeholders I drew; each product's real icon should replace them. The dark default is less warm than the others.
 
-## Recommendation
+## Round 3: G, Sunrise with the Orbit sky
+
+`07-sunrise-orbit.html`
+
+![Sunrise with the Orbit sky](screenshots/07-sunrise-orbit-desktop.png)
+
+A, Sunrise, kept as it is (palette, copy, sun animation, gold glow, horizon arc, principles band, footer), with three changes from your feedback:
+
+- Hero background: the deep blue night sky with stars from F, Orbit. No gradient text.
+- Products: the bento from C, Horizon, with drawings of each app.
+- Dark mode: the white sections turn charcoal (`#0E1013` page, `#17191D` cards) instead of blue, so the navy hero, principles band and footer still stand out.
+
+## Recommendation for rounds 1 and 2
 
 C, Horizon, for the home page. It is the only one that shows the products, which is what visitors, users and payment reviewers come to see, and the bento grows with each launch. Take two things from the others: the sun-into-bowl load animation from A for the hero, and B's dictionary entry as the "Why Emigisha?" section.
 

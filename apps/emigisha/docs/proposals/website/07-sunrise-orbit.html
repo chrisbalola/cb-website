@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emigisha website: G, Sunrise with the Orbit sky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0E2A47;
+    --navy-deep: #081B30;
+    --gold: #F2B33D;
+    --gold-soft: #F8D58C;
+    --page: #F5F7FA;
+    --card: #FFFFFF;
+    --ink: #0E2A47;
+    --soft: #4D6079;
+    --line: #DCE3EC;
+    --chip: #ECEFF3;
+    --on-navy: #FFFFFF;
+    --on-navy-soft: #A9B8CA;
+    --navy-line: #1F4167;
+    --tile: var(--card);
+    --tile-2: #F2F5F8;
+    --live-bg: #FBE7BD;
+    --shadow: 0 1px 2px rgba(14,42,71,.06), 0 12px 32px -12px rgba(14,42,71,.18);
+  }
+  :root[data-theme="dark"] {
+    --page: #0E1013;
+    --card: #17191D;
+    --tile-2: #202328;
+    --ink: #F2F4F7;
+    --soft: #9BA3AE;
+    --line: #2A2E34;
+    --chip: #202328;
+    --live-bg: #3A3122;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -12px rgba(0,0,0,.6);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--page); color: var(--ink); font: 400 1.0625rem/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3, .brand, .num, .big-mail { font-family: Outfit, system-ui, sans-serif; }
+  .wrap { width: min(1200px, 100% - 2 * clamp(1.25rem, 4vw, 3rem)); margin-inline: auto; }
+  .eyebrow { font: 500 0.8125rem/1 Inter, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft); }
+
+  /* nav */
+  .nav { position: absolute; inset: 0 0 auto; z-index: 3; }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 1.5rem; letter-spacing: -0.03em; color: #fff; text-decoration: none; }
+  .brand svg { width: 34px; height: 34px; }
+  .links { display: flex; align-items: center; gap: 2rem; font-size: 0.9375rem; color: var(--on-navy-soft); }
+  .links a { text-decoration: none; transition: color .2s; }
+  .links a:hover { color: #fff; }
+  .pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.1rem; border-radius: 999px; background: var(--gold); color: var(--navy) !important; font-weight: 600; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+  .pill:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(242,179,61,.35); }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; background: radial-gradient(80% 70% at 50% 42%, #133659 0%, #0A1E36 45%, #050F1D 100%); color: var(--on-navy); min-height: 860px; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 150px clamp(1.25rem, 4vw, 3rem) 0; isolation: isolate; }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.3px), radial-gradient(rgba(255,255,255,.3) 1px, transparent 1.3px); background-size: 160px 160px, 97px 97px; background-position: 30px 40px, 70px 10px; opacity: .55; }
+  .glow { position: absolute; width: 900px; height: 900px; left: 50%; top: 120px; transform: translateX(-50%); background: radial-gradient(circle, rgba(242,179,61,.28) 0%, rgba(242,179,61,.08) 30%, transparent 60%); z-index: -1; animation: breathe 7s ease-in-out infinite; }
+  .mark { width: 168px; height: 168px; overflow: visible; }
+  .mark .sun { transform-origin: 50px 32px; animation: settle 1.8s cubic-bezier(.2,.8,.2,1) both; }
+  .mark .bowl { animation: rise 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .hero .eyebrow { color: var(--gold-soft); margin-top: 2.25rem; animation: fade .9s .5s both; }
+  .hero h1 { font-weight: 600; font-size: clamp(2.9rem, 7.2vw, 6.25rem); line-height: 1; letter-spacing: -0.045em; max-width: 12ch; margin-top: 1.25rem; animation: fade .9s .65s both; }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero p.lede { max-width: 36rem; margin-top: 1.5rem; font-size: 1.1875rem; color: var(--on-navy-soft); animation: fade .9s .8s both; }
+  .cta { display: flex; gap: 0.75rem; margin-top: 2.25rem; flex-wrap: wrap; justify-content: center; animation: fade .9s .95s both; }
+  .ghost { display: inline-flex; align-items: center; padding: 0.6rem 1.1rem; border-radius: 999px; border: 1px solid var(--navy-line); color: #fff; text-decoration: none; font-weight: 500; transition: background .2s; }
+  .ghost:hover { background: rgba(255,255,255,.06); }
+  .horizon { position: absolute; left: 50%; bottom: -760px; width: 1400px; height: 1000px; transform: translateX(-50%); border-radius: 50%; border: 1px solid rgba(242,179,61,.35); box-shadow: 0 -30px 120px rgba(242,179,61,.12), inset 0 30px 80px rgba(242,179,61,.06); z-index: -1; }
+  @keyframes settle { from { transform: translateY(-46px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes rise { from { transform: translateY(18px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes fade { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes breathe { 50% { opacity: .75; transform: translateX(-50%) scale(1.04); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; } }
+
+  /* sections */
+  section { padding: clamp(5rem, 10vw, 8rem) 0; }
+  .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: end; margin-bottom: 3rem; }
+  .head h2 { font-weight: 600; font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.04; letter-spacing: -0.04em; margin-top: 1rem; }
+  .head > p { color: var(--soft); max-width: 30rem; justify-self: end; }
+
+  /* products: bento from Horizon */
+  .bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: minmax(300px, auto); gap: 14px; }
+  .tile { background: var(--tile); border: 1px solid var(--line); border-radius: 32px; padding: 1.75rem; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); text-decoration: none; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+  a.tile:hover { transform: translateY(-4px); }
+  .tile .meta { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .tile h3 { font-weight: 600; font-size: 1.75rem; letter-spacing: -0.035em; line-height: 1; }
+  .tile .desc { color: var(--soft); margin-top: 0.5rem; max-width: 26rem; }
+  .chip { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.8125rem; font-weight: 500; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--tile-2); color: var(--soft); white-space: nowrap; }
+  .chip i { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid currentColor; }
+  .chip.live { background: var(--live-bg); color: var(--ink); }
+  .chip.live i { background: var(--gold); border-color: var(--gold); }
+  .stage { margin-top: auto; padding-top: 1.5rem; display: flex; justify-content: center; align-items: flex-end; }
+
+  .t-meneja { grid-column: span 7; grid-row: span 2; background: linear-gradient(180deg, var(--tile) 0%, var(--tile-2) 100%); }
+  .t-tala { grid-column: span 5; }
+  .t-cv { grid-column: span 5; }
+  .t-doc { grid-column: span 7; }
+  .t-every { grid-column: span 5; background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+  /* Meneja phone */
+  .phone { width: 340px; height: 470px; border-radius: 40px 40px 0 0; background: var(--navy); padding: 12px 12px 0; box-shadow: 0 30px 60px -20px rgba(14,42,71,.45); margin-bottom: -1.75rem; }
+  .screen { height: 100%; border-radius: 30px 30px 0 0; background: #F7F9FB; padding: 1.25rem 1rem; color: #0E2A47; overflow: hidden; }
+  .screen .lbl { font-size: 0.6875rem; color: #6B7C91; }
+  .ui-num { font-size: 1.9rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+  .ui-num small { font-size: 0.9rem; color: #6B7C91; font-weight: 500; }
+  .bars { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin: 1rem 0; }
+  .bars span { flex: 1; background: #DCE3EC; border-radius: 6px 6px 3px 3px; transform-origin: bottom; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; }
+  .bars span.on { background: var(--gold); }
+  @keyframes grow { from { transform: scaleY(.1); } }
+  .tx { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 0; border-top: 1px solid #E6EBF1; font-size: 0.75rem; }
+  .tx b { font-weight: 500; }
+  .tx .in { color: #1F7A4D; font-weight: 600; }
+  .tx .out { font-weight: 600; }
+  .tx .ic { width: 26px; height: 26px; border-radius: 8px; background: #ECEFF3; display: inline-grid; place-items: center; margin-right: 0.5rem; font-size: 0.7rem; }
+
+  /* Talatala portraits */
+  .shots { display: flex; gap: 10px; align-items: flex-end; }
+  .shot { width: 92px; height: 120px; border-radius: 16px; position: relative; overflow: hidden; box-shadow: 0 10px 24px -10px rgba(14,42,71,.4); }
+  .shot::before { content: ""; position: absolute; width: 38%; height: 30%; left: 31%; top: 22%; border-radius: 50%; background: rgba(255,255,255,.85); }
+  .shot::after { content: ""; position: absolute; width: 76%; height: 42%; left: 12%; bottom: -8%; border-radius: 50% 50% 0 0; background: rgba(255,255,255,.85); }
+  .shot.a { background: linear-gradient(160deg, #F2B33D, #E07A1F); transform: rotate(-6deg) translateY(6px); }
+  .shot.b { background: linear-gradient(160deg, #2C5C8F, #0E2A47); width: 104px; height: 136px; z-index: 1; }
+  .shot.c { background: linear-gradient(160deg, #9FB4CC, #5E7894); transform: rotate(6deg) translateY(6px); }
+  .selfie { font-size: 0.75rem; color: var(--soft); display: flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; }
+
+  /* PrettyCV chat to CV */
+  .cvwrap { display: flex; gap: 12px; align-items: flex-end; width: 100%; justify-content: center; }
+  .chat { display: flex; flex-direction: column; gap: 6px; font-size: 0.75rem; }
+  .chat span { padding: 0.45rem 0.7rem; border-radius: 14px; max-width: 170px; }
+  .chat .q { background: var(--tile-2); color: var(--ink); border-bottom-left-radius: 4px; }
+  .chat .a { background: var(--navy); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .cv { width: 120px; height: 156px; background: #fff; border-radius: 10px; border: 1px solid #DCE3EC; padding: 12px; box-shadow: 0 14px 30px -12px rgba(14,42,71,.35); display: flex; flex-direction: column; gap: 5px; }
+  .cv .h { height: 9px; width: 70%; background: #0E2A47; border-radius: 3px; }
+  .cv .s { height: 4px; width: 45%; background: #F2B33D; border-radius: 2px; margin-bottom: 4px; }
+  .cv .l { height: 4px; background: #DCE3EC; border-radius: 2px; }
+  .cv .l.m { width: 80%; } .cv .l.n { width: 60%; }
+  .cv .k { height: 5px; width: 40%; background: #0E2A47; border-radius: 2px; margin-top: 5px; opacity: .8; }
+
+  /* StyledDoc */
+  .docs { display: flex; gap: 18px; align-items: center; }
+  .doc { width: 130px; height: 170px; border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .doc.plain { background: var(--tile-2); border: 1px dashed var(--line); }
+  .doc.plain span { height: 4px; background: var(--line); border-radius: 2px; }
+  .doc.styled { background: #fff; border: 1px solid #DCE3EC; box-shadow: 0 18px 40px -14px rgba(14,42,71,.4); padding: 0; overflow: hidden; }
+  .doc.styled .top { height: 54px; background: var(--navy); position: relative; }
+  .doc.styled .top::after { content: ""; position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--gold); right: 12px; top: 16px; }
+  .doc.styled .in { padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+  .doc.styled .in b { height: 7px; width: 70%; background: #0E2A47; border-radius: 2px; }
+  .doc.styled .in span { height: 4px; background: #DCE3EC; border-radius: 2px; }
+  .doc.styled .in span:nth-child(3) { width: 85%; } .doc.styled .in span:nth-child(5) { width: 60%; }
+  .doc.styled.b2 { transform: rotate(4deg); margin-left: -60px; z-index: -1; }
+  .arrow-mid { width: 44px; height: 44px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; flex: none; }
+
+  .t-every h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); max-width: 12ch; }
+  .t-every p { margin-top: 0.75rem; max-width: 22rem; color: #3D3015; }
+  .t-every .pills { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 1.5rem; }
+  .t-every .pills span { background: rgba(14,42,71,.1); border-radius: 999px; padding: 0.4rem 0.85rem; font-size: 0.875rem; font-weight: 500; }
+
+
+  .band { background: var(--navy); color: #fff; border-radius: 40px; padding: clamp(3rem, 6vw, 5rem); position: relative; overflow: hidden; }
+  .band .eyebrow { color: var(--gold-soft); }
+  .band h2 { font-weight: 600; font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.04; letter-spacing: -0.04em; max-width: 16ch; margin-top: 1rem; }
+  .principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; margin-top: 3.5rem; }
+  .principles div { border-top: 1px solid var(--navy-line); padding-top: 1.5rem; }
+  .num { color: var(--gold); font-weight: 500; font-size: 0.9375rem; }
+  .principles h3 { font-weight: 600; font-size: 1.5rem; letter-spacing: -0.02em; margin-top: 0.75rem; }
+  .principles p { color: var(--on-navy-soft); margin-top: 0.5rem; }
+  .band::after { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -220px; background: radial-gradient(circle, rgba(242,179,61,.22), transparent 65%); pointer-events: none; }
+
+  .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .about h2 { font-weight: 600; font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.04; letter-spacing: -0.04em; margin-top: 1rem; }
+  .about .text p { font-size: 1.1875rem; color: var(--soft); }
+  .about .text p + p { margin-top: 1.25rem; }
+  .about .text strong { color: var(--ink); font-weight: 500; }
+  .founder { display: flex; align-items: center; gap: 1rem; margin-top: 2.25rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #E0901A); display: grid; place-items: center; font: 600 1.125rem Outfit, sans-serif; color: var(--navy); }
+  .founder b { display: block; font-weight: 600; }
+  .founder span { color: var(--soft); font-size: 0.9375rem; }
+  .founder nav { margin-left: auto; display: flex; gap: 1rem; font-size: 0.9375rem; }
+
+  /* footer */
+  footer { background: var(--navy-deep); color: #fff; padding: clamp(5rem, 10vw, 8rem) 0 2.5rem; position: relative; overflow: hidden; }
+  footer .eyebrow { color: var(--gold-soft); }
+  .big-mail { display: inline-block; margin-top: 1.25rem; font-weight: 600; font-size: clamp(2.4rem, 7.5vw, 6.5rem); line-height: 1; letter-spacing: -0.045em; text-decoration: none; background: linear-gradient(90deg, #fff 0%, #fff 50%, var(--gold) 50%); background-size: 200% 100%; background-position: 0 0; -webkit-background-clip: text; background-clip: text; color: transparent; transition: background-position .6s cubic-bezier(.2,.8,.2,1); }
+  .big-mail:hover { background-position: -100% 0; }
+  .contacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--navy-line); }
+  .contacts span { display: block; color: var(--on-navy-soft); font-size: 0.875rem; }
+  .contacts a { text-decoration: none; font-weight: 500; }
+  .contacts a:hover { color: var(--gold); }
+  .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 4rem; color: var(--on-navy-soft); font-size: 0.875rem; }
+  .legal nav { display: flex; gap: 1.5rem; }
+  .legal a { text-decoration: none; }
+  .legal a:hover { color: #fff; }
+
+  .toggle { position: fixed; right: 1rem; bottom: 1rem; z-index: 10; font: 500 0.8125rem Inter, sans-serif; padding: 0.5rem 0.9rem; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+
+  @media (max-width: 860px) {
+    .links a:not(.pill) { display: none; }
+    .hero { min-height: 760px; padding-top: 130px; }
+    .mark { width: 128px; height: 128px; }
+    .head, .about { grid-template-columns: 1fr; }
+    .head > p { justify-self: start; }
+    .principles, .contacts { grid-template-columns: 1fr; }
+    .bento { grid-template-columns: 1fr; }
+    .bento > * { grid-column: auto !important; grid-row: auto !important; }
+    .tile { border-radius: 26px; padding: 1.5rem; }
+    .phone { width: 250px; height: 340px; }
+    .doc { width: 96px; height: 128px; }
+    .docs { gap: 12px; }
+    .doc.styled.b2 { margin-left: -70px; }
+    .band { border-radius: 28px; }
+    .founder { flex-wrap: wrap; }
+    .founder nav { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg viewBox="10 17 80 66" aria-hidden="true"><circle cx="50" cy="32" r="15" fill="#F2B33D"/><path d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="#fff"/></svg>
+      Emigisha
+    </a>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#principles">Principles</a>
+      <a href="#about">About</a>
+      <a class="pill" href="#contact">Say hello</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="glow"></div>
+    <div class="horizon"></div>
+    <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Emigisha symbol: a sun settling into a bowl">
+      <circle class="sun" cx="50" cy="32" r="15" fill="#F2B33D"/>
+      <path class="bowl" d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="#fff"/>
+    </svg>
+    <p class="eyebrow">Emigisha means blessings</p>
+    <h1>Software that <em>gives back.</em></h1>
+    <p class="lede">We build focused apps for people and small businesses everywhere. They work on cheap phones, slow networks and mobile money as well as anywhere else.</p>
+    <div class="cta">
+      <a class="pill" href="#products">See our products</a>
+      <a class="ghost" href="#about">Our story</a>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Products</p>
+          <h2>Four apps. One standard.</h2>
+        </div>
+        <p>Each product has its own name, its own site and its own users. Emigisha is the company behind them.</p>
+      </div>
+      <div class="bento">
+        <a class="tile t-meneja" href="https://meneja.app">
+          <div class="meta"><h3>Meneja</h3><span class="chip live"><i></i>Live</span></div>
+          <p class="desc">Track money for yourself, your household or your business, online or offline.</p>
+          <div class="stage">
+            <div class="phone"><div class="screen">
+              <p class="lbl">This month</p>
+              <p class="ui-num">48,250 <small>KES</small></p>
+              <div class="bars"><span style="height:40%"></span><span style="height:62%"></span><span style="height:48%"></span><span style="height:80%"></span><span style="height:55%"></span><span class="on" style="height:92%"></span><span style="height:35%"></span></div>
+              <div class="tx"><span><span class="ic">↓</span><b>Shop sales</b></span><span class="in">+12,400</span></div>
+              <div class="tx"><span><span class="ic">↑</span><b>Stock</b></span><span class="out">−6,800</span></div>
+              <div class="tx"><span><span class="ic">↑</span><b>Rent</b></span><span class="out">−15,000</span></div>
+            </div></div>
+          </div>
+        </a>
+
+        <div class="tile t-tala">
+          <div class="meta"><h3>Talatala</h3><span class="chip"><i></i>Coming soon</span></div>
+          <p class="desc">Professional photos from your selfies. Pay by mobile money or card.</p>
+          <div class="stage"><div class="shots"><div class="shot a"></div><div class="shot b"></div><div class="shot c"></div></div></div>
+        </div>
+
+        <div class="tile t-cv">
+          <div class="meta"><h3>PrettyCV</h3><span class="chip"><i></i>Coming soon</span></div>
+          <p class="desc">Chat your way to a polished CV that passes the filters. Pay once.</p>
+          <div class="stage"><div class="cvwrap">
+            <div class="chat"><span class="q">What was your last role?</span><span class="a">Shop manager, 4 years</span><span class="q">Great. Any numbers to show?</span></div>
+            <div class="cv"><span class="h"></span><span class="s"></span><span class="l"></span><span class="l m"></span><span class="l n"></span><span class="k"></span><span class="l"></span><span class="l m"></span><span class="k"></span><span class="l n"></span></div>
+          </div></div>
+        </div>
+
+        <div class="tile t-doc">
+          <div class="meta"><h3>StyledDoc</h3><span class="chip"><i></i>Coming soon</span></div>
+          <p class="desc">Turn plain documents into well-designed PDFs.</p>
+          <div class="stage"><div class="docs">
+            <div class="doc plain"><span style="width:60%"></span><span></span><span></span><span style="width:80%"></span><span></span><span style="width:50%"></span><span></span><span style="width:70%"></span></div>
+            <span class="arrow-mid"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <div style="display:flex; isolation:isolate"><div class="doc styled"><div class="top"></div><div class="in"><b></b><span></span><span></span><span></span><span></span></div></div><div class="doc styled b2"><div class="top"></div><div class="in"><b></b><span></span><span></span><span></span><span></span></div></div></div>
+          </div></div>
+        </div>
+
+        <div class="tile t-every">
+          <h3>Built for everyone, not just the few.</h3>
+          <p>Most software assumes fast internet, a new phone and a credit card. Ours doesn't.</p>
+          <div class="pills"><span>Mobile money</span><span>Slow networks</span><span>Any phone</span><span>Local languages</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles" style="padding-top: 0">
+    <div class="wrap">
+      <div class="band">
+        <p class="eyebrow">Principles</p>
+        <h2>A product should leave you better off than it found you.</h2>
+        <div class="principles">
+          <div><span class="num">01</span><h3>Useful first</h3><p>Each product solves one real problem, and solves it well.</p></div>
+          <div><span class="num">02</span><h3>Honest pricing</h3><p>Clear prices. No trial traps, no surprise renewals.</p></div>
+          <div><span class="num">03</span><h3>Built for everyone</h3><p>Cheap phones, slow networks and local payment methods come first, not last.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding-top: clamp(3rem, 6vw, 5rem)">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Most software skips most of the world. We don't.</h2>
+      </div>
+      <div class="text">
+        <p>Most software is built for people with fast internet, new phones and a credit card. <strong>Emigisha builds for everyone else too.</strong> Our products support the things big tools tend to skip: mobile money, low connectivity, local languages.</p>
+        <p>The name comes from Mashi, the language of the Bashi people of eastern Congo. It means blessings, and it is the bar we hold our work to.</p>
+        <div class="founder">
+          <span class="avatar">CB</span>
+          <div><b>Christian Balola</b><span>Founder · Nairobi and Kampala</span></div>
+          <nav><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">X</a></nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <a class="big-mail" href="mailto:hello@emigisha.com">hello@emigisha.com</a>
+    <div class="contacts">
+      <div><span>Support</span><a href="mailto:support@emigisha.com">support@emigisha.com</a></div>
+      <div><span>Legal</span><a href="mailto:legal@emigisha.com">legal@emigisha.com</a></div>
+      <div><span>Careers</span>No open roles. Write to us anyway.</div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Emigisha LLC, a Delaware limited liability company.</span>
+      <nav><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Refunds</a></nav>
+    </div>
+  </div>
+</footer>
+
+<button class="toggle" type="button" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Light / dark</button>
+<script>
+  var t = new URLSearchParams(location.search).get('theme');
+  if (t) document.documentElement.dataset.theme = t;
+</script>
+</body>
+</html>
