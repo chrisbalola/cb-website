@@ -1,38 +1,74 @@
 import { useTranslations } from 'next-intl';
-import { clientConfig } from '@/core/config/client-config';
+import { BrandSymbol } from '@/shared/presentation/components/misc/brand-symbol';
 import { ThemeToggleButton } from '@/shared/presentation/components/misc/theme-toggle-button';
-import { shippedCount } from '../products';
-import { MarkTrack } from './mark-track';
+import { cn } from '@/shared/presentation/utils/shadcn';
+import { containerClassName, eyebrowClassName, focusRingClassName } from '../class-names';
 
-const navLinkClassName =
-  'hover:underline focus-visible:rounded-xs focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent';
+const goldButtonClassName =
+  'inline-flex items-center rounded-full bg-accent px-[1.1rem] py-[0.6rem] font-semibold whitespace-nowrap text-navy transition-transform hover:-translate-y-px';
+
+const navLinkClassName = cn('transition-colors hover:text-on-navy', focusRingClassName);
+
+/** Section links that only fit next to the products link on wide screens */
+const wideNavLinkClassName = cn(navLinkClassName, 'max-[860px]:hidden');
 
 export function HomeHero() {
-  const t = useTranslations('home.hero');
+  const t = useTranslations('home');
 
   return (
-    <div className="flex min-h-[60svh] flex-col bg-leaf px-[clamp(1.25rem,4vw,3.5rem)] pt-8 pb-7 text-on-leaf min-[52rem]:min-h-[68svh]">
-      <header className="flex items-center justify-between gap-4">
-        <p className="font-display text-2xl leading-none font-bold tracking-[-0.01em]">{t('wordmark')}</p>
-        <nav className="flex items-center gap-6 font-medium">
-          <a href="#products" className={navLinkClassName}>
-            {t('nav.products')}
+    <section className="hero-sky relative isolate flex min-h-[760px] flex-col items-center overflow-hidden px-[clamp(1.25rem,4vw,3rem)] pt-[130px] text-center text-on-navy min-[860px]:min-h-[860px] min-[860px]:pt-[150px]">
+      <header className="absolute inset-x-0 top-0 z-10">
+        <div className={cn(containerClassName, 'flex h-21 items-center justify-between')}>
+          <a href="#" className={cn('flex items-center gap-[0.6rem] font-display text-2xl font-semibold tracking-[-0.03em]', focusRingClassName)}>
+            <BrandSymbol cropped className="size-[34px]" />
+            <span className="max-[420px]:sr-only">{t('nav.wordmark')}</span>
           </a>
-          <a href={`mailto:${clientConfig.links.email}`} className={navLinkClassName}>
-            {t('nav.contact')}
-          </a>
-          <ThemeToggleButton />
-        </nav>
+          <nav className="flex items-center gap-4 text-[0.9375rem] text-on-navy-soft min-[860px]:gap-8">
+            <a href="#products" className={navLinkClassName}>
+              {t('nav.products')}
+            </a>
+            <a href="#principles" className={wideNavLinkClassName}>
+              {t('nav.principles')}
+            </a>
+            <a href="#about" className={wideNavLinkClassName}>
+              {t('nav.about')}
+            </a>
+            <ThemeToggleButton />
+            <a href="#contact" className={cn(goldButtonClassName, focusRingClassName)}>
+              {t('nav.sayHello')}
+            </a>
+          </nav>
+        </div>
       </header>
 
-      <h1 className="mt-auto mb-[clamp(2rem,5vh,3.5rem)] max-w-[11ch] pt-12 font-display text-[clamp(2.75rem,8.4vw,7.5rem)] leading-[0.98] font-bold tracking-[-0.035em]">
-        {t('headline')}
-      </h1>
+      <div aria-hidden className="hero-glow absolute top-[120px] left-[calc(50%-450px)] -z-10 size-[900px]" />
+      <div
+        aria-hidden
+        className="hero-horizon absolute bottom-[-560px] left-[calc(50%-450px)] -z-10 h-[700px] w-[900px] rounded-full min-[860px]:bottom-[-760px] min-[860px]:left-[calc(50%-700px)] min-[860px]:h-[1000px] min-[860px]:w-[1400px]"
+      />
 
-      <div className="grid items-center gap-3 border-t border-leaf-mark pt-5 min-[52rem]:grid-cols-[minmax(0,1fr)_auto] min-[52rem]:gap-8">
-        <MarkTrack shipped={shippedCount} label={t('marksAlt', { count: shippedCount })} />
-        <p className="max-w-[17rem] text-[0.9375rem] opacity-80">{t('tally', { count: shippedCount })}</p>
+      <BrandSymbol label={t('hero.symbolAlt')} className="size-32 min-[860px]:size-42" sunClassName="animate-settle" bowlClassName="animate-rise" />
+      <p className={cn(eyebrowClassName, 'mt-9 animate-fade text-gold-soft [animation-delay:0.5s]')}>{t('hero.eyebrow')}</p>
+      <h1 className="mt-5 max-w-[12ch] animate-fade font-display text-[clamp(2.9rem,7.2vw,6.25rem)] leading-none font-semibold tracking-[-0.045em] [animation-delay:0.65s]">
+        {t.rich('hero.headline', {
+          em: (chunks) => <em className="text-accent not-italic">{chunks}</em>,
+        })}
+      </h1>
+      <p className="mt-6 max-w-[36rem] animate-fade text-[1.1875rem] text-on-navy-soft [animation-delay:0.8s]">{t('hero.lede')}</p>
+      <div className="mt-9 flex animate-fade flex-wrap justify-center gap-3 [animation-delay:0.95s]">
+        <a href="#products" className={cn(goldButtonClassName, focusRingClassName)}>
+          {t('hero.seeProducts')}
+        </a>
+        <a
+          href="#about"
+          className={cn(
+            'inline-flex items-center rounded-full border border-navy-line px-[1.1rem] py-[0.6rem] font-medium transition-colors hover:bg-white/5',
+            focusRingClassName
+          )}
+        >
+          {t('hero.ourStory')}
+        </a>
       </div>
-    </div>
+    </section>
   );
 }

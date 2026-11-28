@@ -5,10 +5,22 @@ export const clientConfig = {
   /** Outbound links shown on the site */
   links: {
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@emigisha.com',
+    supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? 'support@emigisha.com',
+    legalEmail: process.env.NEXT_PUBLIC_LEGAL_EMAIL ?? 'legal@emigisha.com',
     meneja: process.env.NEXT_PUBLIC_LINK_MENEJA ?? 'https://about.meneja.app',
     talatala: process.env.NEXT_PUBLIC_LINK_TALATALA ?? 'https://talatala.app',
     styleddoc: process.env.NEXT_PUBLIC_LINK_STYLEDDOC ?? 'https://styleddoc.app',
     founder: process.env.NEXT_PUBLIC_LINK_FOUNDER ?? 'https://chrisbalola.com',
+    github: process.env.NEXT_PUBLIC_SOCIAL_GITHUB ?? 'https://github.com/chrisbalola',
+    linkedin: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN ?? 'https://www.linkedin.com/in/chrisbalola',
+    x: process.env.NEXT_PUBLIC_SOCIAL_X ?? 'https://x.com/chrisbalola',
+  },
+
+  /** Company-level legal pages linked from the footer */
+  legal: {
+    terms: '/terms',
+    privacy: '/privacy',
+    refunds: '/refunds',
   },
 
   /** Cloudflare Web Analytics beacon token */

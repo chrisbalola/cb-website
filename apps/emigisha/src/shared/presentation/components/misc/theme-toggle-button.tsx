@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import { WithClientSideMount } from '../../hocs/WithClientSideMount';
 
 const buttonClassName =
-  'flex size-8 items-center justify-center rounded-full border bg-background text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
+  'flex size-9 items-center justify-center rounded-full border border-navy-line text-on-navy-soft transition-colors hover:text-on-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
 
 export const ThemeToggleButton = WithClientSideMount(
   () => {

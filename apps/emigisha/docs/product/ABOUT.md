@@ -10,29 +10,31 @@ The website exists so that customers, app stores, payment providers and partners
 
 ### Meneja
 
-Finance, products and services management in one app.
+Track money for yourself, your household or your business, online or offline.
 
 - Website: [about.meneja.app](https://about.meneja.app)
 - Status: live
 
 ### Talatala
 
-Studio photos from a selfie, paid with mobile money.
+Professional photos from your selfies. Pay by mobile money or card.
 
 - Website: [talatala.app](https://talatala.app)
 - Status: live
 
 ### StyledDoc
 
-Designed documents from plain content.
+Turn plain documents into well-designed PDFs.
 
 - Website: [styleddoc.app](https://styleddoc.app)
-- Status: building
+- Status: building (shown as "Coming soon")
 
 ## What the site says
 
-- "Emigisha means blessings." The name is the standard the work is held to.
-- The products, each with a status.
-- Who founded it, and one contact address.
+- "Software that gives back." and "Emigisha means blessings." The name is the standard the work is held to.
+- The products, each with a status and a drawing of what it does.
+- Three principles: useful first, honest pricing, built for everyone.
+- Who founded it, the founder's profiles, and the contact, support and legal addresses.
+- The legal name, and links to the company Terms, Privacy and Refunds pages.
 
 What stays off: testimonials, a team page, a contact form, a blog.

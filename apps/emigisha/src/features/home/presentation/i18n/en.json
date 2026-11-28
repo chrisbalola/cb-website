@@ -1,39 +1,108 @@
 {
-  "hero": {
+  "nav": {
     "wordmark": "Emigisha",
-    "nav": {
-      "products": "Products",
-      "contact": "Contact"
-    },
-    "headline": "Emigisha means blessings.",
-    "marksAlt": "A row of small diamonds. {count, plural, one {One is yellow} other {# are yellow}}, one for each product shipped.",
-    "tally": "One mark turns yellow for every product we ship. {count, plural, one {One so far.} other {# so far.}}"
+    "products": "Products",
+    "principles": "Principles",
+    "about": "About",
+    "sayHello": "Say hello"
   },
-  "story": {
-    "standard": "It is the standard we hold our work to. A product should leave the person using it better off than it found them: more time, clearer books, fewer things to worry about.",
-    "company": "We are a small company, founded by <founder>Christian Balola</founder>, building software for people who run businesses."
+  "hero": {
+    "symbolAlt": "Emigisha symbol: a sun settling into a bowl",
+    "eyebrow": "Emigisha means blessings",
+    "headline": "Software that <em>gives back.</em>",
+    "lede": "We build focused apps for people and small businesses everywhere. They work on cheap phones, slow networks and mobile money as well as anywhere else.",
+    "seeProducts": "See our products",
+    "ourStory": "Our story"
   },
   "products": {
+    "eyebrow": "Products",
+    "title": "Three apps. One standard.",
+    "intro": "Each product has its own name, its own site and its own users. Emigisha is the company behind them.",
     "status": {
       "live": "Live",
-      "building": "Building"
+      "building": "Coming soon"
     },
     "items": {
       "meneja": {
         "name": "Meneja",
-        "description": "Finance, products and services management in one app."
+        "description": "Track money for yourself, your household or your business, online or offline."
       },
       "talatala": {
         "name": "Talatala",
-        "description": "Studio photos from a selfie, paid with mobile money."
+        "description": "Professional photos from your selfies. Pay by mobile money or card."
       },
       "styleddoc": {
         "name": "StyledDoc",
-        "description": "Designed documents from plain content."
+        "description": "Turn plain documents into well-designed PDFs."
+      }
+    },
+    "menejaScreen": {
+      "period": "This month",
+      "balance": "48,250",
+      "currency": "KES",
+      "sales": "Shop sales",
+      "salesAmount": "+12,400",
+      "stock": "Stock",
+      "stockAmount": "−6,800",
+      "rent": "Rent",
+      "rentAmount": "−15,000"
+    },
+    "everyone": {
+      "title": "Made for everyone, everywhere.",
+      "body": "Most software assumes fast internet, a new phone and a credit card. Ours doesn't.",
+      "traits": {
+        "mobileMoney": "Mobile money",
+        "slowNetworks": "Slow networks",
+        "anyPhone": "Any phone",
+        "localLanguages": "Local languages"
       }
     }
   },
+  "principles": {
+    "eyebrow": "Principles",
+    "title": "A product should leave you better off than it found you.",
+    "items": {
+      "useful": {
+        "title": "Useful first",
+        "body": "Each product solves one real problem, and solves it well."
+      },
+      "honest": {
+        "title": "Honest pricing",
+        "body": "Clear prices. No trial traps, no surprise renewals."
+      },
+      "everyone": {
+        "title": "Built for everyone",
+        "body": "Cheap phones, slow networks and local payment methods come first, not last."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Most software skips most of the world. We don't.",
+    "everyone": "Most software is built for people with fast internet, new phones and a credit card. <strong>Emigisha builds for everyone else too.</strong> Our products support the things big tools tend to skip: mobile money, low connectivity, local languages.",
+    "name": "The name comes from Mashi, the language of the Bashi people of eastern Congo. It means blessings, and it is the bar we hold our work to.",
+    "founder": {
+      "initials": "CB",
+      "name": "Christian Balola",
+      "role": "Founder · Nairobi and Kampala"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "x": "X"
+    }
+  },
   "footer": {
-    "copyright": "© {year} Emigisha, LLC"
+    "eyebrow": "Contact",
+    "support": "Support",
+    "legal": "Legal",
+    "careers": "Careers",
+    "careersText": "No open roles. Write to us anyway.",
+    "copyright": "© {year} Emigisha, LLC · A Delaware limited liability company",
+    "links": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "refunds": "Refunds"
+    }
   }
 }
