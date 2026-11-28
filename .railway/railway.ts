@@ -70,10 +70,15 @@ export default defineRailway(() => {
     env: {
       NEXT_PUBLIC_SITE_URL: preserve(),
       NEXT_PUBLIC_CONTACT_EMAIL: preserve(),
+      NEXT_PUBLIC_SUPPORT_EMAIL: preserve(),
+      NEXT_PUBLIC_LEGAL_EMAIL: preserve(),
       NEXT_PUBLIC_LINK_MENEJA: preserve(),
       NEXT_PUBLIC_LINK_TALATALA: preserve(),
       NEXT_PUBLIC_LINK_STYLEDDOC: preserve(),
       NEXT_PUBLIC_LINK_FOUNDER: preserve(),
+      NEXT_PUBLIC_SOCIAL_GITHUB: preserve(),
+      NEXT_PUBLIC_SOCIAL_LINKEDIN: preserve(),
+      NEXT_PUBLIC_SOCIAL_X: preserve(),
       NEXT_PUBLIC_CF_ANALYTICS_TOKEN: preserve(),
     },
   });

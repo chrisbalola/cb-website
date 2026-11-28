@@ -7,9 +7,10 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-display: var(--font-syne), sans-serif;
+  --font-display: var(--font-outfit), sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -22,66 +23,169 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-leaf: var(--leaf);
-  --color-leaf-mark: var(--leaf-mark);
-  --color-on-leaf: var(--on-leaf);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-line: var(--navy-line);
+  --color-on-navy: var(--on-navy);
+  --color-on-navy-soft: var(--on-navy-soft);
+  --color-gold-soft: var(--gold-soft);
+  --color-live: var(--live);
+  --animate-settle: settle 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-rise: rise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-fade: fade 0.9s both;
+  --animate-grow: grow 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  @keyframes settle {
+    from {
+      transform: translateY(-46px);
+      opacity: 0;
+    }
+  }
+  @keyframes rise {
+    from {
+      transform: translateY(18px);
+      opacity: 0;
+    }
+  }
+  @keyframes fade {
+    from {
+      transform: translateY(14px);
+      opacity: 0;
+    }
+  }
+  @keyframes grow {
+    from {
+      transform: scaleY(0.1);
+    }
+  }
 }
 
 :root {
   --radius: 0.625rem;
 
   /* Light mode (default). See docs/guide/BRAND_GUIDE.md */
-  --background: #eff4e9;
-  --foreground: #12251a;
-  --primary: #17502f;
-  --primary-foreground: #f3f7ee;
-  --secondary: #e1ead9;
-  --secondary-foreground: #12251a;
-  --muted: #e1ead9;
-  --muted-foreground: #55695b;
-  --accent: #f2c230;
-  --accent-foreground: #12251a;
+  --background: #f5f7fa;
+  --foreground: #0e2a47;
+  --card: #ffffff;
+  --primary: #0e2a47;
+  --primary-foreground: #ffffff;
+  --secondary: #eceff3;
+  --secondary-foreground: #0e2a47;
+  --muted: #f2f5f8;
+  --muted-foreground: #4d6079;
+  --accent: #f2b33d;
+  --accent-foreground: #0e2a47;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #cad6c4;
-  --input: #cad6c4;
-  --ring: #f2c230;
+  --border: #dce3ec;
+  --input: #dce3ec;
+  --ring: #f2b33d;
 
-  /* Brand field: the green band, the marks on it, and text on it */
-  --leaf: #17502f;
-  --leaf-mark: #2c6e45;
-  --on-leaf: #f3f7ee;
+  /* Brand blocks: the hero, the principles band and the footer stay navy in both themes */
+  --navy: #0e2a47;
+  --navy-deep: #081b30;
+  --navy-line: #1f4167;
+  --on-navy: #ffffff;
+  --on-navy-soft: #a9b8ca;
+  --gold-soft: #f8d58c;
+
+  /* Background of the "Live" chip */
+  --live: #fbe7bd;
 }
 
 .dark {
-  /* Dark mode. See docs/guide/BRAND_GUIDE.md */
-  --background: #0c1a12;
-  --foreground: #e9f1e5;
-  --primary: #e9f1e5;
-  --primary-foreground: #0c1a12;
-  --secondary: #14261b;
-  --secondary-foreground: #e9f1e5;
-  --muted: #14261b;
-  --muted-foreground: #9cb0a1;
-  --accent: #f2c230;
-  --accent-foreground: #12251a;
+  /* Dark mode: neutral charcoal, so the navy blocks keep their contrast. See docs/guide/BRAND_GUIDE.md */
+  --background: #0e1013;
+  --foreground: #f2f4f7;
+  --card: #17191d;
+  --primary: #f2f4f7;
+  --primary-foreground: #0e1013;
+  --secondary: #202328;
+  --secondary-foreground: #f2f4f7;
+  --muted: #202328;
+  --muted-foreground: #9ba3ae;
+  --accent: #f2b33d;
+  --accent-foreground: #0e2a47;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #24382b;
-  --input: #24382b;
-  --ring: #f2c230;
+  --border: #2a2e34;
+  --input: #2a2e34;
+  --ring: #f2b33d;
 
-  --leaf: #0f3a22;
-  --leaf-mark: #1f5a37;
-  --on-leaf: #f3f7ee;
+  --navy-deep: #06162a;
+  --live: #3a3122;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-albert-sans), sans-serif;
+    font-family: var(--font-inter), sans-serif;
     font-size: 1.0625rem;
     line-height: 1.6;
+  }
+}
+
+/* Hero night sky: deep navy with a field of stars */
+.hero-sky {
+  background: radial-gradient(80% 70% at 50% 42%, #133659 0%, #0a1e36 45%, #050f1d 100%);
+}
+.hero-sky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1.3px), radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1.3px);
+  background-size:
+    160px 160px,
+    97px 97px;
+  background-position:
+    30px 40px,
+    70px 10px;
+  opacity: 0.55;
+}
+
+/* Gold light behind the symbol in the hero */
+.hero-glow {
+  background: radial-gradient(circle, rgba(242, 179, 61, 0.28) 0%, rgba(242, 179, 61, 0.08) 30%, transparent 60%);
+  animation: breathe 7s ease-in-out infinite;
+}
+
+/* The horizon: a faint gold arc rising from the bottom of the hero */
+.hero-horizon {
+  border: 1px solid rgba(242, 179, 61, 0.35);
+  box-shadow:
+    0 -30px 120px rgba(242, 179, 61, 0.12),
+    inset 0 30px 80px rgba(242, 179, 61, 0.06);
+}
+
+/* Soft gold light in the corner of a navy block */
+.navy-glow::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -160px;
+  top: -220px;
+  background: radial-gradient(circle, rgba(242, 179, 61, 0.22), transparent 65%);
+  pointer-events: none;
+}
+
+@keyframes breathe {
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
   }
 }
