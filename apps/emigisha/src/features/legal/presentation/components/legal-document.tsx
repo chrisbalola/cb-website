@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { clientConfig } from '@/core/config/client-config';
 import { SiteFooter } from '@/shared/presentation/components/layout/site-footer';
 import { SiteHeader } from '@/shared/presentation/components/layout/site-header';
-import { containerClassName } from '@/shared/presentation/utils/class-names';
+import { containerClassName, focusRingClassName } from '@/shared/presentation/utils/class-names';
 import { cn } from '@/shared/presentation/utils/shadcn';
 
 type LegalNamespace = 'terms' | 'privacy' | 'refunds';
@@ -19,11 +20,30 @@ type LegalDocumentProps = {
   sections: readonly string[];
 };
 
-/** Fills the contact placeholders. Sections are arrays read raw, so ICU arguments are not available. */
-function withContacts(text: string) {
-  const { supportEmail, legalEmail } = clientConfig.links;
+const emailLinkClassName = cn(
+  'text-foreground underline decoration-accent decoration-2 underline-offset-4 hover:decoration-[3px]',
+  focusRingClassName
+);
 
-  return text.replaceAll('{supportEmail}', supportEmail).replaceAll('{legalEmail}', legalEmail);
+/**
+ * Turns the contact placeholders into email links. Sections are arrays read raw, so ICU arguments and rich text
+ * are not available.
+ */
+function withContacts(text: string): ReactNode[] {
+  const { supportEmail, legalEmail } = clientConfig.links;
+  const emails: Record<string, string> = { '{supportEmail}': supportEmail, '{legalEmail}': legalEmail };
+
+  return text.split(/(\{supportEmail\}|\{legalEmail\})/).map((part, index) => {
+    const email = emails[part];
+
+    return email ? (
+      <a key={index} href={`mailto:${email}`} className={emailLinkClassName}>
+        {email}
+      </a>
+    ) : (
+      part
+    );
+  });
 }
 
 /**
