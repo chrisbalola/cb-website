@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('shared.pages.home');
   return {
     metadataBase: new URL(clientConfig.siteUrl),
-    ...pageMetadata({ title: t('documentTitle'), description: t('description'), path: '/', siteName: t('title') }),
+    ...pageMetadata({ fullTitle: t('documentTitle'), description: t('description'), path: '/', siteName: t('title') }),
   };
 }
 

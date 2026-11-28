@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const site = await getTranslations('shared.pages.home');
 
   return pageMetadata({
-    title: `${t('title')} · ${site('title')}`,
+    title: t('title'),
     description: t('description'),
     path: '/refunds',
     siteName: site('title'),
