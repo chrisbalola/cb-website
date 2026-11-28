@@ -1,8 +1,10 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { clientConfig } from '@/core/config/client-config';
+import { routing } from '@/core/i18n/routing';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('shared.pages.home');
@@ -33,8 +35,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  // Paths with a dot skip the i18n middleware and land here with the path as the locale, e.g. /sitemap.xml
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return <NextIntlClientProvider>{children}</NextIntlClientProvider>;
 }
