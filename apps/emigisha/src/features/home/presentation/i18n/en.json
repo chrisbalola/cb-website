@@ -41,8 +41,11 @@
       "balance": "48,250",
       "currency": "KES",
       "sales": "Shop sales",
+      "salesAmount": "+12,400",
       "stock": "Stock",
-      "rent": "Rent"
+      "stockAmount": "−6,800",
+      "rent": "Rent",
+      "rentAmount": "−15,000"
     },
     "everyone": {
       "title": "Made for everyone, everywhere.",

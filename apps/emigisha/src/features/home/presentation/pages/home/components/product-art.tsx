@@ -10,9 +10,9 @@ const HIGHLIGHTED_BAR = 5;
 function MenejaArt() {
   const t = useTranslations('home.products.menejaScreen');
   const rows = [
-    { label: t('sales'), amount: '+12,400', incoming: true },
-    { label: t('stock'), amount: '−6,800', incoming: false },
-    { label: t('rent'), amount: '−15,000', incoming: false },
+    { label: t('sales'), amount: t('salesAmount'), incoming: true },
+    { label: t('stock'), amount: t('stockAmount'), incoming: false },
+    { label: t('rent'), amount: t('rentAmount'), incoming: false },
   ];
 
   return (
