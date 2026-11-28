@@ -1,10 +1,11 @@
 import { ReactNode } from 'react';
-import { useTranslations } from 'next-intl';
+import { useFormatter, useTranslations } from 'next-intl';
 import { clientConfig } from '@/core/config/client-config';
 import { SiteFooter } from '@/shared/presentation/components/layout/site-footer';
 import { SiteHeader } from '@/shared/presentation/components/layout/site-header';
 import { containerClassName, focusRingClassName } from '@/shared/presentation/utils/class-names';
 import { cn } from '@/shared/presentation/utils/shadcn';
+import { legalUpdatedAt } from '../legal-updated-at';
 
 type LegalNamespace = 'terms' | 'privacy' | 'refunds';
 
@@ -52,6 +53,7 @@ function withContacts(text: string): ReactNode[] {
  */
 export function LegalDocument({ namespace, sections }: LegalDocumentProps) {
   const t = useTranslations('legal');
+  const format = useFormatter();
   const { mailingAddress } = clientConfig.company;
 
   return (
@@ -62,7 +64,7 @@ export function LegalDocument({ namespace, sections }: LegalDocumentProps) {
           <h1 className="max-w-[16ch] font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none font-semibold tracking-[-0.045em]">
             {t(`${namespace}.title`)}
           </h1>
-          <p className="mt-5 text-on-navy-soft">{t('updated')}</p>
+          <p className="mt-5 text-on-navy-soft">{t('updated', { date: format.dateTime(legalUpdatedAt, { dateStyle: 'long', timeZone: 'UTC' }) })}</p>
         </div>
       </div>
       <main className={cn(containerClassName, 'py-[clamp(3rem,8vw,5.5rem)]')}>

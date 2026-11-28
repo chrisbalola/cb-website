@@ -11,9 +11,19 @@ export const clientConfig = {
     talatala: process.env.NEXT_PUBLIC_LINK_TALATALA ?? 'https://talatala.app',
     styleddoc: process.env.NEXT_PUBLIC_LINK_STYLEDDOC ?? 'https://styleddoc.app',
     founder: process.env.NEXT_PUBLIC_LINK_FOUNDER ?? 'https://chrisbalola.com',
-    github: process.env.NEXT_PUBLIC_SOCIAL_GITHUB ?? 'https://github.com/chrisbalola',
-    linkedin: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN ?? 'https://www.linkedin.com/in/chrisbalola',
-    x: process.env.NEXT_PUBLIC_SOCIAL_X ?? 'https://x.com/chrisbalola',
+  },
+
+  /** The founder's own profiles, shown in the about section */
+  founderProfiles: {
+    github: process.env.NEXT_PUBLIC_FOUNDER_GITHUB ?? 'https://github.com/chrisbalola',
+    linkedin: process.env.NEXT_PUBLIC_FOUNDER_LINKEDIN ?? 'https://www.linkedin.com/in/chrisbalola',
+    x: process.env.NEXT_PUBLIC_FOUNDER_X ?? 'https://x.com/chrisbalola',
+  },
+
+  /** Emigisha's own profiles, shown in the footer. Each stays hidden until its URL is set */
+  companyProfiles: {
+    linkedin: process.env.NEXT_PUBLIC_COMPANY_LINKEDIN ?? '',
+    x: process.env.NEXT_PUBLIC_COMPANY_X ?? '',
   },
 
   /** Company details shown on the legal pages */

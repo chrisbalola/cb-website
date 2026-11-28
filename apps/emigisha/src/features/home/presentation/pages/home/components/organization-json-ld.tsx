@@ -1,7 +1,8 @@
 import { clientConfig } from '@/core/config/client-config';
 
 export function OrganizationJsonLd() {
-  const { siteUrl, links } = clientConfig;
+  const { siteUrl, links, founderProfiles, companyProfiles } = clientConfig;
+  const companySameAs = Object.values(companyProfiles).filter(Boolean);
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -10,10 +11,12 @@ export function OrganizationJsonLd() {
     url: siteUrl,
     logo: `${siteUrl}/icon.svg`,
     email: links.email,
+    ...(companySameAs.length > 0 && { sameAs: companySameAs }),
     founder: {
       '@type': 'Person',
       name: 'Christian Balola',
       url: links.founder,
+      sameAs: Object.values(founderProfiles),
     },
   };
 

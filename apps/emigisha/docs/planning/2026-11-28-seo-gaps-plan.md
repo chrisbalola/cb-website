@@ -2,6 +2,15 @@
 
 Fixes for the gaps found when checking emigisha.com on 28 Nov 2026. The basics are already right: server-rendered pages, a title, description and canonical URL per page, `lang="en"`, one `h1` per page, an Open Graph image, Organization structured data on the home page, and a `robots.txt` that allows everything.
 
+## Status (28 Nov 2026)
+
+Steps 1 to 6 are built. Decisions taken while building:
+
+- The legal pages' last-updated date now lives in one constant, used for both the page line and the sitemap. The page shows it in the locale's long date format ("November 28, 2026").
+- Step 6 was built before the company profiles exist: `NEXT_PUBLIC_COMPANY_LINKEDIN` and `NEXT_PUBLIC_COMPANY_X` are empty by default, so nothing shows until they are set. The founder settings were renamed to `NEXT_PUBLIC_FOUNDER_*`, with the same defaults.
+
+Left: set the new Railway values once the profiles exist (step 6), and step 8 after deploying.
+
 ## Gaps
 
 | #   | Gap                                                                                                                                 | Effect                                                                                                                                                     |

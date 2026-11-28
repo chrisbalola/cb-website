@@ -3,13 +3,13 @@ import { clientConfig } from '@/core/config/client-config';
 import { cn } from '@/shared/presentation/utils/shadcn';
 import { containerClassName, eyebrowClassName, focusRingClassName, sectionTitleClassName } from '@/shared/presentation/utils/class-names';
 
-const SOCIAL = ['github', 'linkedin', 'x'] as const;
+const FOUNDER_NETWORKS = ['github', 'linkedin', 'x'] as const;
 
 const linkClassName = cn('underline decoration-accent decoration-2 underline-offset-4 hover:decoration-[3px]', focusRingClassName);
 
 export function AboutSection() {
   const t = useTranslations('home.about');
-  const { links } = clientConfig;
+  const { links, founderProfiles } = clientConfig;
 
   return (
     <section id="about" className="scroll-mt-4 py-[clamp(4rem,8vw,6.5rem)]">
@@ -36,8 +36,8 @@ export function AboutSection() {
               <span className="text-[0.9375rem]">{t('founder.role')}</span>
             </div>
             <nav className="flex w-full gap-4 text-[0.9375rem] text-foreground min-[860px]:ml-auto min-[860px]:w-auto">
-              {SOCIAL.map((network) => (
-                <a key={network} href={links[network]} target="_blank" rel="noopener noreferrer" className={linkClassName}>
+              {FOUNDER_NETWORKS.map((network) => (
+                <a key={network} href={founderProfiles[network]} target="_blank" rel="noopener noreferrer" className={linkClassName}>
                   {t(`social.${network}`)}
                 </a>
               ))}
