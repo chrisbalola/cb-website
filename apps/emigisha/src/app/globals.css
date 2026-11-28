@@ -33,7 +33,6 @@
   --animate-settle: settle 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   --animate-rise: rise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   --animate-fade: fade 0.9s both;
-  --animate-grow: grow 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 
   @keyframes settle {
     from {
@@ -51,11 +50,6 @@
     from {
       transform: translateY(14px);
       opacity: 0;
-    }
-  }
-  @keyframes grow {
-    from {
-      transform: scaleY(0.1);
     }
   }
 }
@@ -173,6 +167,91 @@
   top: -220px;
   background: radial-gradient(circle, rgba(242, 179, 61, 0.22), transparent 65%);
   pointer-events: none;
+}
+
+/* Product drawings: each part plays once when its tile scrolls into view. ProductArtStage sets data-motion:
+   "armed" holds every part at its first frame, "play" runs them. Without the attribute the drawing is still. */
+[data-motion] :is(.art-bar, .art-rise, .art-pop, .art-fan-left, .art-fan-right, .art-line, .art-drop, .art-tilt) {
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-delay: var(--delay, 0s);
+  animation-fill-mode: both;
+}
+[data-motion='armed'] :is(.art-bar, .art-rise, .art-pop, .art-fan-left, .art-fan-right, .art-line, .art-drop, .art-tilt) {
+  animation-play-state: paused;
+}
+[data-motion] .art-bar {
+  animation-name: art-bar;
+}
+[data-motion] .art-rise {
+  animation-name: art-rise;
+}
+[data-motion] .art-pop {
+  animation-name: art-pop;
+}
+[data-motion] .art-fan-left {
+  animation-name: art-fan-left;
+}
+[data-motion] .art-fan-right {
+  animation-name: art-fan-right;
+}
+[data-motion] .art-line {
+  animation-name: art-line;
+}
+[data-motion] .art-drop {
+  animation-name: art-drop;
+}
+[data-motion] .art-tilt {
+  animation-name: art-tilt;
+}
+
+@keyframes art-bar {
+  from {
+    transform: scaleY(0.08);
+  }
+}
+@keyframes art-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@keyframes art-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+@keyframes art-fan-left {
+  from {
+    opacity: 0;
+    rotate: 0deg;
+    transform: translateX(70px) scale(0.9);
+  }
+}
+@keyframes art-fan-right {
+  from {
+    opacity: 0;
+    rotate: 0deg;
+    transform: translateX(-70px) scale(0.9);
+  }
+}
+@keyframes art-line {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes art-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+}
+@keyframes art-tilt {
+  from {
+    opacity: 0;
+    rotate: 0deg;
+  }
 }
 
 @keyframes breathe {

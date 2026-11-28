@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/shared/presentation/utils/shadcn';
 import { containerClassName, eyebrowClassName, focusRingClassName, sectionTitleClassName } from '@/shared/presentation/utils/class-names';
 import { Product, products } from '../products';
 import { ProductArt } from './product-art';
+import { ProductArtStage } from './product-art-stage';
 
 const TRAITS = ['mobileMoney', 'slowNetworks', 'anyPhone', 'localLanguages'] as const;
 
@@ -37,13 +39,16 @@ function ProductTile({ product, featured }: { product: Product; featured: boolea
   const content = (
     <>
       <div className="flex items-center justify-between gap-4">
-        <h3 className="font-display text-[1.75rem] leading-none font-semibold tracking-[-0.035em]">{t(`${product.key}.name`)}</h3>
+        <div className="flex items-center gap-3">
+          <Image src={product.icon} alt="" width={44} height={44} className="size-11 shrink-0 rounded-xl ring-1 ring-border" />
+          <h3 className="font-display text-[1.75rem] leading-none font-semibold tracking-[-0.035em]">{t(`${product.key}.name`)}</h3>
+        </div>
         <StatusChip status={product.status} />
       </div>
       <p className="mt-2 max-w-[26rem] text-muted-foreground">{t(`${product.key}.description`)}</p>
-      <div aria-hidden className="mt-auto flex items-end justify-center pt-6">
+      <ProductArtStage>
         <ProductArt productKey={product.key} />
-      </div>
+      </ProductArtStage>
     </>
   );
 

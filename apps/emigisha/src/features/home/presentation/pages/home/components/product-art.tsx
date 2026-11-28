@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/shared/presentation/utils/shadcn';
@@ -26,16 +27,17 @@ function MenejaArt() {
           {BARS.map((height, index) => (
             <span
               key={index}
-              style={{ height: `${height}%` }}
-              className={cn(
-                'flex-1 origin-bottom animate-grow rounded-t-md rounded-b-[3px]',
-                index === HIGHLIGHTED_BAR ? 'bg-accent' : 'bg-[#dce3ec]'
-              )}
+              style={{ height: `${height}%`, '--delay': `${index * 70}ms` } as CSSProperties}
+              className={cn('art-bar flex-1 origin-bottom rounded-t-md rounded-b-[3px]', index === HIGHLIGHTED_BAR ? 'bg-accent' : 'bg-[#dce3ec]')}
             />
           ))}
         </div>
-        {rows.map((row) => (
-          <div key={row.label} className="flex items-center justify-between border-t border-[#e6ebf1] py-[0.7rem] text-xs">
+        {rows.map((row, index) => (
+          <div
+            key={row.label}
+            style={{ '--delay': `${650 + index * 120}ms` } as CSSProperties}
+            className="art-rise flex items-center justify-between border-t border-[#e6ebf1] py-[0.7rem] text-xs"
+          >
             <span className="flex items-center gap-2 font-medium">
               <span className="grid size-[26px] place-items-center rounded-lg bg-[#eceff3] text-[0.7rem]">{row.incoming ? '↓' : '↑'}</span>
               {row.label}
@@ -61,9 +63,9 @@ function Portrait({ className }: { className: string }) {
 function TalatalaArt() {
   return (
     <div className="flex origin-bottom items-end gap-2.5 max-[400px]:scale-[0.82]">
-      <Portrait className="h-[120px] w-[92px] translate-y-1.5 -rotate-6 bg-linear-160 from-[#f2b33d] to-[#e07a1f]" />
-      <Portrait className="z-10 h-[136px] w-[104px] bg-linear-160 from-[#2c5c8f] to-[#0e2a47]" />
-      <Portrait className="h-[120px] w-[92px] translate-y-1.5 rotate-6 bg-linear-160 from-[#9fb4cc] to-[#5e7894]" />
+      <Portrait className="art-fan-left h-[120px] w-[92px] translate-y-1.5 -rotate-6 bg-linear-160 from-[#f2b33d] to-[#e07a1f] [--delay:450ms]" />
+      <Portrait className="art-pop z-10 h-[136px] w-[104px] bg-linear-160 from-[#2c5c8f] to-[#0e2a47]" />
+      <Portrait className="art-fan-right h-[120px] w-[92px] translate-y-1.5 rotate-6 bg-linear-160 from-[#9fb4cc] to-[#5e7894] [--delay:450ms]" />
     </div>
   );
 }
@@ -98,15 +100,19 @@ function StyledDocArt() {
     <div className="flex origin-bottom items-center gap-3 max-[400px]:scale-[0.8] min-[1200px]:gap-[18px]">
       <div className="flex h-[128px] w-[96px] flex-col gap-1.5 rounded-[10px] border border-dashed bg-muted p-3.5 min-[1200px]:h-[170px] min-[1200px]:w-[130px]">
         {PLAIN_LINES.map((width, index) => (
-          <span key={index} style={{ width }} className="h-1 rounded-xs bg-border" />
+          <span
+            key={index}
+            style={{ width, '--delay': `${index * 60}ms` } as CSSProperties}
+            className="art-line h-1 origin-left rounded-xs bg-border"
+          />
         ))}
       </div>
-      <span className="grid size-11 shrink-0 place-items-center rounded-full bg-accent text-navy">
+      <span className="art-pop grid size-11 shrink-0 place-items-center rounded-full bg-accent text-navy [--delay:600ms]">
         <ArrowRight className="size-[18px]" />
       </span>
       <div className="isolate flex">
-        <StyledPage className="shadow-[0_18px_40px_-14px_rgba(14,42,71,0.4)]" />
-        <StyledPage className="-z-10 -ml-[70px] rotate-[4deg] min-[1200px]:-ml-[60px]" />
+        <StyledPage className="art-drop shadow-[0_18px_40px_-14px_rgba(14,42,71,0.4)] [--delay:850ms]" />
+        <StyledPage className="art-tilt -z-10 -ml-[70px] rotate-[4deg] min-[1200px]:-ml-[60px] [--delay:1150ms]" />
       </div>
     </div>
   );
