@@ -6,10 +6,15 @@ import { cn } from '@/shared/presentation/utils/shadcn';
 
 const LEGAL_PAGES = ['terms', 'privacy', 'refunds'] as const;
 
+const COMPANY_NETWORKS = ['linkedin', 'x'] as const;
+
+const bottomLinkClassName = cn('transition-colors hover:text-on-navy', focusRingClassName);
+
 /** Contact block, legal line and legal links, shown at the bottom of every page */
 export function SiteFooter() {
   const t = useTranslations('shared.layout.footer');
-  const { links, legal } = clientConfig;
+  const { links, legal, companyProfiles } = clientConfig;
+  const networks = COMPANY_NETWORKS.filter((network) => companyProfiles[network]);
 
   const contacts = [
     { label: t('support'), email: links.supportEmail },
@@ -45,13 +50,24 @@ export function SiteFooter() {
         </div>
         <div className="mt-16 flex flex-wrap justify-between gap-4 text-sm text-on-navy-soft">
           <span>{t('copyright', { year: new Date().getFullYear() })}</span>
-          <nav className="flex gap-6">
-            {LEGAL_PAGES.map((page) => (
-              <Link key={page} href={legal[page]} className={cn('transition-colors hover:text-on-navy', focusRingClassName)}>
-                {t(`links.${page}`)}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {networks.length > 0 && (
+              <nav className="flex gap-6">
+                {networks.map((network) => (
+                  <a key={network} href={companyProfiles[network]} target="_blank" rel="noopener noreferrer" className={bottomLinkClassName}>
+                    {t(`profiles.${network}`)}
+                  </a>
+                ))}
+              </nav>
+            )}
+            <nav className="flex gap-6">
+              {LEGAL_PAGES.map((page) => (
+                <Link key={page} href={legal[page]} className={bottomLinkClassName}>
+                  {t(`links.${page}`)}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

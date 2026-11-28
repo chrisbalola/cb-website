@@ -37,6 +37,10 @@
         "terms": "Terms",
         "privacy": "Privacy",
         "refunds": "Refunds"
+      },
+      "profiles": {
+        "linkedin": "LinkedIn",
+        "x": "X"
       }
     }
   }
