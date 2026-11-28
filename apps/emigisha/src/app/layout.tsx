@@ -1,13 +1,13 @@
-import { Inter, Outfit } from 'next/font/google';
+import { Instrument_Sans, Outfit } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { clientConfig } from '@/core/config/client-config';
 
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-instrument-sans',
 });
 
 const outfit = Outfit({
@@ -23,7 +23,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${outfit.variable} antialiased`} suppressHydrationWarning>
+      <body className={`${instrumentSans.variable} ${outfit.variable} antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="emigisha-theme">
           {children}
         </ThemeProvider>

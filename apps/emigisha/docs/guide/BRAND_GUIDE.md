@@ -47,7 +47,7 @@ Tokens live in `src/app/globals.css`.
 ## Type
 
 - Display: Outfit, weights 400 to 600. Wordmark, headlines, product names. Headlines are tight (`-0.045em` for the hero, `-0.04em` for section titles).
-- Text: Inter, weights 400 to 600. Base size `1.0625rem`, line height `1.6`.
+- Text: Instrument Sans, weights 400 to 600. Base size `1.0625rem`, line height `1.6`.
 
 Both are loaded with `next/font` in `src/app/layout.tsx`.
 
