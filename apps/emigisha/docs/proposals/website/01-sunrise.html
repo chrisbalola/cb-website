@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emigisha website: A, Sunrise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0E2A47;
+    --navy-deep: #081B30;
+    --gold: #F2B33D;
+    --gold-soft: #F8D58C;
+    --page: #F5F7FA;
+    --card: #FFFFFF;
+    --ink: #0E2A47;
+    --soft: #4D6079;
+    --line: #DCE3EC;
+    --chip: #ECEFF3;
+    --on-navy: #FFFFFF;
+    --on-navy-soft: #A9B8CA;
+    --navy-line: #1F4167;
+  }
+  :root[data-theme="dark"] {
+    --page: #0A1F36;
+    --card: #10294A;
+    --ink: #F1F5FA;
+    --soft: #A9B8CA;
+    --line: #1F4167;
+    --chip: #163659;
+    --navy: #0E2A47;
+    --navy-deep: #06162A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--page); color: var(--ink); font: 400 1.0625rem/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3, .brand, .num, .big-mail { font-family: Outfit, system-ui, sans-serif; }
+  .wrap { width: min(1200px, 100% - 2 * clamp(1.25rem, 4vw, 3rem)); margin-inline: auto; }
+  .eyebrow { font: 500 0.8125rem/1 Inter, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft); }
+
+  /* nav */
+  .nav { position: absolute; inset: 0 0 auto; z-index: 3; }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 1.5rem; letter-spacing: -0.03em; color: #fff; text-decoration: none; }
+  .brand svg { width: 34px; height: 34px; }
+  .links { display: flex; align-items: center; gap: 2rem; font-size: 0.9375rem; color: var(--on-navy-soft); }
+  .links a { text-decoration: none; transition: color .2s; }
+  .links a:hover { color: #fff; }
+  .pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.1rem; border-radius: 999px; background: var(--gold); color: var(--navy) !important; font-weight: 600; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+  .pill:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(242,179,61,.35); }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; background: radial-gradient(120% 90% at 50% 0%, #163A61 0%, var(--navy) 45%, var(--navy-deep) 100%); color: var(--on-navy); min-height: 860px; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 150px clamp(1.25rem, 4vw, 3rem) 0; isolation: isolate; }
+  .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(60% 60% at 50% 40%, #000, transparent); z-index: -1; }
+  .glow { position: absolute; width: 900px; height: 900px; left: 50%; top: 120px; transform: translateX(-50%); background: radial-gradient(circle, rgba(242,179,61,.28) 0%, rgba(242,179,61,.08) 30%, transparent 60%); z-index: -1; animation: breathe 7s ease-in-out infinite; }
+  .mark { width: 168px; height: 168px; overflow: visible; }
+  .mark .sun { transform-origin: 50px 32px; animation: settle 1.8s cubic-bezier(.2,.8,.2,1) both; }
+  .mark .bowl { animation: rise 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .hero .eyebrow { color: var(--gold-soft); margin-top: 2.25rem; animation: fade .9s .5s both; }
+  .hero h1 { font-weight: 600; font-size: clamp(2.9rem, 7.2vw, 6.25rem); line-height: 1; letter-spacing: -0.045em; max-width: 12ch; margin-top: 1.25rem; animation: fade .9s .65s both; }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero p.lede { max-width: 36rem; margin-top: 1.5rem; font-size: 1.1875rem; color: var(--on-navy-soft); animation: fade .9s .8s both; }
+  .cta { display: flex; gap: 0.75rem; margin-top: 2.25rem; flex-wrap: wrap; justify-content: center; animation: fade .9s .95s both; }
+  .ghost { display: inline-flex; align-items: center; padding: 0.6rem 1.1rem; border-radius: 999px; border: 1px solid var(--navy-line); color: #fff; text-decoration: none; font-weight: 500; transition: background .2s; }
+  .ghost:hover { background: rgba(255,255,255,.06); }
+  .horizon { position: absolute; left: 50%; bottom: -760px; width: 1400px; height: 1000px; transform: translateX(-50%); border-radius: 50%; border: 1px solid rgba(242,179,61,.35); box-shadow: 0 -30px 120px rgba(242,179,61,.12), inset 0 30px 80px rgba(242,179,61,.06); z-index: -1; }
+  @keyframes settle { from { transform: translateY(-46px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes rise { from { transform: translateY(18px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes fade { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes breathe { 50% { opacity: .75; transform: translateX(-50%) scale(1.04); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; } }
+
+  /* sections */
+  section { padding: clamp(5rem, 10vw, 8rem) 0; }
+  .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: end; margin-bottom: 3rem; }
+  .head h2 { font-weight: 600; font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.04; letter-spacing: -0.04em; margin-top: 1rem; }
+  .head > p { color: var(--soft); max-width: 30rem; justify-self: end; }
+
+  .products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .product { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 2rem; min-height: 280px; display: flex; flex-direction: column; text-decoration: none; transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s; overflow: hidden; }
+  .product:hover { transform: translateY(-4px); box-shadow: 0 24px 60px -24px rgba(14,42,71,.35); }
+  .product .top { display: flex; justify-content: space-between; align-items: center; }
+  .icon { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--chip); color: var(--ink); }
+  .icon svg { width: 26px; height: 26px; }
+  .status { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 500; color: var(--soft); padding: 0.35rem 0.75rem; border: 1px solid var(--line); border-radius: 999px; }
+  .status i { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid currentColor; }
+  .status.live { color: var(--ink); }
+  .status.live i { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 4px rgba(242,179,61,.2); }
+  .product h3 { margin-top: auto; padding-top: 2.5rem; font-weight: 600; font-size: 2rem; letter-spacing: -0.035em; line-height: 1; }
+  .product p { margin-top: 0.6rem; color: var(--soft); max-width: 28rem; }
+  .product .go { position: absolute; right: 2rem; bottom: 2rem; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--chip); transition: background .3s, color .3s, transform .3s; }
+  .product:hover .go { background: var(--gold); color: var(--navy); transform: rotate(-45deg); }
+  .product.feature p { padding-right: 3.5rem; }
+  .product.feature { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .product.feature p { color: var(--on-navy-soft); }
+  .product.feature .icon, .product.feature .go { background: rgba(255,255,255,.08); color: #fff; }
+  .product.feature .status { border-color: var(--navy-line); color: #fff; }
+  .product.feature::after { content: ""; position: absolute; width: 360px; height: 360px; right: -120px; top: -140px; background: radial-gradient(circle, rgba(242,179,61,.35), transparent 65%); }
+
+  .band { background: var(--navy); color: #fff; border-radius: 40px; padding: clamp(3rem, 6vw, 5rem); position: relative; overflow: hidden; }
+  .band .eyebrow { color: var(--gold-soft); }
+  .band h2 { font-weight: 600; font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.04; letter-spacing: -0.04em; max-width: 16ch; margin-top: 1rem; }
+  .principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; margin-top: 3.5rem; }
+  .principles div { border-top: 1px solid var(--navy-line); padding-top: 1.5rem; }
+  .num { color: var(--gold); font-weight: 500; font-size: 0.9375rem; }
+  .principles h3 { font-weight: 600; font-size: 1.5rem; letter-spacing: -0.02em; margin-top: 0.75rem; }
+  .principles p { color: var(--on-navy-soft); margin-top: 0.5rem; }
+  .band::after { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -220px; background: radial-gradient(circle, rgba(242,179,61,.22), transparent 65%); pointer-events: none; }
+
+  .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .about h2 { font-weight: 600; font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.04; letter-spacing: -0.04em; margin-top: 1rem; }
+  .about .text p { font-size: 1.1875rem; color: var(--soft); }
+  .about .text p + p { margin-top: 1.25rem; }
+  .about .text strong { color: var(--ink); font-weight: 500; }
+  .founder { display: flex; align-items: center; gap: 1rem; margin-top: 2.25rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #E0901A); display: grid; place-items: center; font: 600 1.125rem Outfit, sans-serif; color: var(--navy); }
+  .founder b { display: block; font-weight: 600; }
+  .founder span { color: var(--soft); font-size: 0.9375rem; }
+  .founder nav { margin-left: auto; display: flex; gap: 1rem; font-size: 0.9375rem; }
+
+  /* footer */
+  footer { background: var(--navy-deep); color: #fff; padding: clamp(5rem, 10vw, 8rem) 0 2.5rem; position: relative; overflow: hidden; }
+  footer .eyebrow { color: var(--gold-soft); }
+  .big-mail { display: inline-block; margin-top: 1.25rem; font-weight: 600; font-size: clamp(2.4rem, 7.5vw, 6.5rem); line-height: 1; letter-spacing: -0.045em; text-decoration: none; background: linear-gradient(90deg, #fff 0%, #fff 50%, var(--gold) 50%); background-size: 200% 100%; background-position: 0 0; -webkit-background-clip: text; background-clip: text; color: transparent; transition: background-position .6s cubic-bezier(.2,.8,.2,1); }
+  .big-mail:hover { background-position: -100% 0; }
+  .contacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--navy-line); }
+  .contacts span { display: block; color: var(--on-navy-soft); font-size: 0.875rem; }
+  .contacts a { text-decoration: none; font-weight: 500; }
+  .contacts a:hover { color: var(--gold); }
+  .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 4rem; color: var(--on-navy-soft); font-size: 0.875rem; }
+  .legal nav { display: flex; gap: 1.5rem; }
+  .legal a { text-decoration: none; }
+  .legal a:hover { color: #fff; }
+
+  .toggle { position: fixed; right: 1rem; bottom: 1rem; z-index: 10; font: 500 0.8125rem Inter, sans-serif; padding: 0.5rem 0.9rem; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+
+  @media (max-width: 860px) {
+    .links a:not(.pill) { display: none; }
+    .hero { min-height: 760px; padding-top: 130px; }
+    .mark { width: 128px; height: 128px; }
+    .head, .about { grid-template-columns: 1fr; }
+    .head > p { justify-self: start; }
+    .products, .principles, .contacts { grid-template-columns: 1fr; }
+    .product { min-height: 240px; padding: 1.5rem; }
+    .product .go { right: 1.5rem; bottom: 1.5rem; }
+    .band { border-radius: 28px; }
+    .founder { flex-wrap: wrap; }
+    .founder nav { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg viewBox="10 17 80 66" aria-hidden="true"><circle cx="50" cy="32" r="15" fill="#F2B33D"/><path d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="#fff"/></svg>
+      Emigisha
+    </a>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#principles">Principles</a>
+      <a href="#about">About</a>
+      <a class="pill" href="#contact">Say hello</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="glow"></div>
+    <div class="horizon"></div>
+    <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Emigisha symbol: a sun settling into a bowl">
+      <circle class="sun" cx="50" cy="32" r="15" fill="#F2B33D"/>
+      <path class="bowl" d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="#fff"/>
+    </svg>
+    <p class="eyebrow">Emigisha means blessings</p>
+    <h1>Software that <em>gives back.</em></h1>
+    <p class="lede">We build focused apps for people and small businesses everywhere. They work on cheap phones, slow networks and mobile money as well as anywhere else.</p>
+    <div class="cta">
+      <a class="pill" href="#products">See our products</a>
+      <a class="ghost" href="#about">Our story</a>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Products</p>
+          <h2>Four apps. One standard.</h2>
+        </div>
+        <p>Each product has its own name, its own site and its own users. Emigisha is the company behind them.</p>
+      </div>
+      <div class="products">
+        <a class="product feature" href="https://meneja.app">
+          <div class="top">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V12M10 20V6M16 20v-5M21 20H3"/><circle cx="19" cy="6" r="2.2"/></svg></span>
+            <span class="status live"><i></i>Live</span>
+          </div>
+          <h3>Meneja</h3>
+          <p>Track money for yourself, your household or your business, online or offline.</p>
+          <span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <div class="product">
+          <div class="top">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3.5v5M20.5 12h-5M12 20.5v-5M3.5 12h5" stroke-linecap="round"/></svg></span>
+            <span class="status"><i></i>Coming soon</span>
+          </div>
+          <h3>Talatala</h3>
+          <p>Professional photos from your selfies. Pay by mobile money or card.</p>
+        </div>
+        <div class="product">
+          <div class="top">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M9 11h6M9 15h6M9 7h2"/></svg></span>
+            <span class="status"><i></i>Coming soon</span>
+          </div>
+          <h3>PrettyCV</h3>
+          <p>Chat your way to a polished CV that passes the filters. Pay once.</p>
+        </div>
+        <div class="product">
+          <div class="top">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12.5l9 5 9-5M3 17l9 5 9-5" stroke-linecap="round"/></svg></span>
+            <span class="status"><i></i>Coming soon</span>
+          </div>
+          <h3>StyledDoc</h3>
+          <p>Turn plain documents into well-designed PDFs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles" style="padding-top: 0">
+    <div class="wrap">
+      <div class="band">
+        <p class="eyebrow">Principles</p>
+        <h2>A product should leave you better off than it found you.</h2>
+        <div class="principles">
+          <div><span class="num">01</span><h3>Useful first</h3><p>Each product solves one real problem, and solves it well.</p></div>
+          <div><span class="num">02</span><h3>Honest pricing</h3><p>Clear prices. No trial traps, no surprise renewals.</p></div>
+          <div><span class="num">03</span><h3>Built for everyone</h3><p>Cheap phones, slow networks and local payment methods come first, not last.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding-top: clamp(3rem, 6vw, 5rem)">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Most software skips most of the world. We don't.</h2>
+      </div>
+      <div class="text">
+        <p>Most software is built for people with fast internet, new phones and a credit card. <strong>Emigisha builds for everyone else too.</strong> Our products support the things big tools tend to skip: mobile money, low connectivity, local languages.</p>
+        <p>The name comes from Mashi, the language of the Bashi people of eastern Congo. It means blessings, and it is the bar we hold our work to.</p>
+        <div class="founder">
+          <span class="avatar">CB</span>
+          <div><b>Christian Balola</b><span>Founder · Nairobi and Kampala</span></div>
+          <nav><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">X</a></nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <a class="big-mail" href="mailto:hello@emigisha.com">hello@emigisha.com</a>
+    <div class="contacts">
+      <div><span>Support</span><a href="mailto:support@emigisha.com">support@emigisha.com</a></div>
+      <div><span>Legal</span><a href="mailto:legal@emigisha.com">legal@emigisha.com</a></div>
+      <div><span>Careers</span>No open roles. Write to us anyway.</div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Emigisha LLC, a Delaware limited liability company.</span>
+      <nav><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Refunds</a></nav>
+    </div>
+  </div>
+</footer>
+
+<button class="toggle" type="button" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Light / dark</button>
+<script>
+  var t = new URLSearchParams(location.search).get('theme');
+  if (t) document.documentElement.dataset.theme = t;
+</script>
+</body>
+</html>
