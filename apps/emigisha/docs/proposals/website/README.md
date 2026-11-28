@@ -91,6 +91,10 @@ Each mockup has a light and dark toggle in the corner, and needs internet access
 - Best at: explaining the model (one company, many products) in a single picture. The most premium and "tech" of the six.
 - Risk: the product icons are placeholders I drew; each product's real icon should replace them. The dark default is less warm than the others.
 
+## Decision (28 Nov 2026)
+
+G, Sunrise with the Orbit sky (`07-sunrise-orbit.html`). The site is built from it: content, palette, typefaces, hero, product bento and the neutral dark mode as in the mockup.
+
 ## Round 3: G, Sunrise with the Orbit sky
 
 `07-sunrise-orbit.html`
