@@ -41,7 +41,7 @@ function ProductTile({ product, featured }: { product: Product; featured: boolea
         <StatusChip status={product.status} />
       </div>
       <p className="mt-2 max-w-[26rem] text-muted-foreground">{t(`${product.key}.description`)}</p>
-      <div className="mt-auto flex items-end justify-center pt-6">
+      <div aria-hidden className="mt-auto flex items-end justify-center pt-6">
         <ProductArt productKey={product.key} />
       </div>
     </>
