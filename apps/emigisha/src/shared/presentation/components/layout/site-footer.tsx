@@ -52,7 +52,7 @@ export function SiteFooter() {
           <span>{t('copyright', { year: new Date().getFullYear() })}</span>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {networks.length > 0 && (
-              <nav className="flex gap-6">
+              <nav aria-label={t('profilesLabel')} className="flex gap-6">
                 {networks.map((network) => (
                   <a key={network} href={companyProfiles[network]} target="_blank" rel="noopener noreferrer" className={bottomLinkClassName}>
                     {t(`profiles.${network}`)}
@@ -60,7 +60,7 @@ export function SiteFooter() {
                 ))}
               </nav>
             )}
-            <nav className="flex gap-6">
+            <nav aria-label={t('legalLabel')} className="flex gap-6">
               {LEGAL_PAGES.map((page) => (
                 <Link key={page} href={legal[page]} className={bottomLinkClassName}>
                   {t(`links.${page}`)}

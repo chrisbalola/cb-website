@@ -41,7 +41,9 @@
       "profiles": {
         "linkedin": "LinkedIn",
         "x": "X"
-      }
+      },
+      "profilesLabel": "Emigisha profiles",
+      "legalLabel": "Legal"
     }
   }
 }
