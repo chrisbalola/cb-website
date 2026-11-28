@@ -53,7 +53,7 @@
   },
   "principles": {
     "eyebrow": "Principles",
-    "title": "A product should leave you better off than it found you.",
+    "title": "Three rules every app follows.",
     "items": {
       "useful": {
         "title": "Useful first",
@@ -73,7 +73,7 @@
     "eyebrow": "About",
     "title": "Most software skips most of the world. We don't.",
     "everyone": "Most software is built for people with fast internet, new phones and a credit card. <strong>Emigisha builds for everyone else too.</strong> Our products support the things big tools tend to skip: mobile money, low connectivity, local languages.",
-    "name": "The name comes from Mashi, the language of the Bashi people of eastern Congo. It means blessings, and it is the bar we hold our work to.",
+    "name": "The name comes from Mashi, the language of the Bashi people of eastern Congo. It means blessings. That is the test for every app we make: does it make life better for the people who use it?",
     "founder": {
       "initials": "CB",
       "name": "Christian Balola",
