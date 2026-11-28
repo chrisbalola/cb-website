@@ -4,6 +4,18 @@ Plan for the three pages the emigisha.com footer links to (`/terms`, `/privacy`,
 
 This is general information, not legal advice. The drafts are written to be short and to protect Emigisha, LLC where it matters most (liability, AI output, refunds, people in photos). Have a lawyer read the final versions once, before the payment provider reviews.
 
+## Decisions (28 Nov 2026)
+
+- Governing law: Delaware law and Delaware courts, with local consumer rights kept.
+- Minimum age: 18.
+- Liability cap: the greater of what the customer paid in the last 12 months or US$100.
+- Refunds: the company page sets the default (failed generations return credits, unused credits refundable within 14 days, used credits not). Each app's own terms may set more specific rules, such as credit expiry.
+- Privacy and deletion requests go to support@emigisha.com; no separate privacy@ mailbox.
+- Mailing address: left out until there is one. Set `NEXT_PUBLIC_MAILING_ADDRESS` and it appears on all three pages.
+- No draft banner; each page shows a "Last updated" date.
+
+Built: `/terms`, `/privacy` (with `#delete-account`) and `/refunds` on emigisha.com. The published pages are now the source of truth; the drafts in section 6 are kept as the starting point. The privacy policy leaves out "our AI providers do not train on your data" until that is confirmed for fal.ai and Anthropic (section 8).
+
 ## 1. What exists today
 
 | Product                 | Terms                                   | Privacy                        | Refunds                    | Problems                                                                                                                                                                                                                                                                                                                    |
@@ -155,7 +167,7 @@ Placeholders are in square brackets.
 ## 7. Implementation plan
 
 1. **Decide** the points in section 5 and fill the placeholders.
-2. **Pages on emigisha.com** (this repo): a `legal` feature with `terms`, `privacy` and `refunds` pages under `src/features/legal/presentation/pages/`, routes in `src/app/[locale]/`, text in `src/features/legal/presentation/i18n/en.json`. Simple reading layout in the site's style (navy header band, one text column). "Last updated" date on each page. Add the new `privacy@` address to the config and footer.
+2. **Pages on emigisha.com** (this repo, done): a `legal` feature with `terms`, `privacy` and `refunds` pages under `src/features/legal/presentation/pages/`, routes in `src/app/[locale]/`, text in `src/features/legal/presentation/i18n/en.json`. Simple reading layout in the site's style (navy header band, one text column). "Last updated" date on each page. Add the new `privacy@` address to the config and footer.
 3. **Checkout consent in each paid product**: an EU-safe checkbox before credits are delivered ("I want my credits now and understand I lose my 14-day right to cancel once I use them"), and the same line in the receipt email.
 4. **Products link to the company pages**: Talatala, PrettyCV and StyledDoc footers and sign-up screens link to emigisha.com/terms, /privacy and /refunds. Keep only product-specific rules on the product sites (Talatala's consent rule; StyledDoc's credit expiry).
 5. **Fix the product texts**:
