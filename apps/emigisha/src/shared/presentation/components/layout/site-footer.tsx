@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { clientConfig } from '@/core/config/client-config';
+import { containerClassName, eyebrowClassName, focusRingClassName } from '@/shared/presentation/utils/class-names';
 import { cn } from '@/shared/presentation/utils/shadcn';
-import { containerClassName, eyebrowClassName, focusRingClassName } from '../class-names';
 
 const LEGAL_PAGES = ['terms', 'privacy', 'refunds'] as const;
 
-export function HomeFooter() {
-  const t = useTranslations('home.footer');
+/** Contact block, legal line and legal links, shown at the bottom of every page */
+export function SiteFooter() {
+  const t = useTranslations('shared.layout.footer');
   const { links, legal } = clientConfig;
 
   const contacts = [

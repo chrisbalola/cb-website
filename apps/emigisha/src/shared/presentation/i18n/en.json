@@ -16,5 +16,27 @@
       "title": "Emigisha",
       "description": "Emigisha means blessings. We build focused apps for people and small businesses everywhere: Meneja, Talatala and StyledDoc."
     }
+  },
+  "layout": {
+    "nav": {
+      "wordmark": "Emigisha",
+      "products": "Products",
+      "principles": "Principles",
+      "about": "About",
+      "sayHello": "Say hello"
+    },
+    "footer": {
+      "eyebrow": "Contact",
+      "support": "Support",
+      "legal": "Legal",
+      "careers": "Careers",
+      "careersText": "No open roles. Write to us anyway.",
+      "copyright": "© {year} Emigisha, LLC · A Delaware limited liability company",
+      "links": {
+        "terms": "Terms",
+        "privacy": "Privacy",
+        "refunds": "Refunds"
+      }
+    }
   }
 }

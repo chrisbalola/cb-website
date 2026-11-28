@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { cn } from '@/shared/presentation/utils/shadcn';
-import { containerClassName, eyebrowClassName, sectionTitleClassName } from '../class-names';
+import { containerClassName, eyebrowClassName, sectionTitleClassName } from '@/shared/presentation/utils/class-names';
 
 const PRINCIPLES = ['useful', 'honest', 'everyone'] as const;
 

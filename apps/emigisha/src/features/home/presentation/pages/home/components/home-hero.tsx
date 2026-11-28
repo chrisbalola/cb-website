@@ -1,45 +1,15 @@
 import { useTranslations } from 'next-intl';
+import { SiteHeader } from '@/shared/presentation/components/layout/site-header';
 import { BrandSymbol } from '@/shared/presentation/components/misc/brand-symbol';
-import { ThemeToggleButton } from '@/shared/presentation/components/misc/theme-toggle-button';
+import { eyebrowClassName, focusRingClassName, goldButtonClassName } from '@/shared/presentation/utils/class-names';
 import { cn } from '@/shared/presentation/utils/shadcn';
-import { containerClassName, eyebrowClassName, focusRingClassName } from '../class-names';
-
-const goldButtonClassName =
-  'inline-flex items-center rounded-full bg-accent px-[1.1rem] py-[0.6rem] font-semibold whitespace-nowrap text-navy transition-transform hover:-translate-y-px';
-
-const navLinkClassName = cn('transition-colors hover:text-on-navy', focusRingClassName);
-
-/** Section links that only fit next to the products link on wide screens */
-const wideNavLinkClassName = cn(navLinkClassName, 'max-[860px]:hidden');
 
 export function HomeHero() {
   const t = useTranslations('home');
 
   return (
     <section className="hero-sky relative isolate flex min-h-[760px] flex-col items-center overflow-hidden px-[clamp(1.25rem,4vw,3rem)] pt-[130px] text-center text-on-navy min-[860px]:min-h-[860px] min-[860px]:pt-[150px]">
-      <header className="absolute inset-x-0 top-0 z-10">
-        <div className={cn(containerClassName, 'flex h-21 items-center justify-between')}>
-          <a href="#" className={cn('flex items-center gap-[0.6rem] font-display text-2xl font-semibold tracking-[-0.03em]', focusRingClassName)}>
-            <BrandSymbol cropped className="size-[34px]" />
-            <span className="max-[420px]:sr-only">{t('nav.wordmark')}</span>
-          </a>
-          <nav className="flex items-center gap-4 text-[0.9375rem] text-on-navy-soft min-[860px]:gap-8">
-            <a href="#products" className={navLinkClassName}>
-              {t('nav.products')}
-            </a>
-            <a href="#principles" className={wideNavLinkClassName}>
-              {t('nav.principles')}
-            </a>
-            <a href="#about" className={wideNavLinkClassName}>
-              {t('nav.about')}
-            </a>
-            <ThemeToggleButton />
-            <a href="#contact" className={cn(goldButtonClassName, focusRingClassName)}>
-              {t('nav.sayHello')}
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader className="absolute inset-x-0 top-0 z-10" />
 
       <div aria-hidden className="hero-glow absolute top-[120px] left-[calc(50%-450px)] -z-10 size-[900px]" />
       <div

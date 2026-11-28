@@ -1,11 +1,4 @@
 {
-  "nav": {
-    "wordmark": "Emigisha",
-    "products": "Products",
-    "principles": "Principles",
-    "about": "About",
-    "sayHello": "Say hello"
-  },
   "hero": {
     "symbolAlt": "Emigisha symbol: a sun settling into a bowl",
     "eyebrow": "Emigisha means blessings",
@@ -90,19 +83,6 @@
       "github": "GitHub",
       "linkedin": "LinkedIn",
       "x": "X"
-    }
-  },
-  "footer": {
-    "eyebrow": "Contact",
-    "support": "Support",
-    "legal": "Legal",
-    "careers": "Careers",
-    "careersText": "No open roles. Write to us anyway.",
-    "copyright": "© {year} Emigisha, LLC · A Delaware limited liability company",
-    "links": {
-      "terms": "Terms",
-      "privacy": "Privacy",
-      "refunds": "Refunds"
     }
   }
 }
