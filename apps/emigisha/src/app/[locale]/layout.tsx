@@ -9,12 +9,9 @@ import { pageMetadata } from '@/core/utils/page-metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('shared.pages.home');
-  const title = t('title');
-  const description = t('description');
-
   return {
     metadataBase: new URL(clientConfig.siteUrl),
-    ...pageMetadata({ title, description, path: '/', siteName: title }),
+    ...pageMetadata({ title: t('documentTitle'), description: t('description'), path: '/', siteName: t('title') }),
   };
 }
 
