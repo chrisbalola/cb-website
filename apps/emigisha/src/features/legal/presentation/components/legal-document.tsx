@@ -5,7 +5,7 @@ import { SiteFooter } from '@/shared/presentation/components/layout/site-footer'
 import { SiteHeader } from '@/shared/presentation/components/layout/site-header';
 import { containerClassName, focusRingClassName } from '@/shared/presentation/utils/class-names';
 import { cn } from '@/shared/presentation/utils/shadcn';
-import { legalUpdatedAt } from '../../legal-updated-at';
+import { legalUpdatedAt } from '../legal-updated-at';
 
 type LegalNamespace = 'terms' | 'privacy' | 'refunds';
 

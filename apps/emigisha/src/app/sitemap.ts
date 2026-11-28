@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { clientConfig } from '@/core/config/client-config';
-import { legalUpdatedAt } from '@/features/legal/legal-updated-at';
+import { legalUpdatedAt } from '@/features/legal/presentation/legal-updated-at';
 
 const LEGAL_PAGES = ['/terms', '/privacy', '/refunds'] as const;
 
