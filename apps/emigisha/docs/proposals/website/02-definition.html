@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emigisha website: B, Definition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0E2A47;
+    --gold: #F2B33D;
+    --gold-deep: #A86F07;
+    --paper: #FAF8F3;
+    --card: #FFFFFF;
+    --ink: #0E2A47;
+    --soft: #56677D;
+    --faint: #8A97A8;
+    --rule: #E3DED3;
+    --row-hover: #0E2A47;
+    --on-hover: #FFFFFF;
+  }
+  :root[data-theme="dark"] {
+    --paper: #0B1E33;
+    --card: #10294A;
+    --ink: #F2F5F9;
+    --soft: #A9B8CA;
+    --faint: #6F849C;
+    --rule: #1F3D5F;
+    --gold-deep: #F2B33D;
+    --row-hover: #F2B33D;
+    --on-hover: #0E2A47;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  .display, h1, h2, h3, .brand { font-family: Outfit, system-ui, sans-serif; }
+  .wrap { width: min(1280px, 100% - 2 * clamp(1.25rem, 4vw, 3.5rem)); margin-inline: auto; }
+  .label { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+
+  header { border-bottom: 1px solid var(--rule); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 1.4rem; letter-spacing: -0.03em; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; }
+  .brand .bowl { fill: var(--ink); }
+  header nav { display: flex; gap: 2.25rem; font-size: 0.9375rem; color: var(--soft); }
+  header nav a { text-decoration: none; position: relative; }
+  header nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+  header nav a:hover { color: var(--ink); }
+  header nav a:hover::after { transform: scaleX(1); }
+
+  /* the entry */
+  .entry { padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3rem, 6vw, 5rem); border-bottom: 1px solid var(--rule); }
+  .entry .meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; align-items: baseline; color: var(--soft); font-size: 1.0625rem; }
+  .entry .meta .ipa { font-family: Outfit, sans-serif; font-weight: 300; font-size: 1.5rem; color: var(--ink); }
+  .entry .meta i { font-style: italic; }
+  .word { font-family: Outfit, sans-serif; font-weight: 600; font-size: clamp(4.25rem, 23.5vw, 22rem); line-height: 0.86; letter-spacing: -0.055em; margin: 1.5rem 0 0 -0.04em; display: flex; align-items: flex-end; gap: 0.06em; }
+  .word .sun { width: 0.22em; height: 0.22em; border-radius: 50%; background: var(--gold); flex: none; margin-bottom: 0.08em; animation: drop 1.4s .2s cubic-bezier(.2,.8,.2,1) both; }
+  .word span.syl { color: var(--ink); }
+  .word span.dot { color: var(--gold); font-weight: 300; }
+  @keyframes drop { from { transform: translateY(-0.9em); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  .senses { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+  .sense { display: grid; grid-template-columns: 2.25rem 1fr; gap: 0.25rem; }
+  .sense b { font-family: Outfit, sans-serif; font-weight: 500; font-size: 1.125rem; color: var(--gold-deep); }
+  .sense p { font-size: 1.25rem; line-height: 1.45; }
+  .sense p small { display: block; margin-top: 0.5rem; font-size: 0.9375rem; color: var(--soft); line-height: 1.5; }
+  .sense.lead p { font-family: Outfit, sans-serif; font-size: 1.75rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
+
+  /* sections */
+  section { padding: clamp(4.5rem, 9vw, 7.5rem) 0; border-bottom: 1px solid var(--rule); }
+  .sec-head { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); align-items: baseline; }
+  .sec-head h2 { font-weight: 500; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.035em; max-width: 18ch; }
+
+  /* product index */
+  .index { list-style: none; border-top: 1px solid var(--ink); }
+  .index a, .index .row { display: grid; grid-template-columns: 5rem minmax(0, 1.1fr) minmax(0, 1.6fr) 10rem 2.5rem; gap: 1.5rem; align-items: center; padding: 1.75rem 1.25rem; margin: 0 -1.25rem; text-decoration: none; border-radius: 16px; position: relative; transition: background .35s cubic-bezier(.2,.8,.2,1), color .35s; }
+  .index li { border-bottom: 1px solid var(--rule); }
+  .index .n { font-family: Outfit, sans-serif; color: var(--faint); font-size: 1rem; }
+  .index h3 { font-weight: 500; font-size: clamp(1.75rem, 3.2vw, 2.75rem); letter-spacing: -0.035em; line-height: 1; }
+  .index p { color: var(--soft); }
+  .index .st { font-size: 0.875rem; color: var(--soft); display: flex; align-items: center; gap: 0.5rem; }
+  .index .st i { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid currentColor; }
+  .index .st.live { color: var(--ink); font-weight: 500; }
+  .index .st.live i { background: var(--gold); border-color: var(--gold); }
+  .index .arrow { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--rule); display: grid; place-items: center; transition: transform .35s, background .35s, border-color .35s; }
+  .index a:hover { background: var(--row-hover); color: var(--on-hover); }
+  .index a:hover p, .index a:hover .n, .index a:hover .st { color: inherit; opacity: .85; }
+  .index a:hover .arrow { background: var(--gold); border-color: var(--gold); color: var(--navy); transform: rotate(-45deg); }
+  .index .row { opacity: 1; }
+  .index .row h3 { color: var(--ink); }
+
+  /* principles */
+  .prin { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+  .prin div { padding: 2rem 2rem 0 0; }
+  .prin div + div { padding-left: 2rem; border-left: 1px solid var(--rule); }
+  .prin .big { font-family: Outfit, sans-serif; font-weight: 300; font-size: 4.5rem; line-height: 1; color: var(--gold-deep); letter-spacing: -0.04em; }
+  .prin h3 { font-weight: 500; font-size: 1.625rem; letter-spacing: -0.02em; margin-top: 1.5rem; }
+  .prin p { color: var(--soft); margin-top: 0.5rem; max-width: 22rem; }
+
+  /* letter */
+  .letter { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+  .letter .body { max-width: 40rem; }
+  .letter .body p { font-family: Outfit, sans-serif; font-weight: 400; font-size: clamp(1.375rem, 2.2vw, 1.75rem); line-height: 1.4; letter-spacing: -0.015em; }
+  .letter .body p + p { margin-top: 1.25rem; }
+  .letter .body mark { background: linear-gradient(transparent 62%, rgba(242,179,61,.45) 62%); color: inherit; }
+  .sign { display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; }
+  .sign svg { width: 44px; height: 44px; }
+  .sign b { display: block; font-weight: 600; }
+  .sign span { color: var(--soft); font-size: 0.9375rem; }
+  .sign a { color: var(--soft); }
+
+  footer { padding: clamp(4.5rem, 9vw, 7rem) 0 2.5rem; }
+  .write { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: end; }
+  .write a.mail { font-family: Outfit, sans-serif; font-weight: 500; font-size: clamp(2.25rem, 6.5vw, 5.75rem); line-height: 1; letter-spacing: -0.045em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25em; }
+  .write a.mail .sun { width: 0.32em; height: 0.32em; border-radius: 50%; background: var(--gold); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+  .write a.mail:hover .sun { transform: translateX(0.15em) scale(1.15); }
+  .addr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.9375rem; }
+  .addr span { display: block; color: var(--faint); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.35rem; }
+  .addr a { text-decoration: none; }
+  .addr a:hover { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 3rem; color: var(--faint); font-size: 0.875rem; }
+  .fine nav { display: flex; gap: 1.5rem; }
+  .fine a { text-decoration: none; }
+
+  .toggle { position: fixed; right: 1rem; bottom: 1rem; z-index: 10; font: 500 0.8125rem Inter, sans-serif; padding: 0.5rem 0.9rem; background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; cursor: pointer; }
+
+  @media (max-width: 900px) {
+    header nav a:not(:last-child) { display: none; }
+    .senses, .sec-head, .letter, .write { grid-template-columns: 1fr; }
+    .index a, .index .row { grid-template-columns: 2.5rem 1fr auto; row-gap: 0.4rem; padding: 1.5rem 1rem; margin: 0 -1rem; }
+    .index p { grid-column: 2 / -1; grid-row: 2; }
+    .index .st { grid-column: 2 / -1; grid-row: 3; }
+    .index .arrow { grid-column: 3; grid-row: 1; }
+    .prin { grid-template-columns: 1fr; }
+    .prin div, .prin div + div { padding: 1.75rem 0; border-left: 0; border-bottom: 1px solid var(--rule); }
+    .addr { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg viewBox="10 17 80 66" aria-hidden="true"><circle cx="50" cy="32" r="15" fill="#F2B33D"/><path class="bowl" d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z"/></svg>
+      Emigisha
+    </a>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#principles">Principles</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="entry">
+    <div class="wrap">
+      <div class="meta">
+        <span class="ipa">e·mi·gi·sha</span>
+        <span><i>noun</i></span>
+        <span>from Mashi, eastern Congo</span>
+      </div>
+      <h1 class="word" aria-label="Emigisha">
+        <span class="syl">emigisha</span><span class="sun" aria-hidden="true"></span>
+      </h1>
+      <div class="senses">
+        <div class="sense lead"><b>1.</b><p>Blessings.</p></div>
+        <div class="sense"><b>2.</b><p>A software company that builds focused apps for people and small businesses, everywhere.<small>Emigisha LLC, a Delaware limited liability company.</small></p></div>
+        <div class="sense"><b>3.</b><p>The standard each of its products is held to: leave the person using it better off.<small>Useful first, honest pricing, built for everyone.</small></p></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Products</p>
+        <h2>Each one with its own name, its own site, its own users.</h2>
+      </div>
+      <ol class="index">
+        <li><a href="https://meneja.app">
+          <span class="n">01</span>
+          <h3>Meneja</h3>
+          <p>Track money for yourself, your household or your business, online or offline.</p>
+          <span class="st live"><i></i>Live</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a></li>
+        <li><div class="row">
+          <span class="n">02</span>
+          <h3>Talatala</h3>
+          <p>Professional photos from your selfies. Pay by mobile money or card.</p>
+          <span class="st"><i></i>Coming soon</span>
+          <span></span>
+        </div></li>
+        <li><div class="row">
+          <span class="n">03</span>
+          <h3>PrettyCV</h3>
+          <p>Chat your way to a polished CV that passes the filters. Pay once.</p>
+          <span class="st"><i></i>Coming soon</span>
+          <span></span>
+        </div></li>
+        <li><div class="row">
+          <span class="n">04</span>
+          <h3>StyledDoc</h3>
+          <p>Turn plain documents into well-designed PDFs.</p>
+          <span class="st"><i></i>Coming soon</span>
+          <span></span>
+        </div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Principles</p>
+        <h2>Three rules every product follows.</h2>
+      </div>
+      <div class="prin">
+        <div><span class="big">i.</span><h3>Useful first</h3><p>Each product solves one real problem, and solves it well.</p></div>
+        <div><span class="big">ii.</span><h3>Honest pricing</h3><p>Clear prices. No trial traps, no surprise renewals.</p></div>
+        <div><span class="big">iii.</span><h3>Built for everyone</h3><p>Cheap phones, slow networks and local payment methods come first, not last.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap letter">
+      <p class="label">About</p>
+      <div class="body">
+        <p>Most software is built for people with fast internet, new phones and a credit card. <mark>Emigisha builds for everyone else too.</mark></p>
+        <p>Our products support the things big tools tend to skip: mobile money, low connectivity, local languages. We are a small remote team. We ship often and keep things simple.</p>
+        <div class="sign">
+          <svg viewBox="10 17 80 66" aria-hidden="true"><circle cx="50" cy="32" r="15" fill="#F2B33D"/><path d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="currentColor"/></svg>
+          <div><b>Christian Balola, founder</b><span>Nairobi and Kampala · <a href="#">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">X</a></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="write">
+      <p class="label">Write to us</p>
+      <a class="mail" href="mailto:hello@emigisha.com">hello@emigisha.com <span class="sun" aria-hidden="true"></span></a>
+    </div>
+    <div class="addr">
+      <div><span>Support</span><a href="mailto:support@emigisha.com">support@emigisha.com</a></div>
+      <div><span>Legal</span><a href="mailto:legal@emigisha.com">legal@emigisha.com</a></div>
+      <div><span>Careers</span>No open roles. Write anyway.</div>
+      <div><span>Company</span>Emigisha LLC, Delaware</div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Emigisha LLC, a Delaware limited liability company.</span>
+      <nav><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Refunds</a></nav>
+    </div>
+  </div>
+</footer>
+
+<button class="toggle" type="button" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Light / dark</button>
+<script>
+  var t = new URLSearchParams(location.search).get('theme');
+  if (t) document.documentElement.dataset.theme = t;
+</script>
+</body>
+</html>

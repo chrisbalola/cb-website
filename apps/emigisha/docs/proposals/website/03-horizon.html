@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emigisha website: C, Horizon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0E2A47;
+    --navy-2: #163A61;
+    --gold: #F2B33D;
+    --gold-soft: #FBE7BD;
+    --page: #EEF1F5;
+    --tile: #FFFFFF;
+    --tile-2: #F5F7FA;
+    --ink: #0E2A47;
+    --soft: #52647B;
+    --line: #DCE3EC;
+    --shadow: 0 1px 2px rgba(14,42,71,.06), 0 12px 32px -12px rgba(14,42,71,.18);
+  }
+  :root[data-theme="dark"] {
+    --page: #071629;
+    --tile: #0F2643;
+    --tile-2: #143154;
+    --ink: #F1F5FA;
+    --soft: #A3B3C6;
+    --line: #1E3C60;
+    --gold-soft: #3A3420;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -12px rgba(0,0,0,.5);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--page); color: var(--ink); font: 400 1rem/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  h1, h2, h3, .brand, .ui-num { font-family: Outfit, system-ui, sans-serif; }
+  .wrap { width: min(1240px, 100% - 2 * clamp(0.75rem, 2.5vw, 2rem)); margin-inline: auto; }
+
+  /* floating nav */
+  .nav { position: sticky; top: 14px; z-index: 20; margin-top: 14px; }
+  .nav .bar { display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 0.6rem 0 1.25rem; background: color-mix(in srgb, var(--tile) 82%, transparent); backdrop-filter: blur(14px); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow); }
+  .brand { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 1.3rem; letter-spacing: -0.03em; text-decoration: none; }
+  .brand svg { width: 28px; height: 28px; }
+  .brand .bowl { fill: var(--ink); }
+  .nav nav { display: flex; align-items: center; gap: 0.25rem; font-size: 0.9375rem; }
+  .nav nav a { text-decoration: none; padding: 0.5rem 0.9rem; border-radius: 999px; color: var(--soft); transition: background .2s, color .2s; }
+  .nav nav a:hover { background: var(--tile-2); color: var(--ink); }
+  .nav nav a.cta { background: var(--navy); color: #fff; font-weight: 500; }
+  :root[data-theme="dark"] .nav nav a.cta { background: var(--gold); color: var(--navy); }
+
+  /* hero panel */
+  .hero { margin-top: 14px; position: relative; overflow: hidden; border-radius: 40px; background: linear-gradient(160deg, #13365C 0%, var(--navy) 50%, #0A2039 100%); color: #fff; min-height: 640px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; isolation: isolate; }
+  .hero .copy { padding: clamp(2.5rem, 6vw, 5rem); position: relative; z-index: 2; }
+  .tag { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.35rem 0.9rem 0.35rem 0.4rem; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); font-size: 0.875rem; color: #DCE3EC; text-decoration: none; }
+  .tag b { background: var(--gold); color: var(--navy); font-weight: 600; font-size: 0.75rem; padding: 0.15rem 0.55rem; border-radius: 999px; }
+  .hero h1 { font-weight: 600; font-size: clamp(2.75rem, 6vw, 5.25rem); line-height: 0.98; letter-spacing: -0.045em; margin-top: 1.5rem; }
+  .hero h1 .u { position: relative; white-space: nowrap; }
+  .hero h1 .u svg { position: absolute; left: 0; right: 0; bottom: -0.14em; width: 100%; height: 0.24em; overflow: visible; }
+  .hero h1 .u path { stroke: var(--gold); stroke-width: 7; fill: none; stroke-linecap: round; stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 1.2s .6s cubic-bezier(.2,.8,.2,1) forwards; }
+  .hero p { margin-top: 2.25rem; font-size: 1.125rem; color: #A9B8CA; max-width: 30rem; }
+  .btns { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.3rem; border-radius: 999px; font-weight: 600; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+  .btn.gold { background: var(--gold); color: var(--navy); }
+  .btn.gold:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(242,179,61,.35); }
+  .btn.line { border: 1px solid rgba(255,255,255,.18); color: #fff; font-weight: 500; }
+  .art { position: relative; height: 100%; min-height: 520px; }
+  .art svg { position: absolute; width: 760px; right: -150px; bottom: -150px; }
+  .art .sun { animation: sink 2.2s cubic-bezier(.2,.8,.2,1) both; }
+  .art .halo { animation: glow 6s ease-in-out infinite; transform-origin: 50px 32px; }
+  .stars { position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(rgba(255,255,255,.5) 1px, transparent 1.2px), radial-gradient(rgba(255,255,255,.25) 1px, transparent 1.2px); background-size: 140px 140px, 90px 90px; background-position: 10px 20px, 60px 70px; mask-image: linear-gradient(to bottom, #000, transparent 70%); opacity: .5; }
+  @keyframes sink { from { transform: translateY(-28px); } to { transform: none; } }
+  @keyframes glow { 50% { opacity: .65; } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .hero h1 .u path { stroke-dashoffset: 0; } }
+
+  /* bento */
+  .section-title { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin: clamp(4rem, 8vw, 6rem) 0.5rem 1.5rem; }
+  .section-title h2 { font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; line-height: 1.05; }
+  .section-title p { color: var(--soft); max-width: 26rem; }
+  .bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: minmax(300px, auto); gap: 14px; }
+  .tile { background: var(--tile); border: 1px solid var(--line); border-radius: 32px; padding: 1.75rem; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); text-decoration: none; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+  a.tile:hover { transform: translateY(-4px); }
+  .tile .meta { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .tile h3 { font-weight: 600; font-size: 1.75rem; letter-spacing: -0.035em; line-height: 1; }
+  .tile .desc { color: var(--soft); margin-top: 0.5rem; max-width: 26rem; }
+  .chip { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.8125rem; font-weight: 500; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--tile-2); color: var(--soft); white-space: nowrap; }
+  .chip i { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid currentColor; }
+  .chip.live { background: var(--gold-soft); color: var(--ink); }
+  .chip.live i { background: var(--gold); border-color: var(--gold); }
+  .stage { margin-top: auto; padding-top: 1.5rem; display: flex; justify-content: center; align-items: flex-end; }
+
+  .t-meneja { grid-column: span 7; grid-row: span 2; background: linear-gradient(180deg, var(--tile) 0%, var(--tile-2) 100%); }
+  .t-tala { grid-column: span 5; }
+  .t-cv { grid-column: span 5; }
+  .t-doc { grid-column: span 7; }
+  .t-every { grid-column: span 5; background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+  /* Meneja phone */
+  .phone { width: 340px; height: 470px; border-radius: 40px 40px 0 0; background: var(--navy); padding: 12px 12px 0; box-shadow: 0 30px 60px -20px rgba(14,42,71,.45); margin-bottom: -1.75rem; }
+  .screen { height: 100%; border-radius: 30px 30px 0 0; background: #F7F9FB; padding: 1.25rem 1rem; color: #0E2A47; overflow: hidden; }
+  .screen .lbl { font-size: 0.6875rem; color: #6B7C91; }
+  .ui-num { font-size: 1.9rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+  .ui-num small { font-size: 0.9rem; color: #6B7C91; font-weight: 500; }
+  .bars { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin: 1rem 0; }
+  .bars span { flex: 1; background: #DCE3EC; border-radius: 6px 6px 3px 3px; transform-origin: bottom; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; }
+  .bars span.on { background: var(--gold); }
+  @keyframes grow { from { transform: scaleY(.1); } }
+  .tx { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 0; border-top: 1px solid #E6EBF1; font-size: 0.75rem; }
+  .tx b { font-weight: 500; }
+  .tx .in { color: #1F7A4D; font-weight: 600; }
+  .tx .out { font-weight: 600; }
+  .tx .ic { width: 26px; height: 26px; border-radius: 8px; background: #ECEFF3; display: inline-grid; place-items: center; margin-right: 0.5rem; font-size: 0.7rem; }
+
+  /* Talatala portraits */
+  .shots { display: flex; gap: 10px; align-items: flex-end; }
+  .shot { width: 92px; height: 120px; border-radius: 16px; position: relative; overflow: hidden; box-shadow: 0 10px 24px -10px rgba(14,42,71,.4); }
+  .shot::before { content: ""; position: absolute; width: 38%; height: 30%; left: 31%; top: 22%; border-radius: 50%; background: rgba(255,255,255,.85); }
+  .shot::after { content: ""; position: absolute; width: 76%; height: 42%; left: 12%; bottom: -8%; border-radius: 50% 50% 0 0; background: rgba(255,255,255,.85); }
+  .shot.a { background: linear-gradient(160deg, #F2B33D, #E07A1F); transform: rotate(-6deg) translateY(6px); }
+  .shot.b { background: linear-gradient(160deg, #2C5C8F, #0E2A47); width: 104px; height: 136px; z-index: 1; }
+  .shot.c { background: linear-gradient(160deg, #9FB4CC, #5E7894); transform: rotate(6deg) translateY(6px); }
+  .selfie { font-size: 0.75rem; color: var(--soft); display: flex; align-items: center; gap: 0.5rem; margin-right: 0.75rem; }
+
+  /* PrettyCV chat to CV */
+  .cvwrap { display: flex; gap: 12px; align-items: flex-end; width: 100%; justify-content: center; }
+  .chat { display: flex; flex-direction: column; gap: 6px; font-size: 0.75rem; }
+  .chat span { padding: 0.45rem 0.7rem; border-radius: 14px; max-width: 170px; }
+  .chat .q { background: var(--tile-2); color: var(--ink); border-bottom-left-radius: 4px; }
+  .chat .a { background: var(--navy); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .cv { width: 120px; height: 156px; background: #fff; border-radius: 10px; border: 1px solid #DCE3EC; padding: 12px; box-shadow: 0 14px 30px -12px rgba(14,42,71,.35); display: flex; flex-direction: column; gap: 5px; }
+  .cv .h { height: 9px; width: 70%; background: #0E2A47; border-radius: 3px; }
+  .cv .s { height: 4px; width: 45%; background: #F2B33D; border-radius: 2px; margin-bottom: 4px; }
+  .cv .l { height: 4px; background: #DCE3EC; border-radius: 2px; }
+  .cv .l.m { width: 80%; } .cv .l.n { width: 60%; }
+  .cv .k { height: 5px; width: 40%; background: #0E2A47; border-radius: 2px; margin-top: 5px; opacity: .8; }
+
+  /* StyledDoc */
+  .docs { display: flex; gap: 18px; align-items: center; }
+  .doc { width: 130px; height: 170px; border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .doc.plain { background: var(--tile-2); border: 1px dashed var(--line); }
+  .doc.plain span { height: 4px; background: var(--line); border-radius: 2px; }
+  .doc.styled { background: #fff; border: 1px solid #DCE3EC; box-shadow: 0 18px 40px -14px rgba(14,42,71,.4); padding: 0; overflow: hidden; }
+  .doc.styled .top { height: 54px; background: var(--navy); position: relative; }
+  .doc.styled .top::after { content: ""; position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--gold); right: 12px; top: 16px; }
+  .doc.styled .in { padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+  .doc.styled .in b { height: 7px; width: 70%; background: #0E2A47; border-radius: 2px; }
+  .doc.styled .in span { height: 4px; background: #DCE3EC; border-radius: 2px; }
+  .doc.styled .in span:nth-child(3) { width: 85%; } .doc.styled .in span:nth-child(5) { width: 60%; }
+  .doc.styled.b2 { transform: rotate(4deg); margin-left: -60px; z-index: -1; }
+  .arrow-mid { width: 44px; height: 44px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; flex: none; }
+
+  .t-every h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); max-width: 12ch; }
+  .t-every p { margin-top: 0.75rem; max-width: 22rem; color: #3D3015; }
+  .t-every .pills { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 1.5rem; }
+  .t-every .pills span { background: rgba(14,42,71,.1); border-radius: 999px; padding: 0.4rem 0.85rem; font-size: 0.875rem; font-weight: 500; }
+
+  /* principles + about */
+  .duo { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+  .p-tile { grid-column: span 4; min-height: 0; }
+  .p-tile .n { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--tile-2); font: 600 1rem Outfit, sans-serif; }
+  .p-tile h3 { font-size: 1.375rem; margin-top: 1.5rem; }
+  .p-tile p { color: var(--soft); margin-top: 0.5rem; }
+  .about { grid-column: span 7; }
+  .about h2 { font-weight: 600; font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -0.035em; line-height: 1.1; max-width: 20ch; }
+  .about p { color: var(--soft); margin-top: 1rem; max-width: 36rem; font-size: 1.0625rem; }
+  .founder { display: flex; align-items: center; gap: 0.9rem; margin-top: auto; padding-top: 2rem; }
+  .founder .av { width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font: 600 1rem Outfit, sans-serif; border: 2px solid var(--gold); }
+  .founder b { display: block; }
+  .founder span { color: var(--soft); font-size: 0.875rem; }
+  .name { grid-column: span 5; background: var(--navy); border-color: var(--navy); color: #fff; justify-content: space-between; }
+  .name p.word { color: #fff; font: 600 clamp(2.5rem, 5vw, 4rem)/1 Outfit, sans-serif; letter-spacing: -0.045em; }
+  .name p.word em { font-style: normal; color: var(--gold); }
+  .name p { color: #A9B8CA; margin-top: 0.75rem; }
+  .name .lang { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .name .lang span { font-size: 0.8125rem; padding: 0.3rem 0.75rem; border: 1px solid rgba(255,255,255,.15); border-radius: 999px; color: #DCE3EC; }
+
+  /* footer */
+  .end { margin: 14px 0; border-radius: 40px; background: var(--navy); color: #fff; padding: clamp(2.5rem, 6vw, 4.5rem); position: relative; overflow: hidden; }
+  .end h2 { font-weight: 600; font-size: clamp(2.25rem, 5.5vw, 4.5rem); letter-spacing: -0.045em; line-height: 1; max-width: 14ch; }
+  .end h2 a { color: var(--gold); text-decoration: none; }
+  .end h2 a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+  .end .cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.12); font-size: 0.9375rem; }
+  .end .cols span { display: block; color: #A9B8CA; font-size: 0.8125rem; }
+  .end .cols a { text-decoration: none; }
+  .end .fine { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; color: #A9B8CA; font-size: 0.8125rem; }
+  .end .fine nav { display: flex; gap: 1.25rem; }
+  .end .fine a { text-decoration: none; }
+  .end::after { content: ""; position: absolute; width: 560px; height: 560px; right: -180px; bottom: -300px; background: radial-gradient(circle, rgba(242,179,61,.3), transparent 65%); pointer-events: none; }
+
+  .toggle { position: fixed; right: 1rem; bottom: 1rem; z-index: 30; font: 500 0.8125rem Inter, sans-serif; padding: 0.5rem 0.9rem; background: var(--tile); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; box-shadow: var(--shadow); }
+
+  @media (max-width: 960px) {
+    .nav nav a:not(.cta) { display: none; }
+    .hero { grid-template-columns: 1fr; border-radius: 28px; min-height: 0; }
+    .art { min-height: 300px; }
+    .art svg { width: 460px; right: 50%; transform: translateX(50%); bottom: -110px; }
+    .section-title { flex-direction: column; align-items: start; }
+    .bento, .duo { grid-template-columns: 1fr; }
+    .bento > *, .duo > * { grid-column: auto !important; grid-row: auto !important; }
+    .tile { border-radius: 26px; padding: 1.5rem; }
+    .phone { width: 250px; height: 340px; }
+    .doc { width: 96px; height: 128px; }
+    .docs { gap: 12px; }
+    .doc.styled.b2 { margin-left: -70px; }
+    .end { border-radius: 28px; }
+    .end .cols { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <div class="bar">
+      <a class="brand" href="#">
+        <svg viewBox="10 17 80 66" aria-hidden="true"><circle cx="50" cy="32" r="15" fill="#F2B33D"/><path class="bowl" d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z"/></svg>
+        Emigisha
+      </a>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Careers</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="stars"></div>
+    <div class="copy">
+      <a class="tag" href="https://meneja.app"><b>New</b> Meneja is live. Take a look →</a>
+      <h1>Good software, <span class="u">for everyone.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 80 4, 200 2, 296 10"/></svg></span></h1>
+      <p>Emigisha builds focused apps for people and small businesses. Made for cheap phones, slow networks and mobile money, and just as good everywhere else.</p>
+      <div class="btns">
+        <a class="btn gold" href="#products">Explore products</a>
+        <a class="btn line" href="#about">Why “Emigisha”?</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="bowl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C9D6E5"/></linearGradient>
+          <radialGradient id="halo"><stop offset="0" stop-color="#F2B33D" stop-opacity=".55"/><stop offset="1" stop-color="#F2B33D" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle class="halo" cx="50" cy="32" r="34" fill="url(#halo)"/>
+        <circle class="sun" cx="50" cy="32" r="15" fill="#F2B33D"/>
+        <path d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="url(#bowl)"/>
+      </svg>
+    </div>
+  </section>
+
+  <div id="products" class="section-title">
+    <h2>Four products, one standard.</h2>
+    <p>Each has its own name, its own site and its own users. Emigisha is the company behind them.</p>
+  </div>
+
+  <div class="bento">
+    <a class="tile t-meneja" href="https://meneja.app">
+      <div class="meta"><h3>Meneja</h3><span class="chip live"><i></i>Live</span></div>
+      <p class="desc">Track money for yourself, your household or your business, online or offline.</p>
+      <div class="stage">
+        <div class="phone"><div class="screen">
+          <p class="lbl">This month</p>
+          <p class="ui-num">48,250 <small>KES</small></p>
+          <div class="bars"><span style="height:40%"></span><span style="height:62%"></span><span style="height:48%"></span><span style="height:80%"></span><span style="height:55%"></span><span class="on" style="height:92%"></span><span style="height:35%"></span></div>
+          <div class="tx"><span><span class="ic">↓</span><b>Shop sales</b></span><span class="in">+12,400</span></div>
+          <div class="tx"><span><span class="ic">↑</span><b>Stock</b></span><span class="out">−6,800</span></div>
+          <div class="tx"><span><span class="ic">↑</span><b>Rent</b></span><span class="out">−15,000</span></div>
+        </div></div>
+      </div>
+    </a>
+
+    <div class="tile t-tala">
+      <div class="meta"><h3>Talatala</h3><span class="chip"><i></i>Coming soon</span></div>
+      <p class="desc">Professional photos from your selfies. Pay by mobile money or card.</p>
+      <div class="stage"><div class="shots"><div class="shot a"></div><div class="shot b"></div><div class="shot c"></div></div></div>
+    </div>
+
+    <div class="tile t-cv">
+      <div class="meta"><h3>PrettyCV</h3><span class="chip"><i></i>Coming soon</span></div>
+      <p class="desc">Chat your way to a polished CV that passes the filters. Pay once.</p>
+      <div class="stage"><div class="cvwrap">
+        <div class="chat"><span class="q">What was your last role?</span><span class="a">Shop manager, 4 years</span><span class="q">Great. Any numbers to show?</span></div>
+        <div class="cv"><span class="h"></span><span class="s"></span><span class="l"></span><span class="l m"></span><span class="l n"></span><span class="k"></span><span class="l"></span><span class="l m"></span><span class="k"></span><span class="l n"></span></div>
+      </div></div>
+    </div>
+
+    <div class="tile t-doc">
+      <div class="meta"><h3>StyledDoc</h3><span class="chip"><i></i>Coming soon</span></div>
+      <p class="desc">Turn plain documents into well-designed PDFs.</p>
+      <div class="stage"><div class="docs">
+        <div class="doc plain"><span style="width:60%"></span><span></span><span></span><span style="width:80%"></span><span></span><span style="width:50%"></span><span></span><span style="width:70%"></span></div>
+        <span class="arrow-mid"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div style="display:flex; isolation:isolate"><div class="doc styled"><div class="top"></div><div class="in"><b></b><span></span><span></span><span></span><span></span></div></div><div class="doc styled b2"><div class="top"></div><div class="in"><b></b><span></span><span></span><span></span><span></span></div></div></div>
+      </div></div>
+    </div>
+
+    <div class="tile t-every">
+      <h3>Built for everyone, not just the few.</h3>
+      <p>Most software assumes fast internet, a new phone and a credit card. Ours doesn't.</p>
+      <div class="pills"><span>Mobile money</span><span>Slow networks</span><span>Any phone</span><span>Local languages</span></div>
+    </div>
+  </div>
+
+  <div class="duo">
+    <div class="tile p-tile"><span class="n">01</span><h3>Useful first</h3><p>Each product solves one real problem, and solves it well.</p></div>
+    <div class="tile p-tile"><span class="n">02</span><h3>Honest pricing</h3><p>Clear prices. No trial traps, no surprise renewals.</p></div>
+    <div class="tile p-tile"><span class="n">03</span><h3>Small and steady</h3><p>A small remote team. We ship often and keep things simple.</p></div>
+
+    <div id="about" class="tile name">
+      <div>
+        <p class="word">Emigisha <em>=</em><br>blessings.</p>
+        <p>From Mashi, the language of the Bashi people of eastern Congo. It is the bar we hold our work to: leave people better off.</p>
+      </div>
+      <div class="lang"><span>Mashi</span><span>Eastern DRC</span><span>e·mi·gi·sha</span></div>
+    </div>
+    <div class="tile about">
+      <h2>A small company with a simple idea.</h2>
+      <p>Emigisha builds and sells software for people and small businesses around the world. Each product stands on its own. All of them are built to work on cheap phones, slow networks and local payment methods as well as they do anywhere else.</p>
+      <div class="founder"><span class="av">CB</span><div><b>Christian Balola</b><span>Founder · Nairobi and Kampala</span></div></div>
+    </div>
+  </div>
+
+  <footer id="contact" class="end">
+    <h2>Say hello at <a href="mailto:hello@emigisha.com">hello@emigisha.com</a></h2>
+    <div class="cols">
+      <div><span>Support</span><a href="mailto:support@emigisha.com">support@emigisha.com</a></div>
+      <div><span>Legal</span><a href="mailto:legal@emigisha.com">legal@emigisha.com</a></div>
+      <div><span>Careers</span>No open roles. Write anyway.</div>
+      <div><span>Follow</span><a href="#">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">X</a></div>
+    </div>
+    <div class="fine"><span>© 2026 Emigisha LLC, a Delaware limited liability company.</span><nav><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Refunds</a></nav></div>
+  </footer>
+</div>
+
+<button class="toggle" type="button" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Light / dark</button>
+<script>
+  var t = new URLSearchParams(location.search).get('theme');
+  if (t) document.documentElement.dataset.theme = t;
+</script>
+</body>
+</html>
