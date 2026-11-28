@@ -13,7 +13,7 @@ export function PrinciplesSection() {
         <div className="navy-glow relative overflow-hidden rounded-[28px] bg-navy p-[clamp(3rem,6vw,5rem)] text-on-navy min-[860px]:rounded-[40px]">
           <p className={cn(eyebrowClassName, 'text-gold-soft')}>{t('eyebrow')}</p>
           <h2 className={cn(sectionTitleClassName, 'mt-4 max-w-[16ch]')}>{t('title')}</h2>
-          <ol className="mt-14 grid gap-10 min-[860px]:grid-cols-3">
+          <ol className="mt-14 grid gap-10 min-[640px]:grid-cols-3">
             {PRINCIPLES.map((key, index) => (
               <li key={key} className="border-t border-navy-line pt-6">
                 <span className="font-display text-[0.9375rem] font-medium text-accent">{String(index + 1).padStart(2, '0')}</span>

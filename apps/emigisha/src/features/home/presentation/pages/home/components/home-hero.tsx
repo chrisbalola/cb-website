@@ -5,9 +5,12 @@ import { cn } from '@/shared/presentation/utils/shadcn';
 import { containerClassName, eyebrowClassName, focusRingClassName } from '../class-names';
 
 const goldButtonClassName =
-  'inline-flex items-center rounded-full bg-accent px-[1.1rem] py-[0.6rem] font-semibold text-navy transition-transform hover:-translate-y-px';
+  'inline-flex items-center rounded-full bg-accent px-[1.1rem] py-[0.6rem] font-semibold whitespace-nowrap text-navy transition-transform hover:-translate-y-px';
 
-const navLinkClassName = cn('transition-colors hover:text-on-navy max-[860px]:hidden', focusRingClassName);
+const navLinkClassName = cn('transition-colors hover:text-on-navy', focusRingClassName);
+
+/** Section links that only fit next to the products link on wide screens */
+const wideNavLinkClassName = cn(navLinkClassName, 'max-[860px]:hidden');
 
 export function HomeHero() {
   const t = useTranslations('home');
@@ -18,16 +21,16 @@ export function HomeHero() {
         <div className={cn(containerClassName, 'flex h-21 items-center justify-between')}>
           <a href="#" className={cn('flex items-center gap-[0.6rem] font-display text-2xl font-semibold tracking-[-0.03em]', focusRingClassName)}>
             <BrandSymbol cropped className="size-[34px]" />
-            {t('nav.wordmark')}
+            <span className="max-[420px]:sr-only">{t('nav.wordmark')}</span>
           </a>
-          <nav className="flex items-center gap-8 text-[0.9375rem] text-on-navy-soft">
+          <nav className="flex items-center gap-4 text-[0.9375rem] text-on-navy-soft min-[860px]:gap-8">
             <a href="#products" className={navLinkClassName}>
               {t('nav.products')}
             </a>
-            <a href="#principles" className={navLinkClassName}>
+            <a href="#principles" className={wideNavLinkClassName}>
               {t('nav.principles')}
             </a>
-            <a href="#about" className={navLinkClassName}>
+            <a href="#about" className={wideNavLinkClassName}>
               {t('nav.about')}
             </a>
             <ThemeToggleButton />
@@ -39,7 +42,10 @@ export function HomeHero() {
       </header>
 
       <div aria-hidden className="hero-glow absolute top-[120px] left-[calc(50%-450px)] -z-10 size-[900px]" />
-      <div aria-hidden className="hero-horizon absolute bottom-[-760px] left-[calc(50%-700px)] -z-10 h-[1000px] w-[1400px] rounded-full" />
+      <div
+        aria-hidden
+        className="hero-horizon absolute bottom-[-560px] left-[calc(50%-450px)] -z-10 h-[700px] w-[900px] rounded-full min-[860px]:bottom-[-760px] min-[860px]:left-[calc(50%-700px)] min-[860px]:h-[1000px] min-[860px]:w-[1400px]"
+      />
 
       <BrandSymbol label={t('hero.symbolAlt')} className="size-32 min-[860px]:size-42" sunClassName="animate-settle" bowlClassName="animate-rise" />
       <p className={cn(eyebrowClassName, 'mt-9 animate-fade text-gold-soft [animation-delay:0.5s]')}>{t('hero.eyebrow')}</p>

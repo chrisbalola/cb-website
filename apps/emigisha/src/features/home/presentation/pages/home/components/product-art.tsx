@@ -16,7 +16,7 @@ function MenejaArt() {
   ];
 
   return (
-    <div className="-mb-7 h-[340px] w-[250px] rounded-t-[40px] bg-navy px-3 pt-3 shadow-[0_30px_60px_-20px_rgba(14,42,71,0.45)] min-[860px]:h-[470px] min-[860px]:w-[340px]">
+    <div className="-mb-7 h-[340px] w-[250px] rounded-t-[40px] max-[400px]:h-[310px] max-[400px]:w-[220px] bg-navy px-3 pt-3 shadow-[0_30px_60px_-20px_rgba(14,42,71,0.45)] min-[860px]:h-[470px] min-[860px]:w-[340px]">
       <div className="h-full overflow-hidden rounded-t-[30px] bg-[#f7f9fb] px-4 py-5 text-left text-[#0e2a47]">
         <p className="text-[0.6875rem] text-[#6b7c91]">{t('period')}</p>
         <p className="font-display text-[1.9rem] leading-[1.1] font-semibold tracking-[-0.03em]">
@@ -60,7 +60,7 @@ function Portrait({ className }: { className: string }) {
 /** Three studio portraits made from one selfie */
 function TalatalaArt() {
   return (
-    <div className="flex items-end gap-2.5">
+    <div className="flex origin-bottom items-end gap-2.5 max-[400px]:scale-[0.82]">
       <Portrait className="h-[120px] w-[92px] translate-y-1.5 -rotate-6 bg-linear-160 from-[#f2b33d] to-[#e07a1f]" />
       <Portrait className="z-10 h-[136px] w-[104px] bg-linear-160 from-[#2c5c8f] to-[#0e2a47]" />
       <Portrait className="h-[120px] w-[92px] translate-y-1.5 rotate-6 bg-linear-160 from-[#9fb4cc] to-[#5e7894]" />
@@ -72,7 +72,7 @@ function StyledPage({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'h-[128px] w-[96px] overflow-hidden rounded-[10px] border border-[#dce3ec] bg-white min-[860px]:h-[170px] min-[860px]:w-[130px]',
+        'h-[128px] w-[96px] overflow-hidden rounded-[10px] border border-[#dce3ec] bg-white min-[1200px]:h-[170px] min-[1200px]:w-[130px]',
         className
       )}
     >
@@ -95,8 +95,8 @@ const PLAIN_LINES = ['60%', '100%', '100%', '80%', '100%', '50%', '100%', '70%']
 /** A plain page turned into a designed one */
 function StyledDocArt() {
   return (
-    <div className="flex items-center gap-3 min-[860px]:gap-[18px]">
-      <div className="flex h-[128px] w-[96px] flex-col gap-1.5 rounded-[10px] border border-dashed bg-muted p-3.5 min-[860px]:h-[170px] min-[860px]:w-[130px]">
+    <div className="flex origin-bottom items-center gap-3 max-[400px]:scale-[0.8] min-[1200px]:gap-[18px]">
+      <div className="flex h-[128px] w-[96px] flex-col gap-1.5 rounded-[10px] border border-dashed bg-muted p-3.5 min-[1200px]:h-[170px] min-[1200px]:w-[130px]">
         {PLAIN_LINES.map((width, index) => (
           <span key={index} style={{ width }} className="h-1 rounded-xs bg-border" />
         ))}
@@ -106,7 +106,7 @@ function StyledDocArt() {
       </span>
       <div className="isolate flex">
         <StyledPage className="shadow-[0_18px_40px_-14px_rgba(14,42,71,0.4)]" />
-        <StyledPage className="-z-10 -ml-[70px] rotate-[4deg] min-[860px]:-ml-[60px]" />
+        <StyledPage className="-z-10 -ml-[70px] rotate-[4deg] min-[1200px]:-ml-[60px]" />
       </div>
     </div>
   );

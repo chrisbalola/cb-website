@@ -22,13 +22,13 @@ export function HomeFooter() {
         <a
           href={`mailto:${links.email}`}
           className={cn(
-            'mt-5 inline-block font-display text-[clamp(2.2rem,7.5vw,6.5rem)] leading-none font-semibold tracking-[-0.045em] break-all transition-colors hover:text-accent',
+            'mt-5 inline-block font-display text-[clamp(1.6rem,7.5vw,6.5rem)] leading-none font-semibold tracking-[-0.045em] [overflow-wrap:anywhere] transition-colors hover:text-accent',
             focusRingClassName
           )}
         >
           {links.email}
         </a>
-        <div className="mt-16 grid gap-8 border-t border-navy-line pt-8 min-[860px]:grid-cols-3">
+        <div className="mt-16 grid gap-8 border-t border-navy-line pt-8 min-[640px]:grid-cols-3">
           {contacts.map((contact) => (
             <div key={contact.email}>
               <span className="block text-sm text-on-navy-soft">{contact.label}</span>
