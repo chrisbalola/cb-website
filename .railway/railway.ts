@@ -72,6 +72,7 @@ export default defineRailway(() => {
       NEXT_PUBLIC_CONTACT_EMAIL: preserve(),
       NEXT_PUBLIC_SUPPORT_EMAIL: preserve(),
       NEXT_PUBLIC_LEGAL_EMAIL: preserve(),
+      NEXT_PUBLIC_MAILING_ADDRESS: preserve(),
       NEXT_PUBLIC_LINK_MENEJA: preserve(),
       NEXT_PUBLIC_LINK_TALATALA: preserve(),
       NEXT_PUBLIC_LINK_STYLEDDOC: preserve(),

@@ -16,6 +16,12 @@ export const clientConfig = {
     x: process.env.NEXT_PUBLIC_SOCIAL_X ?? 'https://x.com/chrisbalola',
   },
 
+  /** Company details shown on the legal pages */
+  company: {
+    /** Postal address; the line is hidden until this is set */
+    mailingAddress: process.env.NEXT_PUBLIC_MAILING_ADDRESS ?? '',
+  },
+
   /** Company-level legal pages linked from the footer */
   legal: {
     terms: '/terms',

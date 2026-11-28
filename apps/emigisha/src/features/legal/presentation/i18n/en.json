@@ -1,0 +1,88 @@
+{
+  "updated": "Last updated: 28 November 2026",
+  "mailingAddress": "Mailing address: {address}",
+  "terms": {
+    "title": "Terms of Service",
+    "description": "The terms for using emigisha.com and the apps run by Emigisha, LLC.",
+    "intro": "These terms cover emigisha.com and the apps run by Emigisha, LLC: Talatala, StyledDoc, PrettyCV and any other app that links to these terms. When you create an account or use one of these apps, you agree to them.",
+    "sections": {
+      "who": {
+        "title": "Who we are",
+        "paragraphs": [
+          "Emigisha, LLC (\"Emigisha\", \"we\") is a Delaware limited liability company.",
+          "An app may add its own rules on its site, such as how its credits work. For that app, those rules apply on top of these terms."
+        ]
+      },
+      "account": {
+        "title": "Your account",
+        "paragraphs": [
+          "You must be 18 or older. Give accurate details, keep your password safe, and tell us if someone else gets into your account. You are responsible for what happens in it."
+        ]
+      },
+      "content": {
+        "title": "Your content",
+        "paragraphs": [
+          "What you upload stays yours. You let us store and process it only to run the app for you.",
+          "Only upload content you have the right to use. If it shows another person, you must have their explicit consent."
+        ]
+      },
+      "notAllowed": {
+        "title": "What you may not do",
+        "items": [
+          "Break the law, or use our apps to harm someone",
+          "Upload content that is not yours to use",
+          "Impersonate anyone, or make misleading images of real people",
+          "Try to break, overload or get around the security of our apps",
+          "Scrape, copy or resell our apps or what they produce at scale"
+        ]
+      },
+      "ai": {
+        "title": "AI results",
+        "paragraphs": [
+          "Our apps use AI. Results can be wrong or unexpected. Check them before you rely on them or share them, especially CVs, documents and photos of people."
+        ]
+      },
+      "payments": {
+        "title": "Payments",
+        "paragraphs": [
+          "Prices are shown before you pay, in the currency shown at checkout. We take card payments through Stripe and mobile money through pawaPay. Credits expire as each app states.",
+          "Refunds follow our Refund Policy at emigisha.com/refunds."
+        ]
+      },
+      "availability": {
+        "title": "Changes and availability",
+        "paragraphs": [
+          "We improve our apps often, and may change or stop a feature or an app. If we stop a paid app, we refund unused credits.",
+          "We do our best to keep things running, but the apps are provided \"as is\", without warranties of any kind."
+        ]
+      },
+      "liability": {
+        "title": "Liability",
+        "paragraphs": [
+          "We are not liable for indirect or consequential losses, such as lost profits or lost data. Our total liability is limited to the greater of what you paid us in the 12 months before the claim or US$100.",
+          "Nothing in these terms limits liability that the law does not allow us to limit."
+        ]
+      },
+      "ending": {
+        "title": "Ending",
+        "paragraphs": [
+          "You can stop using an app and delete your account at any time. We may suspend or close an account that breaks these terms or puts the apps or other people at risk."
+        ]
+      },
+      "changes": {
+        "title": "Changes to these terms",
+        "paragraphs": ["If we make an important change, we tell you by email or in the app before it applies."]
+      },
+      "law": {
+        "title": "Law",
+        "paragraphs": [
+          "These terms are governed by the laws of the State of Delaware, and disputes go to the courts of Delaware. This does not take away any consumer protection the law of your country gives you."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "paragraphs": ["Questions about these terms: {legalEmail}."]
+      }
+    }
+  }
+}
