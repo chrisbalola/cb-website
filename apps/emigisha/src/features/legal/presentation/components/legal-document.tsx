@@ -5,7 +5,7 @@ import { SiteHeader } from '@/shared/presentation/components/layout/site-header'
 import { containerClassName } from '@/shared/presentation/utils/class-names';
 import { cn } from '@/shared/presentation/utils/shadcn';
 
-export type LegalNamespace = 'terms' | 'privacy' | 'refunds';
+type LegalNamespace = 'terms' | 'privacy' | 'refunds';
 
 type LegalSection = {
   title: string;
