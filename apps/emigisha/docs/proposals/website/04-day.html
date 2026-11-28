@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emigisha website: D, Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0E2A47;
+    --night: #071629;
+    --gold: #F2B33D;
+    --ember: #E58B2E;
+    --cream: #FFF8EC;
+    --paper: #FFFFFF;
+    --ink: #0E2A47;
+    --soft: #52647B;
+    --line: #E4DCCB;
+    --card: rgba(255,255,255,.72);
+  }
+  :root[data-theme="dark"] {
+    --cream: #10233C;
+    --paper: #0C1E35;
+    --ink: #F1F5FA;
+    --soft: #A9B8CA;
+    --line: #22416A;
+    --card: rgba(16,41,74,.75);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--night); color: var(--ink); font: 400 1.0625rem/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  h1, h2, h3, .brand, .time b { font-family: Outfit, system-ui, sans-serif; }
+  .wrap { width: min(1180px, 100% - 2 * clamp(1.25rem, 4vw, 3rem)); margin-inline: auto; }
+  .time { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; letter-spacing: 0.04em; color: var(--soft); }
+  .time b { font-weight: 500; font-size: 1rem; color: var(--ink); letter-spacing: 0; font-variant-numeric: tabular-nums; }
+  .time i { width: 28px; height: 1px; background: currentColor; opacity: .5; }
+
+  /* day rail */
+  .rail { position: fixed; left: clamp(12px, 2vw, 28px); top: 50%; transform: translateY(-50%); z-index: 15; height: 300px; width: 22px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; mix-blend-mode: difference; }
+  .rail::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: rgba(255,255,255,.5); }
+  .rail span { width: 5px; height: 5px; border-radius: 50%; background: #fff; position: relative; }
+  .rail .dot { position: absolute; left: 50%; top: 0; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #F2B33D; mix-blend-mode: normal; box-shadow: 0 0 0 5px rgba(242,179,61,.25); transition: top .15s linear; }
+
+  /* nav */
+  .nav { position: absolute; inset: 0 0 auto; z-index: 10; }
+  .nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 88px; }
+  .brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 1.45rem; letter-spacing: -0.03em; color: #fff; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; }
+  .nav nav { display: flex; gap: 2rem; font-size: 0.9375rem; color: #C9D5E3; }
+  .nav nav a { text-decoration: none; }
+  .nav nav a:hover { color: #fff; }
+
+  /* 06:00 dawn */
+  .dawn { position: relative; overflow: hidden; min-height: 900px; color: #fff; background: linear-gradient(180deg, #06162A 0%, #0E2A47 38%, #2B4C73 62%, #C98A52 86%, #F2B33D 100%); display: flex; align-items: flex-start; padding-top: 190px; isolation: isolate; }
+  .dawn::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.7) 1px, transparent 1.3px), radial-gradient(rgba(255,255,255,.4) 1px, transparent 1.3px); background-size: 170px 170px, 110px 110px; background-position: 20px 30px, 80px 90px; mask-image: linear-gradient(#000 10%, transparent 55%); z-index: -1; }
+  .dawn .time { color: #C9D5E3; } .dawn .time b { color: #fff; }
+  .dawn h1 { font-weight: 600; font-size: clamp(3rem, 8vw, 7.25rem); line-height: 0.95; letter-spacing: -0.05em; margin-top: 1.5rem; max-width: 11ch; }
+  .dawn h1 span { color: var(--gold); }
+  .dawn p { margin-top: 1.75rem; max-width: 33rem; color: #C9D5E3; font-size: 1.1875rem; }
+  .sunrise { position: absolute; left: 50%; bottom: -330px; width: 620px; height: 620px; margin-left: -310px; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #FFE2A3 0%, #F2B33D 45%, #E9A12C 100%); box-shadow: 0 0 120px 40px rgba(242,179,61,.45), 0 0 300px 120px rgba(242,179,61,.25); z-index: -1; animation: up 2.6s cubic-bezier(.2,.8,.2,1) both; }
+  .ground { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(255,255,255,.4); }
+  @keyframes up { from { transform: translateY(180px); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+
+  /* 09:00 morning */
+  .morning { background: linear-gradient(180deg, #F2B33D 0%, #FBDDA0 6%, var(--cream) 22%, var(--paper) 100%); padding: clamp(6rem, 10vw, 8rem) 0 clamp(5rem, 9vw, 7rem); }
+  :root[data-theme="dark"] .morning { background: linear-gradient(180deg, #F2B33D 0%, #7A6440 5%, var(--cream) 20%, var(--paper) 100%); }
+  .sec-h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: end; }
+  .sec-h h2 { font-weight: 600; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; letter-spacing: -0.045em; margin-top: 1rem; }
+  .sec-h p { color: var(--soft); justify-self: end; max-width: 28rem; }
+  .plist { margin-top: 3.5rem; display: grid; gap: 1rem; }
+  .p { display: grid; grid-template-columns: 7rem minmax(0, 1fr) minmax(0, 1.2fr) auto; gap: 2rem; align-items: center; padding: 1.6rem 2rem; border-radius: 24px; background: var(--card); border: 1px solid var(--line); backdrop-filter: blur(6px); text-decoration: none; transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+  a.p:hover { transform: translateX(6px); box-shadow: -6px 0 0 var(--gold); }
+  .p .when { font: 500 0.875rem Outfit, sans-serif; color: var(--soft); }
+  .p .when b { display: block; font-size: 1.5rem; color: var(--ink); font-weight: 500; letter-spacing: -0.02em; }
+  .p h3 { font-weight: 600; font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -0.04em; line-height: 1; }
+  .p p { color: var(--soft); }
+  .badge { font-size: 0.8125rem; font-weight: 500; padding: 0.35rem 0.8rem; border-radius: 999px; border: 1px solid var(--line); color: var(--soft); white-space: nowrap; }
+  .badge.live { background: var(--navy); border-color: var(--navy); color: #fff; }
+  :root[data-theme="dark"] .badge.live { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .badge.live::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); margin-right: 0.45rem; vertical-align: 1px; }
+  :root[data-theme="dark"] .badge.live::before { background: var(--navy); }
+
+  /* 12:00 noon */
+  .noon { background: var(--paper); padding: clamp(5rem, 9vw, 7rem) 0; position: relative; overflow: hidden; }
+  .zenith { width: 120px; height: 120px; border-radius: 50%; background: var(--gold); margin: 0 auto; box-shadow: 0 0 0 22px rgba(242,179,61,.14), 0 0 0 48px rgba(242,179,61,.07); }
+  .noon .center { text-align: center; margin-top: 3.5rem; }
+  .noon h2 { font-weight: 600; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.02; letter-spacing: -0.045em; max-width: 17ch; margin: 1rem auto 0; }
+  .rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 3.5rem; }
+  .rules div { border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+  .rules h3 { font-weight: 600; font-size: 1.625rem; letter-spacing: -0.025em; }
+  .rules p { color: var(--soft); margin-top: 0.5rem; max-width: 22rem; }
+
+  /* 18:30 dusk */
+  .dusk { color: #fff; padding: clamp(6rem, 10vw, 8rem) 0; background: linear-gradient(180deg, var(--paper) 0%, #FBE3B0 10%, #F2B33D 28%, #E58B2E 46%, #7A4A57 68%, #1F3557 86%, var(--night) 100%); }
+  .dusk .time { color: #3D2A10; } .dusk .time b { color: var(--navy); }
+  .dusk .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+  .dusk h2 { font-weight: 600; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; letter-spacing: -0.045em; color: var(--navy); margin-top: 1rem; }
+  .story { background: rgba(7,22,41,.55); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.14); border-radius: 28px; padding: clamp(1.75rem, 4vw, 2.75rem); margin-top: 12rem; }
+  .story p { color: #E6ECF3; font-size: 1.125rem; }
+  .story p + p { margin-top: 1rem; }
+  .story strong { color: #fff; font-weight: 500; }
+  .who { display: flex; align-items: center; gap: 0.9rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.14); }
+  .who .av { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; font: 600 1rem Outfit, sans-serif; }
+  .who b { display: block; }
+  .who span { color: #A9B8CA; font-size: 0.9375rem; }
+  .who nav { margin-left: auto; display: flex; gap: 1rem; font-size: 0.9375rem; }
+
+  /* 22:00 night */
+  .night { background: var(--night); color: #fff; padding: clamp(5rem, 9vw, 7rem) 0 2.5rem; position: relative; overflow: hidden; isolation: isolate; }
+  .night::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.6) 1px, transparent 1.3px); background-size: 130px 130px; mask-image: linear-gradient(transparent, #000 40%); opacity: .6; z-index: -1; }
+  .night .time { color: #A9B8CA; } .night .time b { color: #fff; }
+  .rest { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; margin-top: 2rem; }
+  .rest svg { width: clamp(120px, 16vw, 200px); }
+  .night h2 { font-weight: 600; font-size: clamp(2.4rem, 5.5vw, 4.5rem); line-height: 1; letter-spacing: -0.045em; }
+  .night h2 a { color: var(--gold); text-decoration: none; }
+  .night h2 a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+  .night .sub { color: #A9B8CA; margin-top: 1rem; }
+  .ends { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid #1F3D5F; font-size: 0.9375rem; }
+  .ends span { display: block; color: #8193A8; font-size: 0.8125rem; }
+  .ends a { text-decoration: none; }
+  .fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 2.5rem; color: #8193A8; font-size: 0.8125rem; }
+  .fine nav { display: flex; gap: 1.25rem; }
+  .fine a { text-decoration: none; }
+
+  .toggle { position: fixed; right: 1rem; bottom: 1rem; z-index: 30; font: 500 0.8125rem Inter, sans-serif; padding: 0.5rem 0.9rem; background: #fff; color: #0E2A47; border: 1px solid #DCE3EC; border-radius: 999px; cursor: pointer; }
+
+  @media (max-width: 900px) {
+    .rail { display: none; }
+    .nav nav a:not(:last-child) { display: none; }
+    .dawn { min-height: 760px; padding-top: 150px; }
+    .sunrise { width: 440px; height: 440px; margin-left: -220px; bottom: -240px; }
+    .sec-h, .dusk .grid, .rest { grid-template-columns: 1fr; }
+    .sec-h p { justify-self: start; }
+    .p { grid-template-columns: 1fr auto; gap: 0.5rem 1rem; padding: 1.4rem; }
+    .p .when { grid-column: 1 / -1; }
+    .p .when b { display: inline; font-size: 1rem; margin-right: 0.4rem; }
+    .p h3 { grid-row: 2; }
+    .p p { grid-column: 1 / -1; }
+    .p .badge { grid-column: 1 / -1; justify-self: start; }
+    .rules, .ends { grid-template-columns: 1fr; }
+    .story { margin-top: 2rem; }
+    .who { flex-wrap: wrap; }
+    .who nav { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="rail" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><i class="dot" id="dot"></i></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg viewBox="10 17 80 66" aria-hidden="true"><circle cx="50" cy="32" r="15" fill="#F2B33D"/><path d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="#fff"/></svg>
+      Emigisha
+    </a>
+    <nav><a href="#products">Products</a><a href="#principles">Principles</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="dawn">
+    <div class="sunrise" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="time"><b>06:00</b><i></i>Dawn</p>
+      <h1>Software to make <span>someone's day.</span></h1>
+      <p>Emigisha means blessings. We build focused apps that people and small businesses rely on every day, on any phone, on any network, with the money they already use.</p>
+    </div>
+  </section>
+
+  <section id="products" class="morning">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><p class="time"><b>09:00</b><i></i>Morning</p><h2>Apps that show up for work.</h2></div>
+        <p>Each product has its own name, its own site and its own users. Emigisha is the company behind them.</p>
+      </div>
+      <div class="plist">
+        <a class="p" href="https://meneja.app"><span class="when"><b>01</b>Your money</span><h3>Meneja</h3><p>Track money for yourself, your household or your business, online or offline.</p><span class="badge live">Live</span></a>
+        <div class="p"><span class="when"><b>02</b>Your photos</span><h3>Talatala</h3><p>Professional photos from your selfies. Pay by mobile money or card.</p><span class="badge">Coming soon</span></div>
+        <div class="p"><span class="when"><b>03</b>Your career</span><h3>PrettyCV</h3><p>Chat your way to a polished CV that passes the filters. Pay once.</p><span class="badge">Coming soon</span></div>
+        <div class="p"><span class="when"><b>04</b>Your documents</span><h3>StyledDoc</h3><p>Turn plain documents into well-designed PDFs.</p><span class="badge">Coming soon</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles" class="noon">
+    <div class="wrap">
+      <div class="zenith" aria-hidden="true"></div>
+      <div class="center">
+        <p class="time"><b>12:00</b><i></i>Noon</p>
+        <h2>Nothing hidden in the light of day.</h2>
+      </div>
+      <div class="rules">
+        <div><h3>Useful first</h3><p>Each product solves one real problem, and solves it well.</p></div>
+        <div><h3>Honest pricing</h3><p>Clear prices. No trial traps, no surprise renewals.</p></div>
+        <div><h3>Built for everyone</h3><p>Cheap phones, slow networks and local payment methods come first, not last.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="dusk">
+    <div class="wrap grid">
+      <div><p class="time"><b>18:30</b><i></i>Dusk</p><h2>Built for the rest of the world, too.</h2></div>
+      <div class="story">
+        <p>Most software is built for people with fast internet, new phones and a credit card. <strong>Emigisha builds for everyone else too:</strong> mobile money, low connectivity, local languages.</p>
+        <p>The name comes from Mashi, the language of the Bashi people of eastern Congo. It means blessings, and it is the bar we hold our work to.</p>
+        <div class="who"><span class="av">CB</span><div><b>Christian Balola</b><span>Founder · Nairobi and Kampala</span></div><nav><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">X</a></nav></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="night">
+  <div class="wrap">
+    <p class="time"><b>22:00</b><i></i>Night</p>
+    <div class="rest">
+      <svg viewBox="10 17 80 66" aria-hidden="true"><circle cx="50" cy="32" r="15" fill="#F2B33D"/><path d="M10 43A40 40 0 0 0 90 43L76 43A26 26 0 0 1 24 43Z" fill="#fff"/></svg>
+      <div>
+        <h2>Say hello, any time.<br><a href="mailto:hello@emigisha.com">hello@emigisha.com</a></h2>
+        <p class="sub">No open roles right now, but write to us anyway.</p>
+      </div>
+    </div>
+    <div class="ends">
+      <div><span>Support</span><a href="mailto:support@emigisha.com">support@emigisha.com</a></div>
+      <div><span>Legal</span><a href="mailto:legal@emigisha.com">legal@emigisha.com</a></div>
+      <div><span>Company</span>Emigisha LLC, Delaware</div>
+    </div>
+    <div class="fine"><span>© 2026 Emigisha LLC, a Delaware limited liability company.</span><nav><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Refunds</a></nav></div>
+  </div>
+</footer>
+
+<button class="toggle" type="button" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Light / dark</button>
+<script>
+  var t = new URLSearchParams(location.search).get('theme');
+  if (t) document.documentElement.dataset.theme = t;
+  var dot = document.getElementById('dot');
+  function move() {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    var p = max > 0 ? scrollY / max : 0;
+    dot.style.top = (p * 286) + 'px';
+  }
+  addEventListener('scroll', move, { passive: true }); move();
+  if (innerHeight > 2000) document.querySelector('.rail').style.display = 'none';
+</script>
+</body>
+</html>

@@ -1,16 +1,19 @@
 # Emigisha: website proposals
 
-Three concepts for a new emigisha.com, built on the chosen logo (concept P, "Full bowl", set in Outfit). Each is a working one-page mockup with light and dark themes and a phone layout, and screenshots are in `screenshots/`.
+Six concepts for a new emigisha.com, built on the chosen logo (concept P, "Full bowl", set in Outfit). Each is a working one-page mockup with light and dark themes and a phone layout, and screenshots are in `screenshots/`.
 
 ```
 open apps/emigisha/docs/proposals/website/01-sunrise.html
 open apps/emigisha/docs/proposals/website/02-definition.html
 open apps/emigisha/docs/proposals/website/03-horizon.html
+open apps/emigisha/docs/proposals/website/04-day.html
+open apps/emigisha/docs/proposals/website/05-gold.html
+open apps/emigisha/docs/proposals/website/06-orbit.html
 ```
 
-Each mockup has a light and dark toggle in the corner, and needs internet access for its fonts. Add `?theme=dark` to the URL to open it in dark.
+Each mockup has a light and dark toggle in the corner, and needs internet access for its fonts. Add `?theme=dark` or `?theme=light` to the URL to pick a theme.
 
-## Shared across all three
+## Shared across all six
 
 - Identity: navy `#0E2A47`, gold `#F2B33D`, Outfit for headings, Inter for text, the Full bowl symbol.
 - Content from `website.md`: products (Meneja live; Talatala, PrettyCV and StyledDoc coming soon), principles, about, founder, contact addresses, careers line, legal line with the Delaware LLC name, and links to Terms, Privacy and Refunds (the items payment reviewers check).
@@ -51,11 +54,49 @@ Each mockup has a light and dark toggle in the corner, and needs internet access
 - Best at: showing what the company actually makes. The most modern and the most catchy at a glance.
 - Risk: the most to maintain. Each new product needs an illustration, and the product drawings must stay true to the real apps.
 
+## D: Day
+
+`04-day.html`
+
+![Day](screenshots/04-day-desktop.png)
+
+- Idea: the page is one day, from dawn to night. Each section is a time of day (06:00 Dawn, 09:00 Morning, 12:00 Noon, 18:30 Dusk, 22:00 Night), and the background moves from a starry sky through sunrise, daylight and sunset back to night. A gold dot on a rail at the left tracks the time as you scroll.
+- Headline: "Software to make someone's day." A huge sun rises out of the horizon behind it.
+- The logo's story is told by the page itself: the sun rises at the top and, at night, sits in the bowl next to the email.
+- Best at: catchiness and storytelling. The most cinematic of the six.
+- Risk: the gradients need care to stay legible on every screen, and the time labels are a conceit some visitors will not notice.
+
+## E: Gold
+
+`05-gold.html`
+
+![Gold](screenshots/05-gold-desktop.png)
+
+- Idea: bold and sunny. The hero is solid gold, with a huge four-line headline, "Leave people better off than you found them.", and the symbol drawn large with a white sun dropping into a navy bowl.
+- A navy band scrolls the product names and promises (Mobile money, Any phone, Honest prices) across the page.
+- Products are poster cards, each with a bold geometric drawing in the logo's style. Principles are set very large on navy. The footer is gold again, with the email filling the width.
+- Best at: confidence and warmth. Unmissable, very positive, and the gold makes it unlike any other software company's site.
+- Risk: the loudest. Gold at full strength over large areas needs restraint elsewhere (product sites, social posts).
+
+## F: Orbit
+
+`06-orbit.html` (opens in dark; the toggle switches to light)
+
+![Orbit](screenshots/06-orbit-desktop.png)
+
+- Idea: the company at the centre, its products in orbit. The symbol glows in the middle of a night sky and the four product icons circle it slowly on two rings.
+- Headline: "One company. Many blessings."
+- Sections: product cards with app icons, three principle cards with small drawings, a card for the name next to the about text, and a glowing "Let's talk." contact card.
+- Best at: explaining the model (one company, many products) in a single picture. The most premium and "tech" of the six.
+- Risk: the product icons are placeholders I drew; each product's real icon should replace them. The dark default is less warm than the others.
+
 ## Recommendation
 
 C, Horizon, for the home page. It is the only one that shows the products, which is what visitors, users and payment reviewers come to see, and the bento grows with each launch. Take two things from the others: the sun-into-bowl load animation from A for the hero, and B's dictionary entry as the "Why Emigisha?" section.
 
 If you want the calmest and most distinctive site instead, pick B.
+
+From the second round, D is the strongest. It is the only concept where the whole page tells the logo's story (a sun rising, then settling into the bowl at night), and the most likely to be remembered and shared. Pair it with C's product tiles in the Morning section if you want both.
 
 ## Open questions
 
