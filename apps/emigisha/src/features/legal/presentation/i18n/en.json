@@ -1,5 +1,5 @@
 {
-  "updated": "Last updated: 28 November 2026",
+  "updated": "Last updated: {date}",
   "mailingAddress": "Mailing address: {address}",
   "terms": {
     "title": "Terms of Service",
