@@ -158,5 +158,46 @@
         "paragraphs": ["Questions about your data: {supportEmail}."]
       }
     }
+  },
+  "refunds": {
+    "title": "Refund Policy",
+    "description": "When and how Emigisha, LLC refunds payments made in its apps.",
+    "intro": "This policy covers payments in the apps run by Emigisha, LLC. An app may set more specific rules on its own site, such as how long its credits last; where it does, those rules apply for that app.",
+    "sections": {
+      "failures": {
+        "title": "If something fails",
+        "paragraphs": [
+          "If an app fails to make what you paid for, such as a photo, a CV or a PDF, the credits go back to your balance. If they do not, write to us and we put it right."
+        ]
+      },
+      "unused": {
+        "title": "Unused credits",
+        "paragraphs": ["You can get your money back for credits you have not used, within 14 days of buying them."]
+      },
+      "used": {
+        "title": "Used credits",
+        "paragraphs": ["Credits you have used are not refundable, except where the law requires a refund."]
+      },
+      "ask": {
+        "title": "How to ask",
+        "paragraphs": ["Email {supportEmail} from the address on your account, with the app name and the date of the payment."]
+      },
+      "payback": {
+        "title": "How you are paid back",
+        "paragraphs": [
+          "To the same card or mobile money number you paid with, within 10 business days of our approval. Your bank or mobile money provider may take a few more days to show it."
+        ]
+      },
+      "disputes": {
+        "title": "Before you dispute a payment",
+        "paragraphs": [
+          "Please write to us before disputing a payment with your bank. We answer quickly, and a dispute can freeze your account while it is reviewed."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "paragraphs": ["Questions about a payment: {supportEmail}."]
+      }
+    }
   }
 }
