@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { cn } from '@/shared/presentation/utils/shadcn';
-import { containerClassName, eyebrowClassName, focusRingClassName, sectionTitleClassName } from '../class-names';
+import { containerClassName, eyebrowClassName, focusRingClassName, sectionTitleClassName } from '@/shared/presentation/utils/class-names';
 import { Product, products } from '../products';
 import { ProductArt } from './product-art';
 

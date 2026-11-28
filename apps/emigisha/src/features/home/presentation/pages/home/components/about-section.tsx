@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { clientConfig } from '@/core/config/client-config';
 import { cn } from '@/shared/presentation/utils/shadcn';
-import { containerClassName, eyebrowClassName, focusRingClassName, sectionTitleClassName } from '../class-names';
+import { containerClassName, eyebrowClassName, focusRingClassName, sectionTitleClassName } from '@/shared/presentation/utils/class-names';
 
 const SOCIAL = ['github', 'linkedin', 'x'] as const;
 

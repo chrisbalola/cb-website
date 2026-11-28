@@ -1,0 +1,203 @@
+{
+  "updated": "Last updated: 28 November 2026",
+  "mailingAddress": "Mailing address: {address}",
+  "terms": {
+    "title": "Terms of Service",
+    "description": "The terms for using emigisha.com and the apps run by Emigisha, LLC.",
+    "intro": "These terms cover emigisha.com and the apps run by Emigisha, LLC: Talatala, StyledDoc, PrettyCV and any other app that links to these terms. When you create an account or use one of these apps, you agree to them.",
+    "sections": {
+      "who": {
+        "title": "Who we are",
+        "paragraphs": [
+          "Emigisha, LLC (\"Emigisha\", \"we\") is a Delaware limited liability company.",
+          "An app may add its own rules on its site, such as how its credits work. For that app, those rules apply on top of these terms."
+        ]
+      },
+      "account": {
+        "title": "Your account",
+        "paragraphs": [
+          "You must be 18 or older. Give accurate details, keep your password safe, and tell us if someone else gets into your account. You are responsible for what happens in it."
+        ]
+      },
+      "content": {
+        "title": "Your content",
+        "paragraphs": [
+          "What you upload stays yours. You let us store and process it only to run the app for you.",
+          "Only upload content you have the right to use. If it shows another person, you must have their explicit consent."
+        ]
+      },
+      "notAllowed": {
+        "title": "What you may not do",
+        "items": [
+          "Break the law, or use our apps to harm someone",
+          "Upload content that is not yours to use",
+          "Impersonate anyone, or make misleading images of real people",
+          "Try to break, overload or get around the security of our apps",
+          "Scrape, copy or resell our apps or what they produce at scale"
+        ]
+      },
+      "ai": {
+        "title": "AI results",
+        "paragraphs": [
+          "Our apps use AI. Results can be wrong or unexpected. Check them before you rely on them or share them, especially CVs, documents and photos of people."
+        ]
+      },
+      "payments": {
+        "title": "Payments",
+        "paragraphs": [
+          "Prices are shown before you pay, in the currency shown at checkout. We take card payments through Stripe and mobile money through pawaPay. Credits expire as each app states.",
+          "Refunds follow our Refund Policy at emigisha.com/refunds."
+        ]
+      },
+      "availability": {
+        "title": "Changes and availability",
+        "paragraphs": [
+          "We improve our apps often, and may change or stop a feature or an app. If we stop a paid app, we refund unused credits.",
+          "We do our best to keep things running, but the apps are provided \"as is\", without warranties of any kind."
+        ]
+      },
+      "liability": {
+        "title": "Liability",
+        "paragraphs": [
+          "We are not liable for indirect or consequential losses, such as lost profits or lost data. Our total liability is limited to the greater of what you paid us in the 12 months before the claim or US$100.",
+          "Nothing in these terms limits liability that the law does not allow us to limit."
+        ]
+      },
+      "ending": {
+        "title": "Ending",
+        "paragraphs": [
+          "You can stop using an app and delete your account at any time. We may suspend or close an account that breaks these terms or puts the apps or other people at risk."
+        ]
+      },
+      "changes": {
+        "title": "Changes to these terms",
+        "paragraphs": ["If we make an important change, we tell you by email or in the app before it applies."]
+      },
+      "law": {
+        "title": "Law",
+        "paragraphs": [
+          "These terms are governed by the laws of the State of Delaware, and disputes go to the courts of Delaware. This does not take away any consumer protection the law of your country gives you."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "paragraphs": ["Questions about these terms: {legalEmail}."]
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "What Emigisha, LLC collects in its apps, why, who helps us, and how to delete it.",
+    "intro": "Emigisha, LLC runs Talatala, StyledDoc, PrettyCV and the other apps that link to this policy. It explains what we collect, why, who helps us, and how to have your data deleted.",
+    "sections": {
+      "collect": {
+        "title": "What we collect",
+        "items": [
+          "Account details: your name, your email, and your phone number if you give it",
+          "What you put in the app: photos, CV details, documents, and the results we make from them",
+          "Payment records: the amount, date and status of each payment. We never see your card number or mobile money PIN; Stripe and pawaPay handle payment details",
+          "Support messages, and basic technical logs (device, browser, IP address) used to keep the apps secure"
+        ]
+      },
+      "why": {
+        "title": "Why we use it",
+        "paragraphs": [
+          "To run the app you use, take payments, keep accounts secure, answer support, and meet our legal and tax duties. We do not sell your data and do not use it for ads."
+        ]
+      },
+      "processors": {
+        "title": "Who helps us",
+        "paragraphs": [
+          "These services process data for us, each only for the job listed. Some of them process data in the United States and other countries."
+        ],
+        "items": [
+          "Railway: hosting the apps and their databases (all apps)",
+          "Cloudflare: storing files, checking that sign-ups come from people, and counting visits without cookies (all apps)",
+          "Stripe: card payments (all paid apps)",
+          "pawaPay: mobile money payments (Talatala, and PrettyCV once it launches)",
+          "ZeptoMail: sending emails such as confirmation links (all apps)",
+          "fal.ai: making photos from your selfies (Talatala)",
+          "Anthropic: answering chat messages (StyledDoc, and PrettyCV once its chat ships)"
+        ]
+      },
+      "retention": {
+        "title": "How long we keep it",
+        "paragraphs": [
+          "We keep your data while your account is open. Payment records are kept as long as tax rules require, and technical logs for a short time.",
+          "When you delete your account, we delete your content and personal data within 30 days, except what the law requires us to keep."
+        ]
+      },
+      "delete-account": {
+        "title": "Delete your account",
+        "paragraphs": [
+          "Use Delete account in the app's settings. If you cannot sign in, email {supportEmail} from the address on your account and name the app."
+        ]
+      },
+      "rights": {
+        "title": "Your rights",
+        "paragraphs": [
+          "You can ask to see, correct, export or delete your data, or object to how we use it. Write to {supportEmail} and we reply within 30 days. You can also complain to the data protection authority in your country."
+        ]
+      },
+      "children": {
+        "title": "Children",
+        "paragraphs": ["Our apps are not for anyone under 18, and we do not knowingly collect data from children."]
+      },
+      "cookies": {
+        "title": "Cookies",
+        "paragraphs": [
+          "We only use the cookies needed to keep you signed in. Our visit counts do not use cookies, and we use no advertising trackers."
+        ]
+      },
+      "changes": {
+        "title": "Changes to this policy",
+        "paragraphs": ["If we change this policy in an important way, we tell you by email or in the app before it applies."]
+      },
+      "contact": {
+        "title": "Contact",
+        "paragraphs": ["Questions about your data: {supportEmail}."]
+      }
+    }
+  },
+  "refunds": {
+    "title": "Refund Policy",
+    "description": "When and how Emigisha, LLC refunds payments made in its apps.",
+    "intro": "This policy covers payments in the apps run by Emigisha, LLC. An app may set more specific rules on its own site, such as how long its credits last; where it does, those rules apply for that app.",
+    "sections": {
+      "failures": {
+        "title": "If something fails",
+        "paragraphs": [
+          "If an app fails to make what you paid for, such as a photo, a CV or a PDF, the credits go back to your balance. If they do not, write to us and we put it right."
+        ]
+      },
+      "unused": {
+        "title": "Unused credits",
+        "paragraphs": ["You can get your money back for credits you have not used, within 14 days of buying them."]
+      },
+      "used": {
+        "title": "Used credits",
+        "paragraphs": ["Credits you have used are not refundable, except where the law requires a refund."]
+      },
+      "ask": {
+        "title": "How to ask",
+        "paragraphs": ["Email {supportEmail} from the address on your account, with the app name and the date of the payment."]
+      },
+      "payback": {
+        "title": "How you are paid back",
+        "paragraphs": [
+          "To the same card or mobile money number you paid with, within 10 business days of our approval. Your bank or mobile money provider may take a few more days to show it."
+        ]
+      },
+      "disputes": {
+        "title": "Before you dispute a payment",
+        "paragraphs": [
+          "Please write to us before disputing a payment with your bank. We answer quickly, and a dispute can freeze your account while it is reviewed."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "paragraphs": ["Questions about a payment: {supportEmail}."]
+      }
+    }
+  }
+}
